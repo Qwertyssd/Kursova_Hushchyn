@@ -36,33 +36,113 @@ namespace Kursova_Hushchyn
 
         public List<BusRoute> SearchRoutesByArrival(string arrivalPoint)
         {
-            return BusRoutes.Where(r => r.Stops.Last() == arrivalPoint).ToList();
+            List<BusRoute> list = new List<BusRoute>();
+
+
+            foreach (BusRoute bus in BusRoutes)
+            {
+                if (bus.Stops.Last() == arrivalPoint)
+                {
+                    list.Add(bus);
+                }
+            }
+            return list;
+         
+            
         }
         public List<BusRoute> SearchRoutesByRouteNumber(string routeNumber)
         {
-            return BusRoutes.Where(r => r.RouteNumber == routeNumber).ToList();
+            List<BusRoute> list = new List<BusRoute>();
+
+
+            foreach (BusRoute bus in BusRoutes)
+            {
+                if (bus.RouteNumber == routeNumber)
+                {
+                    list.Add(bus);
+                }
+            }
+            return list;
+           
         }
         public List<BusRoute> SearchRoutesByModel(string model)
         {
-            return BusRoutes.Where(r => r.Model == model).ToList();
+
+            List<BusRoute> list = new List<BusRoute>();
+
+            foreach (BusRoute bus in BusRoutes)
+            {
+                if (bus.Model == model)
+                {
+                    list.Add(bus);
+                }
+            }
+            return list;
         }
         public List<BusRoute> SearchRoutesByCarrierCompany(string company)
         {
-            return BusRoutes.Where(r => r.CarrierCompany == company).ToList();
+            List<BusRoute> list = new List<BusRoute>();
+
+            foreach (BusRoute bus in BusRoutes)
+            {
+                if (bus.CarrierCompany == company)
+                {
+                    list.Add(bus);
+                }
+            }
+            return list;
+           
         }
         public List<BusRoute> SearchRoutesByIntermediate(string intermediatePoint)
         {
-            return BusRoutes.Where(r => r.Stops.Contains(intermediatePoint) ).ToList();
+            List<BusRoute> list = new List<BusRoute>();
+
+            foreach (BusRoute bus in BusRoutes)
+            {
+                foreach (string stop in bus.Stops)
+                {
+                    if (stop == intermediatePoint)
+                    {
+                        list.Add(bus);
+                    }
+                }
+               
+            }
+
+            return list;
+           
         }
 
         public List<BusRoute> SearchRoutesByDepartureDate(DateTime date)
         {
-            return BusRoutes.Where(r => r.DepartureDate.Date == date.Date).ToList();
+            List<BusRoute> list = new List<BusRoute>();
+
+            foreach (BusRoute bus in BusRoutes)
+            {
+                if (bus.DepartureDate.Date == date.Date)
+                {
+                    list.Add(bus);
+                }
+            }
+
+            return list;
+            
         }
 
         public List<BusRoute> SearchRoutesByArrivalDate(DateTime date)
         {
-            return BusRoutes.Where(r => r.ArrivalDate.Date == date.Date).ToList();
+            List<BusRoute> list = new List<BusRoute>();
+
+            foreach (BusRoute bus in BusRoutes)
+            {
+                if (bus.ArrivalDate.Date == date.Date)
+                {
+                    list.Add(bus);
+                }
+            }
+
+            return list;
+           
         }
 
         public List<BusRoute> SearchRoutesByDepartureTime(TimeSpan time)

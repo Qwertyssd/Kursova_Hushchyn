@@ -68,10 +68,10 @@
             // 
             // btnAdd
             // 
-            this.btnAdd.Location = new System.Drawing.Point(298, 388);
-            this.btnAdd.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnAdd.Location = new System.Drawing.Point(407, 373);
+            this.btnAdd.Margin = new System.Windows.Forms.Padding(2);
             this.btnAdd.Name = "btnAdd";
-            this.btnAdd.Size = new System.Drawing.Size(102, 19);
+            this.btnAdd.Size = new System.Drawing.Size(116, 33);
             this.btnAdd.TabIndex = 0;
             this.btnAdd.Text = "Add Route";
             this.btnAdd.UseVisualStyleBackColor = true;
@@ -81,7 +81,7 @@
             // 
             this.chbConditioner.AutoSize = true;
             this.chbConditioner.Location = new System.Drawing.Point(4, 18);
-            this.chbConditioner.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.chbConditioner.Margin = new System.Windows.Forms.Padding(2);
             this.chbConditioner.Name = "chbConditioner";
             this.chbConditioner.Size = new System.Drawing.Size(79, 17);
             this.chbConditioner.TabIndex = 2;
@@ -92,7 +92,7 @@
             // 
             this.chbToilet.AutoSize = true;
             this.chbToilet.Location = new System.Drawing.Point(4, 39);
-            this.chbToilet.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.chbToilet.Margin = new System.Windows.Forms.Padding(2);
             this.chbToilet.Name = "chbToilet";
             this.chbToilet.Size = new System.Drawing.Size(52, 17);
             this.chbToilet.TabIndex = 3;
@@ -103,7 +103,7 @@
             // 
             this.chbInternet.AutoSize = true;
             this.chbInternet.Location = new System.Drawing.Point(4, 60);
-            this.chbInternet.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.chbInternet.Margin = new System.Windows.Forms.Padding(2);
             this.chbInternet.Name = "chbInternet";
             this.chbInternet.Size = new System.Drawing.Size(62, 17);
             this.chbInternet.TabIndex = 4;
@@ -117,9 +117,9 @@
             this.gbOptions.Controls.Add(this.chbInternet);
             this.gbOptions.Controls.Add(this.chbConditioner);
             this.gbOptions.Location = new System.Drawing.Point(14, 62);
-            this.gbOptions.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.gbOptions.Margin = new System.Windows.Forms.Padding(2);
             this.gbOptions.Name = "gbOptions";
-            this.gbOptions.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.gbOptions.Padding = new System.Windows.Forms.Padding(2);
             this.gbOptions.Size = new System.Drawing.Size(150, 112);
             this.gbOptions.TabIndex = 5;
             this.gbOptions.TabStop = false;
@@ -129,7 +129,7 @@
             // 
             this.chbPowerOutlets.AutoSize = true;
             this.chbPowerOutlets.Location = new System.Drawing.Point(4, 81);
-            this.chbPowerOutlets.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.chbPowerOutlets.Margin = new System.Windows.Forms.Padding(2);
             this.chbPowerOutlets.Name = "chbPowerOutlets";
             this.chbPowerOutlets.Size = new System.Drawing.Size(92, 17);
             this.chbPowerOutlets.TabIndex = 5;
@@ -139,7 +139,7 @@
             // txtCapacity
             // 
             this.txtCapacity.Location = new System.Drawing.Point(284, 195);
-            this.txtCapacity.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtCapacity.Margin = new System.Windows.Forms.Padding(2);
             this.txtCapacity.Name = "txtCapacity";
             this.txtCapacity.Size = new System.Drawing.Size(102, 20);
             this.txtCapacity.TabIndex = 1;
@@ -163,12 +163,11 @@
             this.label2.Size = new System.Drawing.Size(76, 13);
             this.label2.TabIndex = 7;
             this.label2.Text = "Route Number";
-            this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
             // txtRouteNumber
             // 
             this.txtRouteNumber.Location = new System.Drawing.Point(362, 62);
-            this.txtRouteNumber.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtRouteNumber.Margin = new System.Windows.Forms.Padding(2);
             this.txtRouteNumber.Name = "txtRouteNumber";
             this.txtRouteNumber.Size = new System.Drawing.Size(102, 20);
             this.txtRouteNumber.TabIndex = 8;
@@ -186,7 +185,7 @@
             // txtCarrierCompany
             // 
             this.txtCarrierCompany.Location = new System.Drawing.Point(284, 161);
-            this.txtCarrierCompany.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtCarrierCompany.Margin = new System.Windows.Forms.Padding(2);
             this.txtCarrierCompany.Name = "txtCarrierCompany";
             this.txtCarrierCompany.Size = new System.Drawing.Size(102, 20);
             this.txtCarrierCompany.TabIndex = 10;
@@ -204,7 +203,7 @@
             // txtPrice
             // 
             this.txtPrice.Location = new System.Drawing.Point(460, 275);
-            this.txtPrice.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtPrice.Margin = new System.Windows.Forms.Padding(2);
             this.txtPrice.Name = "txtPrice";
             this.txtPrice.Size = new System.Drawing.Size(102, 20);
             this.txtPrice.TabIndex = 12;
@@ -232,7 +231,7 @@
             // txtDepartureDate
             // 
             this.txtDepartureDate.Location = new System.Drawing.Point(284, 236);
-            this.txtDepartureDate.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtDepartureDate.Margin = new System.Windows.Forms.Padding(2);
             this.txtDepartureDate.Mask = "00/00/0000";
             this.txtDepartureDate.Name = "txtDepartureDate";
             this.txtDepartureDate.Size = new System.Drawing.Size(102, 20);
@@ -242,7 +241,7 @@
             // txtArrivalDate
             // 
             this.txtArrivalDate.Location = new System.Drawing.Point(284, 275);
-            this.txtArrivalDate.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtArrivalDate.Margin = new System.Windows.Forms.Padding(2);
             this.txtArrivalDate.Mask = "00/00/0000";
             this.txtArrivalDate.Name = "txtArrivalDate";
             this.txtArrivalDate.Size = new System.Drawing.Size(102, 20);
@@ -258,36 +257,36 @@
             this.label7.Size = new System.Drawing.Size(34, 13);
             this.label7.TabIndex = 18;
             this.label7.Text = "Stops";
-            this.label7.Click += new System.EventHandler(this.label7_Click);
             // 
             // txtStops
             // 
             this.txtStops.Location = new System.Drawing.Point(284, 318);
-            this.txtStops.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtStops.Margin = new System.Windows.Forms.Padding(2);
             this.txtStops.Name = "txtStops";
             this.txtStops.Size = new System.Drawing.Size(278, 20);
             this.txtStops.TabIndex = 19;
-            this.txtStops.TextChanged += new System.EventHandler(this.txtStops_TextChanged);
             // 
             // btnReset
             // 
-            this.btnReset.Location = new System.Drawing.Point(179, 388);
-            this.btnReset.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnReset.Location = new System.Drawing.Point(165, 374);
+            this.btnReset.Margin = new System.Windows.Forms.Padding(2);
             this.btnReset.Name = "btnReset";
-            this.btnReset.Size = new System.Drawing.Size(102, 19);
+            this.btnReset.Size = new System.Drawing.Size(112, 32);
             this.btnReset.TabIndex = 20;
             this.btnReset.Text = "Reset";
             this.btnReset.UseVisualStyleBackColor = true;
+            this.btnReset.Click += new System.EventHandler(this.btnReset_Click);
             // 
             // btnExit
             // 
-            this.btnExit.Location = new System.Drawing.Point(59, 388);
-            this.btnExit.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnExit.Location = new System.Drawing.Point(14, 373);
+            this.btnExit.Margin = new System.Windows.Forms.Padding(2);
             this.btnExit.Name = "btnExit";
-            this.btnExit.Size = new System.Drawing.Size(102, 19);
+            this.btnExit.Size = new System.Drawing.Size(116, 33);
             this.btnExit.TabIndex = 21;
             this.btnExit.Text = "Exit";
             this.btnExit.UseVisualStyleBackColor = true;
+            this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
             // 
             // label8
             // 
@@ -303,7 +302,7 @@
             // txtModel
             // 
             this.txtModel.Location = new System.Drawing.Point(460, 236);
-            this.txtModel.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtModel.Margin = new System.Windows.Forms.Padding(2);
             this.txtModel.Name = "txtModel";
             this.txtModel.Size = new System.Drawing.Size(102, 20);
             this.txtModel.TabIndex = 24;
@@ -324,7 +323,7 @@
             this.dgvTravelDurations.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.StopsTime});
             this.dgvTravelDurations.Location = new System.Drawing.Point(9, 187);
-            this.dgvTravelDurations.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dgvTravelDurations.Margin = new System.Windows.Forms.Padding(2);
             this.dgvTravelDurations.Name = "dgvTravelDurations";
             this.dgvTravelDurations.RowHeadersWidth = 51;
             this.dgvTravelDurations.RowTemplate.Height = 24;
@@ -351,7 +350,7 @@
             // txtStopsDuration
             // 
             this.txtStopsDuration.Location = new System.Drawing.Point(284, 125);
-            this.txtStopsDuration.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtStopsDuration.Margin = new System.Windows.Forms.Padding(2);
             this.txtStopsDuration.Mask = "00:00";
             this.txtStopsDuration.Name = "txtStopsDuration";
             this.txtStopsDuration.Size = new System.Drawing.Size(102, 20);
@@ -396,10 +395,9 @@
             this.Controls.Add(this.gbOptions);
             this.Controls.Add(this.txtCapacity);
             this.Controls.Add(this.btnAdd);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "AddRouteForm";
             this.Text = "UKR BUS";
-            this.Load += new System.EventHandler(this.AddRouteForm_Load);
             this.gbOptions.ResumeLayout(false);
             this.gbOptions.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvTravelDurations)).EndInit();

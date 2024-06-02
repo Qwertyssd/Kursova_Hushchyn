@@ -87,24 +87,27 @@ namespace Kursova_Hushchyn
         }
 
 
-
-        private void AddRouteForm_Load(object sender, EventArgs e)
+        private void btnExit_Click(object sender, EventArgs e)
         {
+            this.Close();
         }
 
-        private void label7_Click(object sender, EventArgs e)
+        private void btnReset_Click(object sender, EventArgs e)
         {
-
-        }
-
-        private void txtStops_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label2_Click(object sender, EventArgs e)
-        {
-
+            txtModel.Clear();
+            txtCapacity.Clear();
+            chbConditioner.Checked = false;
+            chbToilet.Checked = false;
+            chbPowerOutlets.Checked = false;
+            chbInternet.Checked = false;
+            txtRouteNumber.Clear();
+            txtCarrierCompany.Clear();
+            txtPrice.Clear();
+            txtDepartureDate.Clear();
+            txtArrivalDate.Clear();
+            txtStops.Clear();
+            txtCapacity.Clear();
+            txtStopsDuration.Clear();
         }
     }
 }
