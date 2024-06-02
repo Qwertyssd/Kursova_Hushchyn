@@ -59,12 +59,7 @@ namespace Kursova_Hushchyn
                 (hasInternet == null || r.HasInternet == hasInternet)
             ).ToList();
         }*/
-        public List<BusRoute> SearchRoutes(string departurePoint = null, string arrivalPoint = null, string intermediateStop = null, DateTime? date = null,
-     bool? hasAirConditioner = null,
-     bool? hasToilet = null,
-     bool? hasPowerOutlets = null,
-     bool? hasInternet = null,
-     bool? hasAvailableTickets = null)
+        public List<BusRoute> SearchRoutes(string departurePoint = null, string arrivalPoint = null, string intermediateStop = null, DateTime? date = null, bool? hasAirConditioner = null,bool? hasToilet = null,bool? hasPowerOutlets = null, bool? hasInternet = null, int? AvailableTickets = null)
         {
             return BusRoutes.Where(r =>
                 (departurePoint == null || r.Stops.First() == departurePoint) &&
@@ -75,8 +70,7 @@ namespace Kursova_Hushchyn
                 (hasToilet == null || r.HasToilet == hasToilet) &&
                 (hasPowerOutlets == null || r.HasPowerOutlets == hasPowerOutlets) &&
                 (hasInternet == null || r.HasInternet == hasInternet) &&
-                (hasAvailableTickets == null || r.AvailableSeats > 0)
-            ).ToList();
+                (AvailableTickets == null || r.AvailableSeats > 0)).ToList();
         }
         public void SaveRoutesToFile(string filePath)
         {

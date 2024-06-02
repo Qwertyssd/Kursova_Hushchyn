@@ -35,9 +35,10 @@
             // 
             // btnAddRoute
             // 
-            this.btnAddRoute.Location = new System.Drawing.Point(116, 138);
+            this.btnAddRoute.Location = new System.Drawing.Point(87, 112);
+            this.btnAddRoute.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnAddRoute.Name = "btnAddRoute";
-            this.btnAddRoute.Size = new System.Drawing.Size(108, 23);
+            this.btnAddRoute.Size = new System.Drawing.Size(81, 19);
             this.btnAddRoute.TabIndex = 0;
             this.btnAddRoute.Text = "Add Route";
             this.btnAddRoute.UseVisualStyleBackColor = true;
@@ -45,9 +46,10 @@
             // 
             // btnSearchRoutes
             // 
-            this.btnSearchRoutes.Location = new System.Drawing.Point(116, 222);
+            this.btnSearchRoutes.Location = new System.Drawing.Point(87, 180);
+            this.btnSearchRoutes.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnSearchRoutes.Name = "btnSearchRoutes";
-            this.btnSearchRoutes.Size = new System.Drawing.Size(108, 23);
+            this.btnSearchRoutes.Size = new System.Drawing.Size(81, 19);
             this.btnSearchRoutes.TabIndex = 1;
             this.btnSearchRoutes.Text = "Search Routes";
             this.btnSearchRoutes.UseVisualStyleBackColor = true;
@@ -55,9 +57,10 @@
             // 
             // btnTicketOperations
             // 
-            this.btnTicketOperations.Location = new System.Drawing.Point(324, 138);
+            this.btnTicketOperations.Location = new System.Drawing.Point(243, 112);
+            this.btnTicketOperations.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnTicketOperations.Name = "btnTicketOperations";
-            this.btnTicketOperations.Size = new System.Drawing.Size(196, 23);
+            this.btnTicketOperations.Size = new System.Drawing.Size(147, 19);
             this.btnTicketOperations.TabIndex = 2;
             this.btnTicketOperations.Text = "Ticket Operations";
             this.btnTicketOperations.UseVisualStyleBackColor = true;
@@ -65,14 +68,15 @@
             // 
             // MainForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(600, 366);
             this.Controls.Add(this.btnTicketOperations);
             this.Controls.Add(this.btnSearchRoutes);
             this.Controls.Add(this.btnAddRoute);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "MainForm";
-            this.Text = "MainForm";
+            this.Text = "UKR BUS";
             this.ResumeLayout(false);
 
         }

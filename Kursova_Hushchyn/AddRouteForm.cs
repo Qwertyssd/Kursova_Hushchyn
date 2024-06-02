@@ -17,6 +17,7 @@ namespace Kursova_Hushchyn
         {
             InitializeComponent();
             this.routeList = routeList;
+            
         }
 
         private void btnAdd_Click(object sender, EventArgs e)
