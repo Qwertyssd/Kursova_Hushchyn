@@ -20,8 +20,8 @@ namespace Kursova_Hushchyn
         { 
             Tickets.Add(ticket);
             RouteList l = new RouteList();
-          
-            
+            RouteList l1 = new RouteList();
+
         }
         public List<Ticket> GetTicketsByID(string ticketID)
         {
