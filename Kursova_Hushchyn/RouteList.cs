@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -111,16 +112,58 @@ namespace Kursova_Hushchyn
             return list;
         }
 
-     
-      
+
+
         public void SaveRoutesToFile(string filePath)
         {
-            // Implement file saving logic
+            using (StreamWriter writer = new StreamWriter(filePath))
+            {
+                foreach (var route in BusRoutes)
+                {
+                    writer.WriteLine(route.Model);
+                    writer.WriteLine(route.PassengerCapacity);
+                    writer.WriteLine(route.HasAirConditioner);
+                    writer.WriteLine(route.HasToilet);
+                    writer.WriteLine(route.HasPowerOutlets);
+                    writer.WriteLine(route.HasInternet);
+                    writer.WriteLine(route.RouteNumber);
+                    writer.WriteLine(route.CarrierCompany);
+                    writer.WriteLine(route.Price);
+                    writer.WriteLine(route.DepartureDate);
+                    writer.WriteLine(route.ArrivalDate);
+                    writer.WriteLine(string.Join(",", route.TravelDurations));
+                    writer.WriteLine(string.Join(",", route.Stops));
+                    writer.WriteLine(route.AvailableSeats);
+                }
+            }
         }
 
         public void LoadRoutesFromFile(string filePath)
         {
-            // Implement file loading logic
+            using (StreamReader reader = new StreamReader(filePath))
+            {
+                while (!reader.EndOfStream)
+                {
+                    string model = reader.ReadLine();
+                    int passengerCapacity = int.Parse(reader.ReadLine());
+                    bool hasAirConditioner = bool.Parse(reader.ReadLine());
+                    bool hasToilet = bool.Parse(reader.ReadLine());
+                    bool hasPowerOutlets = bool.Parse(reader.ReadLine());
+                    bool hasInternet = bool.Parse(reader.ReadLine());
+                    string routeNumber = reader.ReadLine();
+                    string carrierCompany = reader.ReadLine();
+                    double price = double.Parse(reader.ReadLine());
+                    DateTime departureDate = DateTime.Parse(reader.ReadLine());
+                    DateTime arrivalDate = DateTime.Parse(reader.ReadLine());
+                    List<TimeSpan> travelDurations = reader.ReadLine().Split(',').Select(TimeSpan.Parse).ToList();
+                    List<string> stops = reader.ReadLine().Split(',').ToList();
+                    int availableSeats = int.Parse(reader.ReadLine());
+
+                    BusRoute route = new BusRoute(model, passengerCapacity, hasAirConditioner, hasToilet, hasPowerOutlets, hasInternet,
+                                                  routeNumber, carrierCompany, price, departureDate, arrivalDate, travelDurations, stops, availableSeats);
+                    BusRoutes.Add(route);
+                }
+            }
         }
     }
 

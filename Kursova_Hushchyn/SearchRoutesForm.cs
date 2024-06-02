@@ -160,5 +160,10 @@ namespace Kursova_Hushchyn
             dgvRoutes.DataSource = routeList.BusRoutes;
            
         }
+
+        private void btnExit_Click(object sender, EventArgs e)
+        {
+            routeList.SaveRoutesToFile("routes.txt");
+        }
     }
 }
