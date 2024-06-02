@@ -81,10 +81,10 @@
             // 
             // btnFileOperations
             // 
-            this.btnFileOperations.Location = new System.Drawing.Point(350, 277);
+            this.btnFileOperations.Location = new System.Drawing.Point(350, 273);
             this.btnFileOperations.Margin = new System.Windows.Forms.Padding(2);
             this.btnFileOperations.Name = "btnFileOperations";
-            this.btnFileOperations.Size = new System.Drawing.Size(142, 29);
+            this.btnFileOperations.Size = new System.Drawing.Size(142, 33);
             this.btnFileOperations.TabIndex = 4;
             this.btnFileOperations.Text = "File Management";
             this.btnFileOperations.UseVisualStyleBackColor = true;
