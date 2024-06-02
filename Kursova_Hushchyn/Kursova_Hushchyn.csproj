@@ -54,6 +54,18 @@
     </Compile>
     <Compile Include="Bus.cs" />
     <Compile Include="BusRoute.cs" />
+    <Compile Include="deleteRouteForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="deleteRouteForm.Designer.cs">
+      <DependentUpon>deleteRouteForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="fileOperationsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="fileOperationsForm.Designer.cs">
+      <DependentUpon>fileOperationsForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="MainForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -74,6 +86,12 @@
     <Compile Include="TicketList.cs" />
     <EmbeddedResource Include="AddRouteForm.resx">
       <DependentUpon>AddRouteForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="deleteRouteForm.resx">
+      <DependentUpon>deleteRouteForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="fileOperationsForm.resx">
+      <DependentUpon>fileOperationsForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>

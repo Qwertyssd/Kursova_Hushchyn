@@ -23,7 +23,7 @@ namespace Kursova_Hushchyn
         private void btnSearch_Click(object sender, EventArgs e)
         {
 
-            // Validate and parse the departure date
+            
             DateTime? departureDate = null;
             if (!string.IsNullOrWhiteSpace(txtDepartureDate.Text))
             {
@@ -88,7 +88,7 @@ namespace Kursova_Hushchyn
 
             if (model != null)
             {
-                //   routes = routes.SearchRoutesByModel(model);
+                  routes.BusRoutes = routes.SearchRoutesByModel(model);
             }
 
             if (hasAirConditioner != null)

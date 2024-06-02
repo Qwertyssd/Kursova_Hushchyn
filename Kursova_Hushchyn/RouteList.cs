@@ -4,13 +4,14 @@ using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace Kursova_Hushchyn
 {
     public class RouteList
     {
         public List<BusRoute> BusRoutes { get; set; }
-
+        public int unique { get; set; }
         public RouteList()
         {
             BusRoutes = new List<BusRoute>();
@@ -18,13 +19,48 @@ namespace Kursova_Hushchyn
 
         public void AddRoute(BusRoute route)
         {
-            BusRoutes.Add(route);
+            BusRoute busTmp = route;
+            BusRoutes.Add(busTmp);    
         }
 
-        public void RemoveRoute(string routeNumber)
+        public void RemoveRouteByRouteNumber(string routeNumber)
         {
-            BusRoutes.RemoveAll(r => r.RouteNumber == routeNumber);
+            
+            if (BusRoutes.Count==1&& BusRoutes[0].RouteNumber == routeNumber)
+            {
+                BusRoutes.Remove(BusRoutes[0]);
+                return;
+            }
+            foreach (BusRoute route in BusRoutes)
+            {
+                if (route.RouteNumber==routeNumber)
+                {
+                    BusRoutes.Remove(route);
+                }
+            }
         }
+        public void RemoveRouteByModel(string model)
+        {
+            foreach (BusRoute route in BusRoutes)
+            {
+                if (route.Model == model)
+                {
+                    BusRoutes.Remove(route);
+                }
+            }
+        }
+        
+        public void RemoveRouteByCarrierCompany(string carrierCompany)
+        {
+            foreach (BusRoute route in BusRoutes)
+            {
+                if (route.CarrierCompany == carrierCompany)
+                {
+                    BusRoutes.Remove(route);
+                }
+            }
+        }
+
 
         public List<BusRoute> SearchRoutesByDeparture(string departurePoint)
         {
@@ -241,7 +277,7 @@ namespace Kursova_Hushchyn
 
                     BusRoute route = new BusRoute(model, passengerCapacity, hasAirConditioner, hasToilet, hasPowerOutlets, hasInternet,
                                                   routeNumber, carrierCompany, price, departureDate, arrivalDate, travelDurations, stops, availableSeats);
-                    BusRoutes.Add(route);
+                    AddRoute(route);
                 }
             }
         }

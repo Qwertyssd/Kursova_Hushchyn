@@ -70,7 +70,7 @@ namespace Kursova_Hushchyn
                     txtCarrierCompany.Text,
                     double.Parse(txtPrice.Text),
                     DateTime.Parse(txtDepartureDate.Text),
-                      DateTime.Parse(txtArrivalDate.Text),
+                    DateTime.Parse(txtArrivalDate.Text),
                     travelDurations,
                     new List<string>(txtStops.Text.Split(',')),
                     int.Parse(txtCapacity.Text)

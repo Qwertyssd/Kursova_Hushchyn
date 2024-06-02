@@ -31,14 +31,16 @@
             this.btnAddRoute = new System.Windows.Forms.Button();
             this.btnSearchRoutes = new System.Windows.Forms.Button();
             this.btnTicketOperations = new System.Windows.Forms.Button();
+            this.btnDeleteRoute = new System.Windows.Forms.Button();
+            this.btnFileOperations = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // btnAddRoute
             // 
-            this.btnAddRoute.Location = new System.Drawing.Point(87, 112);
-            this.btnAddRoute.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnAddRoute.Location = new System.Drawing.Point(87, 104);
+            this.btnAddRoute.Margin = new System.Windows.Forms.Padding(2);
             this.btnAddRoute.Name = "btnAddRoute";
-            this.btnAddRoute.Size = new System.Drawing.Size(81, 19);
+            this.btnAddRoute.Size = new System.Drawing.Size(142, 33);
             this.btnAddRoute.TabIndex = 0;
             this.btnAddRoute.Text = "Add Route";
             this.btnAddRoute.UseVisualStyleBackColor = true;
@@ -46,10 +48,10 @@
             // 
             // btnSearchRoutes
             // 
-            this.btnSearchRoutes.Location = new System.Drawing.Point(87, 180);
-            this.btnSearchRoutes.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnSearchRoutes.Location = new System.Drawing.Point(87, 196);
+            this.btnSearchRoutes.Margin = new System.Windows.Forms.Padding(2);
             this.btnSearchRoutes.Name = "btnSearchRoutes";
-            this.btnSearchRoutes.Size = new System.Drawing.Size(81, 19);
+            this.btnSearchRoutes.Size = new System.Drawing.Size(142, 29);
             this.btnSearchRoutes.TabIndex = 1;
             this.btnSearchRoutes.Text = "Search Routes";
             this.btnSearchRoutes.UseVisualStyleBackColor = true;
@@ -57,24 +59,48 @@
             // 
             // btnTicketOperations
             // 
-            this.btnTicketOperations.Location = new System.Drawing.Point(243, 112);
-            this.btnTicketOperations.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnTicketOperations.Location = new System.Drawing.Point(350, 196);
+            this.btnTicketOperations.Margin = new System.Windows.Forms.Padding(2);
             this.btnTicketOperations.Name = "btnTicketOperations";
-            this.btnTicketOperations.Size = new System.Drawing.Size(147, 19);
+            this.btnTicketOperations.Size = new System.Drawing.Size(148, 29);
             this.btnTicketOperations.TabIndex = 2;
             this.btnTicketOperations.Text = "Ticket Operations";
             this.btnTicketOperations.UseVisualStyleBackColor = true;
             this.btnTicketOperations.Click += new System.EventHandler(this.btnTicketOperations_Click);
+            // 
+            // btnDeleteRoute
+            // 
+            this.btnDeleteRoute.Location = new System.Drawing.Point(87, 273);
+            this.btnDeleteRoute.Margin = new System.Windows.Forms.Padding(2);
+            this.btnDeleteRoute.Name = "btnDeleteRoute";
+            this.btnDeleteRoute.Size = new System.Drawing.Size(142, 33);
+            this.btnDeleteRoute.TabIndex = 3;
+            this.btnDeleteRoute.Text = "Delete Route";
+            this.btnDeleteRoute.UseVisualStyleBackColor = true;
+            this.btnDeleteRoute.Click += new System.EventHandler(this.btnDeleteRoute_Click);
+            // 
+            // btnFileOperations
+            // 
+            this.btnFileOperations.Location = new System.Drawing.Point(350, 277);
+            this.btnFileOperations.Margin = new System.Windows.Forms.Padding(2);
+            this.btnFileOperations.Name = "btnFileOperations";
+            this.btnFileOperations.Size = new System.Drawing.Size(142, 29);
+            this.btnFileOperations.TabIndex = 4;
+            this.btnFileOperations.Text = "File Management";
+            this.btnFileOperations.UseVisualStyleBackColor = true;
+            this.btnFileOperations.Click += new System.EventHandler(this.btnFileOperations_Click);
             // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(600, 366);
+            this.Controls.Add(this.btnFileOperations);
+            this.Controls.Add(this.btnDeleteRoute);
             this.Controls.Add(this.btnTicketOperations);
             this.Controls.Add(this.btnSearchRoutes);
             this.Controls.Add(this.btnAddRoute);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "MainForm";
             this.Text = "UKR BUS";
             this.ResumeLayout(false);
@@ -86,5 +112,7 @@
         private System.Windows.Forms.Button btnAddRoute;
         private System.Windows.Forms.Button btnSearchRoutes;
         private System.Windows.Forms.Button btnTicketOperations;
+        private System.Windows.Forms.Button btnDeleteRoute;
+        private System.Windows.Forms.Button btnFileOperations;
     }
 }

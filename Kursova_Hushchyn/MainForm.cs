@@ -104,6 +104,16 @@ namespace Kursova_Hushchyn
             ticketForm.Show();*/
         }
 
- 
+        private void btnDeleteRoute_Click(object sender, EventArgs e)
+        {
+            var deleteRouteForm = new deleteRouteForm(routeList);
+            deleteRouteForm.Show();
+        }
+
+        private void btnFileOperations_Click(object sender, EventArgs e)
+        {
+            var fileOperationsForm = new fileOperationsForm(routeList);
+            fileOperationsForm.Show();
+        }
     }
 }

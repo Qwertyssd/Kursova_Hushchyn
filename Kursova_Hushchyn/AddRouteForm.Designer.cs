@@ -68,7 +68,7 @@
             // 
             // btnAdd
             // 
-            this.btnAdd.Location = new System.Drawing.Point(407, 373);
+            this.btnAdd.Location = new System.Drawing.Point(442, 373);
             this.btnAdd.Margin = new System.Windows.Forms.Padding(2);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(116, 33);
@@ -268,7 +268,7 @@
             // 
             // btnReset
             // 
-            this.btnReset.Location = new System.Drawing.Point(165, 374);
+            this.btnReset.Location = new System.Drawing.Point(323, 374);
             this.btnReset.Margin = new System.Windows.Forms.Padding(2);
             this.btnReset.Name = "btnReset";
             this.btnReset.Size = new System.Drawing.Size(112, 32);
