@@ -27,7 +27,10 @@ namespace Kursova_Hushchyn
 
         public List<BusRoute> SearchRoutesByDeparture(string departurePoint)
         {
-            return BusRoutes.Where(r => r.Stops.First() == departurePoint).ToList();
+            List<BusRoute> list = new List<BusRoute>();
+
+            list.Where(r => r.Stops.First() == departurePoint).ToList();
+            return list;
         }
 
         public List<BusRoute> SearchRoutesByArrival(string arrivalPoint)
@@ -95,78 +98,21 @@ namespace Kursova_Hushchyn
         }
         public List<BusRoute> SearchRoutesByPrice(double? priceLow, double? priceHigh)
         {
-            return BusRoutes.Where(r => (r.Price> priceLow && r.Price< priceHigh) ).ToList();
+            List<BusRoute> list = new List<BusRoute>();
+
+
+            foreach (BusRoute bus in BusRoutes)
+            {
+                if (bus.Price<priceHigh&& bus.Price > priceLow)
+                {
+                    list.Add(bus);
+                }
+            }
+            return list;
         }
 
-        public List<BusRoute> SearchRoutes(string model =null, bool? hasAirConditioner=null, bool? hasToilet = null, bool? hasPowerOutlets=null, bool? hasInternet = null, string routeNumber = null, string carrierCompany = null, double? priceLow = null, double? priceHigh = null, DateTime? departureDate=null, DateTime? arrivalDate= null,TimeSpan ? departureTime = null, TimeSpan? arrivalTime = null)
-        {
-            RouteList routes = this;
-            if (model!=null)
-            {
-                routes.SearchRoutesByModel(model);
-            }
-
-            if (hasAirConditioner != null)
-            {
-                routes.SearchRoutesByAirConditioner();
-            }
-            if (hasToilet != null)
-            {
-                routes.SearchRoutesByToilet();
-            }
-            if (hasPowerOutlets != null)
-            {
-                routes.SearchRoutesByPowerOutlets();
-            }
-            if (hasInternet != null)
-            {
-                routes.SearchRoutesByInternet();
-            }
-            if (routeNumber != null)
-            {
-                routes.SearchRoutesByRouteNumber(routeNumber);
-            }
-            if (carrierCompany != null)
-            {
-                routes.SearchRoutesByCarrierCompany(carrierCompany);
-            }
-            if ((priceLow != null&& priceHigh!=null) && priceHigh>priceLow)
-            {
-                routes.SearchRoutesByPrice(priceLow,priceHigh);
-            }
-            if (departureDate != null)
-            {
-                routes.SearchRoutesByDepartureDate((DateTime)departureDate);
-            }
-            if (arrivalDate != null)
-            {
-                routes.SearchRoutesByArrivalDate((DateTime)arrivalDate);
-            }
-            if (departureTime != null)
-            {
-                routes.SearchRoutesByDepartureTime((TimeSpan)departureTime);
-            }
-             if (arrivalDate != null)
-            {
-                routes.SearchRoutesByArrivalTime((TimeSpan)arrivalTime);
-            }
-            return routes.BusRoutes;
-        }
-           
-
-        public List<BusRoute> SearchRoutes(string departurePoint = null, string arrivalPoint = null, string intermediateStop = null, DateTime? date = null, bool? hasAirConditioner = null,bool? hasToilet = null,bool? hasPowerOutlets = null, bool? hasInternet = null, int? AvailableTickets = null)
-        {
-            return BusRoutes.Where(r =>
-                (departurePoint == null || r.Stops.First() == departurePoint) &&
-                (arrivalPoint == null || r.Stops.Last() == arrivalPoint) &&
-                (intermediateStop == null || r.Stops.Contains(intermediateStop)) &&
-                (date == null || r.DepartureDate.Date == date.Value.Date) &&
-                (hasAirConditioner == null || r.HasAirConditioner == hasAirConditioner) &&
-                (hasToilet == null || r.HasToilet == hasToilet) &&
-                (hasPowerOutlets == null || r.HasPowerOutlets == hasPowerOutlets) &&
-                (hasInternet == null || r.HasInternet == hasInternet) &&
-                (AvailableTickets == null || r.AvailableSeats > 0)).ToList();
-        }
+     
+      
         public void SaveRoutesToFile(string filePath)
         {
             // Implement file saving logic

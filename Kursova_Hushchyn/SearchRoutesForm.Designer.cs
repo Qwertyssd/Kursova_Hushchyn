@@ -50,10 +50,10 @@ namespace Kursova_Hushchyn
             this.label1 = new System.Windows.Forms.Label();
             this.txtCapacity = new System.Windows.Forms.TextBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.txtPrice = new System.Windows.Forms.TextBox();
+            this.txtPriceLow = new System.Windows.Forms.TextBox();
             this.txtModel = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txtRouteNumber = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
@@ -79,6 +79,12 @@ namespace Kursova_Hushchyn
             this.hasPowerOutletsDataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.hasInternetDataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.routeListBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.txtPriceHigh = new System.Windows.Forms.TextBox();
+            this.label11 = new System.Windows.Forms.Label();
+            this.txtArrivalTime = new System.Windows.Forms.MaskedTextBox();
+            this.txtDepartureTime = new System.Windows.Forms.MaskedTextBox();
+            this.label12 = new System.Windows.Forms.Label();
+            this.label13 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvRoutes)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.busRoutesBindingSource)).BeginInit();
             this.gbOptions.SuspendLayout();
@@ -310,13 +316,13 @@ namespace Kursova_Hushchyn
             this.groupBox1.TabIndex = 44;
             this.groupBox1.TabStop = false;
             // 
-            // txtPrice
+            // txtPriceLow
             // 
-            this.txtPrice.Location = new System.Drawing.Point(142, 109);
-            this.txtPrice.Margin = new System.Windows.Forms.Padding(2);
-            this.txtPrice.Name = "txtPrice";
-            this.txtPrice.Size = new System.Drawing.Size(102, 20);
-            this.txtPrice.TabIndex = 35;
+            this.txtPriceLow.Location = new System.Drawing.Point(142, 109);
+            this.txtPriceLow.Margin = new System.Windows.Forms.Padding(2);
+            this.txtPriceLow.Name = "txtPriceLow";
+            this.txtPriceLow.Size = new System.Drawing.Size(102, 20);
+            this.txtPriceLow.TabIndex = 35;
             // 
             // txtModel
             // 
@@ -332,17 +338,17 @@ namespace Kursova_Hushchyn
             this.label4.Location = new System.Drawing.Point(26, 116);
             this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(31, 13);
+            this.label4.Size = new System.Drawing.Size(51, 13);
             this.label4.TabIndex = 34;
-            this.label4.Text = "Price";
+            this.label4.Text = "Price Min";
             // 
-            // textBox1
+            // txtRouteNumber
             // 
-            this.textBox1.Location = new System.Drawing.Point(142, 43);
-            this.textBox1.Margin = new System.Windows.Forms.Padding(2);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(102, 20);
-            this.textBox1.TabIndex = 43;
+            this.txtRouteNumber.Location = new System.Drawing.Point(142, 43);
+            this.txtRouteNumber.Margin = new System.Windows.Forms.Padding(2);
+            this.txtRouteNumber.Name = "txtRouteNumber";
+            this.txtRouteNumber.Size = new System.Drawing.Size(102, 20);
+            this.txtRouteNumber.TabIndex = 43;
             // 
             // label9
             // 
@@ -366,15 +372,21 @@ namespace Kursova_Hushchyn
             // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.txtArrivalTime);
+            this.groupBox2.Controls.Add(this.label11);
+            this.groupBox2.Controls.Add(this.txtDepartureTime);
+            this.groupBox2.Controls.Add(this.label12);
+            this.groupBox2.Controls.Add(this.txtPriceHigh);
+            this.groupBox2.Controls.Add(this.label13);
             this.groupBox2.Controls.Add(this.label8);
             this.groupBox2.Controls.Add(this.label9);
-            this.groupBox2.Controls.Add(this.textBox1);
+            this.groupBox2.Controls.Add(this.txtRouteNumber);
             this.groupBox2.Controls.Add(this.label4);
             this.groupBox2.Controls.Add(this.txtModel);
-            this.groupBox2.Controls.Add(this.txtPrice);
-            this.groupBox2.Location = new System.Drawing.Point(468, 397);
+            this.groupBox2.Controls.Add(this.txtPriceLow);
+            this.groupBox2.Location = new System.Drawing.Point(463, 353);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(294, 167);
+            this.groupBox2.Size = new System.Drawing.Size(294, 284);
             this.groupBox2.TabIndex = 45;
             this.groupBox2.TabStop = false;
             // 
@@ -531,6 +543,64 @@ namespace Kursova_Hushchyn
             // 
             this.routeListBindingSource.DataSource = typeof(Kursova_Hushchyn.RouteList);
             // 
+            // txtPriceHigh
+            // 
+            this.txtPriceHigh.Location = new System.Drawing.Point(142, 138);
+            this.txtPriceHigh.Margin = new System.Windows.Forms.Padding(2);
+            this.txtPriceHigh.Name = "txtPriceHigh";
+            this.txtPriceHigh.Size = new System.Drawing.Size(102, 20);
+            this.txtPriceHigh.TabIndex = 44;
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Location = new System.Drawing.Point(26, 145);
+            this.label11.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(54, 13);
+            this.label11.TabIndex = 45;
+            this.label11.Text = "Price Max";
+            // 
+            // txtArrivalTime
+            // 
+            this.txtArrivalTime.Location = new System.Drawing.Point(142, 211);
+            this.txtArrivalTime.Margin = new System.Windows.Forms.Padding(2);
+            this.txtArrivalTime.Mask = "00:00";
+            this.txtArrivalTime.Name = "txtArrivalTime";
+            this.txtArrivalTime.Size = new System.Drawing.Size(102, 20);
+            this.txtArrivalTime.TabIndex = 49;
+            this.txtArrivalTime.ValidatingType = typeof(System.DateTime);
+            // 
+            // txtDepartureTime
+            // 
+            this.txtDepartureTime.Location = new System.Drawing.Point(142, 178);
+            this.txtDepartureTime.Margin = new System.Windows.Forms.Padding(2);
+            this.txtDepartureTime.Mask = "00:00";
+            this.txtDepartureTime.Name = "txtDepartureTime";
+            this.txtDepartureTime.Size = new System.Drawing.Size(102, 20);
+            this.txtDepartureTime.TabIndex = 48;
+            this.txtDepartureTime.ValidatingType = typeof(System.DateTime);
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Location = new System.Drawing.Point(26, 218);
+            this.label12.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(62, 13);
+            this.label12.TabIndex = 47;
+            this.label12.Text = "Arrival Time";
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Location = new System.Drawing.Point(26, 185);
+            this.label13.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(80, 13);
+            this.label13.TabIndex = 46;
+            this.label13.Text = "Departure Time";
+            // 
             // SearchRoutesForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -595,10 +665,10 @@ namespace Kursova_Hushchyn
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox txtCapacity;
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.TextBox txtPrice;
+        private System.Windows.Forms.TextBox txtPriceLow;
         private System.Windows.Forms.TextBox txtModel;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtRouteNumber;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.GroupBox groupBox2;
@@ -611,5 +681,11 @@ namespace Kursova_Hushchyn
         private System.Windows.Forms.TextBox txtIntermediate;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Button btnView;
+        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.TextBox txtPriceHigh;
+        private System.Windows.Forms.MaskedTextBox txtArrivalTime;
+        private System.Windows.Forms.MaskedTextBox txtDepartureTime;
+        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.Label label13;
     }
 }
