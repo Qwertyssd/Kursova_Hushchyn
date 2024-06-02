@@ -11,16 +11,17 @@ namespace Kursova_Hushchyn
         public string TicketID { get; set; }
         public string FirstName { get; set; }
         public string LastName { get; set; }
+        public DateTime DateOfBirth { get; set; }
         public string RouteNumber { get; set; }
-        public BusRoute Route { get; set; }
 
-        public Ticket(string ticketID, string firstName, string lastName, string routeNumber, BusRoute route)
+        public Ticket(string ticketID, string firstName, string lastName, DateTime dateOfBirth, string routeNumber)
         {
             TicketID = ticketID;
             FirstName = firstName;
             LastName = lastName;
+            DateOfBirth = dateOfBirth;
             RouteNumber = routeNumber;
-            Route = route;
+            
         }
     }
 
