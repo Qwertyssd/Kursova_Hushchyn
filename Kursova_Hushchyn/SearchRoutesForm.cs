@@ -215,8 +215,7 @@ namespace Kursova_Hushchyn
                         countDep++;
                         if (countDep< selectedRoute.Arrivals.Count)
                         {
-                            rowIndex = this.dgvSchedule.Rows.Add();
-                            row = this.dgvSchedule.Rows[rowIndex];
+                           
                         }
                         
 

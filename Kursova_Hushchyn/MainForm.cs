@@ -12,7 +12,7 @@ namespace Kursova_Hushchyn
 {
     public partial class MainForm : Form
     {
-        private RouteList routeList;
+        public RouteList routeList;
         private TicketList ticketList;
 
         public MainForm()
@@ -100,8 +100,8 @@ namespace Kursova_Hushchyn
 
         private void btnTicketOperations_Click(object sender, EventArgs e)
         {
-            /*var ticketForm = new TicketForm(routeList, ticketList);
-            ticketForm.Show();*/
+            var ticketsForm = new ticketsForm(routeList, ticketList);
+            ticketsForm.Show();
         }
 
         private void btnDeleteRoute_Click(object sender, EventArgs e)

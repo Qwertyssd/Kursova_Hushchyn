@@ -15,11 +15,41 @@ namespace Kursova_Hushchyn
         private RouteList routeList;
         private TicketList ticketList;
 
-        public ticketsForm()
+        public ticketsForm(RouteList routeList, TicketList ticketList)
         {
             InitializeComponent();
-            routeList = new RouteList();
+            this.routeList = routeList;
             ticketList = new TicketList();
+        }
+
+
+        private void txtDeparture_TextChanged(object sender, EventArgs e)
+        {
+            
+            string departure = txtDeparture.Text;
+            int inpLength = departure.Length;
+            dgvShowDepartures.Rows.Clear();
+            foreach (BusRoute route in routeList.BusRoutes)
+            {
+                foreach (string stop in route.Stops)
+                {
+                    string tmp = stop;
+                       
+                    if ((tmp.Substring(0, inpLength)).ToLower()== departure.ToLower())
+                    {
+                        
+                        int rowIndex = this.dgvShowDepartures.Rows.Add();
+                        var row = this.dgvShowDepartures.Rows[rowIndex];
+                        row.Cells["Departures"].Value = stop;
+                        
+                    }
+                }
+            }
+        }
+
+        private void dgvShowDepartures_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
         }
     }
 }

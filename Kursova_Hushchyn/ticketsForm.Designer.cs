@@ -36,14 +36,15 @@
             this.label3 = new System.Windows.Forms.Label();
             this.maskedTextBox1 = new System.Windows.Forms.MaskedTextBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dgvShowDepartures = new System.Windows.Forms.DataGridView();
             this.dataGridView2 = new System.Windows.Forms.DataGridView();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.txtDeparture = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.textBox4 = new System.Windows.Forms.TextBox();
+            this.Departures = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvShowDepartures)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
             this.SuspendLayout();
             // 
@@ -120,13 +121,16 @@
             this.groupBox1.TabIndex = 7;
             this.groupBox1.TabStop = false;
             // 
-            // dataGridView1
+            // dgvShowDepartures
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(292, 124);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(134, 150);
-            this.dataGridView1.TabIndex = 8;
+            this.dgvShowDepartures.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvShowDepartures.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Departures});
+            this.dgvShowDepartures.Location = new System.Drawing.Point(292, 124);
+            this.dgvShowDepartures.Name = "dgvShowDepartures";
+            this.dgvShowDepartures.Size = new System.Drawing.Size(176, 150);
+            this.dgvShowDepartures.TabIndex = 8;
+            this.dgvShowDepartures.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvShowDepartures_CellContentClick);
             // 
             // dataGridView2
             // 
@@ -136,12 +140,13 @@
             this.dataGridView2.Size = new System.Drawing.Size(134, 150);
             this.dataGridView2.TabIndex = 9;
             // 
-            // textBox3
+            // txtDeparture
             // 
-            this.textBox3.Location = new System.Drawing.Point(292, 89);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(134, 20);
-            this.textBox3.TabIndex = 10;
+            this.txtDeparture.Location = new System.Drawing.Point(292, 89);
+            this.txtDeparture.Name = "txtDeparture";
+            this.txtDeparture.Size = new System.Drawing.Size(176, 20);
+            this.txtDeparture.TabIndex = 10;
+            this.txtDeparture.TextChanged += new System.EventHandler(this.txtDeparture_TextChanged);
             // 
             // label4
             // 
@@ -168,6 +173,11 @@
             this.textBox4.Size = new System.Drawing.Size(134, 20);
             this.textBox4.TabIndex = 13;
             // 
+            // Departures
+            // 
+            this.Departures.HeaderText = "Departures";
+            this.Departures.Name = "Departures";
+            // 
             // ticketsForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -176,16 +186,16 @@
             this.Controls.Add(this.textBox4);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
-            this.Controls.Add(this.textBox3);
+            this.Controls.Add(this.txtDeparture);
             this.Controls.Add(this.dataGridView2);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.dgvShowDepartures);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.btnAddTicket);
             this.Name = "ticketsForm";
             this.Text = "ticketsForm";
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvShowDepartures)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -202,11 +212,12 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.MaskedTextBox maskedTextBox1;
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dgvShowDepartures;
         private System.Windows.Forms.DataGridView dataGridView2;
-        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.TextBox txtDeparture;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.TextBox textBox4;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Departures;
     }
 }
