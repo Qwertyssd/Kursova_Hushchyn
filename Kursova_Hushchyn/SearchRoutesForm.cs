@@ -181,15 +181,15 @@ namespace Kursova_Hushchyn
             {
                 
                 BusRoute selectedRoute = dgvRoutes.Rows[e.RowIndex].DataBoundItem as BusRoute;
-                int count = 0;
+                int countDep = 0;
                 if (selectedRoute != null)
                 {
                     //string routeNumber = selectedRoute.RouteNumber;
                     //row.Cells["Stop"].Value = selectedRoute.Stops;
-                    int i = 0;
-                    foreach (TimeSpan stop in selectedRoute.TravelDurations)
+                   
+                    foreach (TimeSpan arrival in selectedRoute.Arrivals)
                     {
-                        if (count%2==0)
+                        /*if (count%2==0)
                         {
                             row.Cells["Stop"].Value = selectedRoute.Stops[i];
                             i++;
@@ -197,18 +197,31 @@ namespace Kursova_Hushchyn
                         }
                         else
                         {
-                            row.Cells["Departure"].Value = stop;
-                            if (count < selectedRoute.TravelDurations.Count-1)
+                            row.Cells["Departure"].Value = selectedRoute.Departures[i];
+                            if (count < selectedRoute.Arrivals.Count-1)
                             {
                                 rowIndex = this.dgvSchedule.Rows.Add();
                                 row = this.dgvSchedule.Rows[rowIndex];
                             }
                            
                         }
+
                        
                         
-                        count++;
-                       
+                        count++;*/
+                        row.Cells["Arrival"].Value = arrival;
+                        row.Cells["Departure"].Value = selectedRoute.Departures[countDep];
+                        row.Cells["Stop"].Value = selectedRoute.Stops[countDep];
+                        countDep++;
+                        if (countDep< selectedRoute.Arrivals.Count)
+                        {
+                            rowIndex = this.dgvSchedule.Rows.Add();
+                            row = this.dgvSchedule.Rows[rowIndex];
+                        }
+                        
+
+
+
                     }
                     
                     

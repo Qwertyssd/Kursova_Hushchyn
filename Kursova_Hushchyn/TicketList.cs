@@ -17,12 +17,11 @@ namespace Kursova_Hushchyn
             Tickets = new List<Ticket>();
         }
         public void AddTicket(Ticket ticket)
-        { 
-            Tickets.Add(ticket);
-            RouteList l = new RouteList();
-            RouteList l1 = new RouteList();
+        {
+          Tickets.Add(ticket);
 
         }
+        
         public List<Ticket> GetTicketsByID(string ticketID)
         {
             return Tickets.Where(t => t.TicketID == ticketID).ToList();

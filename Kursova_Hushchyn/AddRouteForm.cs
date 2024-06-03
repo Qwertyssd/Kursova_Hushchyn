@@ -25,7 +25,8 @@ namespace Kursova_Hushchyn
             try
             {
                 TimeSpan time = TimeSpan.Parse(txtStopsDuration.Text);
-                List<TimeSpan> travelDurations = new List<TimeSpan>();
+                List<TimeSpan> Arrivals = new List<TimeSpan>();
+                List<TimeSpan> Departures = new List<TimeSpan>();
                 
                 foreach (DataGridViewRow row in dgvTravelDurations.Rows)
                 {
@@ -34,16 +35,16 @@ namespace Kursova_Hushchyn
                         TimeSpan duration = new TimeSpan();
                         if (TimeSpan.TryParse(row.Cells["StopsTime"].Value.ToString(), out duration ))
                         {
-                            travelDurations.Add(duration);
+                            Arrivals.Add(duration);
                             TimeSpan timePotentially = time;
-                            timePotentially.Add(travelDurations.Last());
+                            timePotentially.Add(Arrivals.Last());
                            
                             if (duration.CompareTo(timePotentially)>=0&&timePotentially!=null)
                             {
                                 TimeSpan t = new TimeSpan();
                                 t=time.Add(duration);
-                               
-                                travelDurations.Add(t);
+
+                                Departures.Add(t);
                             }
                             else
                             {
@@ -71,7 +72,7 @@ namespace Kursova_Hushchyn
                     double.Parse(txtPrice.Text),
                     DateTime.Parse(txtDepartureDate.Text),
                     DateTime.Parse(txtArrivalDate.Text),
-                    travelDurations,
+                    Arrivals,Departures,
                     new List<string>(txtStops.Text.Split(',')),
                     int.Parse(txtCapacity.Text)
                 );

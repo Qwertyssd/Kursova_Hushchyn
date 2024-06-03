@@ -183,12 +183,12 @@ namespace Kursova_Hushchyn
 
         public List<BusRoute> SearchRoutesByDepartureTime(TimeSpan time)
         {
-            return BusRoutes.Where(r => r.TravelDurations.First() == time).ToList();
+            return BusRoutes.Where(r => r.Departures.First() == time).ToList();
         }
 
         public List<BusRoute> SearchRoutesByArrivalTime(TimeSpan time)
         {
-            return BusRoutes.Where(r => r.TravelDurations.Last() == time).ToList();
+            return BusRoutes.Where(r => r.Arrivals.Last() == time).ToList();
         }
 
         public List<BusRoute> SearchRoutesByTicketAvailability()
@@ -247,7 +247,8 @@ namespace Kursova_Hushchyn
                     writer.WriteLine(route.Price);
                     writer.WriteLine(route.DepartureDate);
                     writer.WriteLine(route.ArrivalDate);
-                    writer.WriteLine(string.Join(",", route.TravelDurations));
+                    writer.WriteLine(string.Join(",", route.Arrivals));
+                    writer.WriteLine(string.Join(",", route.Departures));
                     writer.WriteLine(string.Join(",", route.Stops));
                     writer.WriteLine(route.AvailableSeats);
                 }
@@ -271,12 +272,13 @@ namespace Kursova_Hushchyn
                     double price = double.Parse(reader.ReadLine());
                     DateTime departureDate = DateTime.Parse(reader.ReadLine());
                     DateTime arrivalDate = DateTime.Parse(reader.ReadLine());
-                    List<TimeSpan> travelDurations = reader.ReadLine().Split(',').Select(TimeSpan.Parse).ToList();
+                    List<TimeSpan> arrivals = reader.ReadLine().Split(',').Select(TimeSpan.Parse).ToList();
+                    List<TimeSpan> departures = reader.ReadLine().Split(',').Select(TimeSpan.Parse).ToList();
                     List<string> stops = reader.ReadLine().Split(',').ToList();
                     int availableSeats = int.Parse(reader.ReadLine());
 
                     BusRoute route = new BusRoute(model, passengerCapacity, hasAirConditioner, hasToilet, hasPowerOutlets, hasInternet,
-                                                  routeNumber, carrierCompany, price, departureDate, arrivalDate, travelDurations, stops, availableSeats);
+                                                  routeNumber, carrierCompany, price, departureDate, arrivalDate, arrivals,departures, stops, availableSeats);
                     AddRoute(route);
                 }
             }

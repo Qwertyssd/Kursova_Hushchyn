@@ -20,10 +20,10 @@ namespace Kursova_Hushchyn
             return BusRoutes.OrderBy(r => r.DepartureDate).ToList();
         }
 
-        public List<BusRoute> SortByTravelDuration()
+        /*public List<BusRoute> SortByTravelDuration()
         {
             return BusRoutes.OrderBy(r => r.TravelDurations.Sum(d => d.TotalMinutes)).ToList();
-        }
+        }*/
 
         public List<BusRoute> SortByDeparturePoint()
         {

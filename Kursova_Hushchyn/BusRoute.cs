@@ -13,13 +13,14 @@ namespace Kursova_Hushchyn
         public double Price { get; set; }
         public DateTime DepartureDate { get; set; }
         public DateTime ArrivalDate { get; set; }
-        public List<TimeSpan> TravelDurations { get; set; }
+        public List<TimeSpan> Departures { get; set; }
+        public List<TimeSpan> Arrivals { get; set; }
         public List<string> Stops { get; set; }
         public int AvailableSeats { get; set; }
 
         public BusRoute(string model, int passengerCapacity, bool hasAirConditioner, bool hasToilet, bool hasPowerOutlets, bool hasInternet,
                         string routeNumber, string carrierCompany, double price, DateTime departureDate, DateTime arrivalDate,
-                        List<TimeSpan> travelDurations, List<string> stops, int availableSeats)
+                        List<TimeSpan> arrivals, List <TimeSpan> departures, List<string> stops, int availableSeats)
             : base(model, passengerCapacity, hasAirConditioner, hasToilet, hasPowerOutlets, hasInternet)
         {
             RouteNumber = routeNumber;
@@ -27,7 +28,8 @@ namespace Kursova_Hushchyn
             Price = price;
             DepartureDate = departureDate;
             ArrivalDate = arrivalDate;
-            TravelDurations = travelDurations;
+            Arrivals = arrivals;
+            Departures = departures;
             Stops = stops;
             AvailableSeats = availableSeats;
         }
