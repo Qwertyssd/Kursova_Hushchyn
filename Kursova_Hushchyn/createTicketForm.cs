@@ -10,39 +10,46 @@ using System.Windows.Forms;
 
 namespace Kursova_Hushchyn
 {
-    public partial class SearchRoutesForm : Form
+    public partial class createTicketForm : Form
     {
-        public RouteList routeList;
-
-        public string SelectedRoute {  get; set; }
-        public SearchRoutesForm(RouteList routeList)
+        private RouteList routeList;
+        private TicketList ticketList;
+        
+        private DateTime DateOfTrip;
+        private string DepartuePoint;
+        private string ArrivalPoint;
+        RouteList Sortedroutes = new RouteList();
+        public createTicketForm(RouteList routeList, TicketList ticketList, DateTime dateOfTrip, string departuePoint, string arrivalPoint)
         {
             InitializeComponent();
+           
+            
             this.routeList = routeList;
+            this.ticketList = ticketList; 
+            DateOfTrip = dateOfTrip;
+            DepartuePoint = departuePoint;
+            ArrivalPoint = arrivalPoint;
+        }
+
+        private void createTicketForm_Load(object sender, EventArgs e)
+        {
+           
+            Sortedroutes.BusRoutes = routeList.BusRoutes;
+
+            Sortedroutes.BusRoutes = Sortedroutes.SearchRoutesByDepartureDate(DateOfTrip);
+            Sortedroutes.BusRoutes = Sortedroutes.SearchRoutesByDepartureAndArrival(DepartuePoint,ArrivalPoint);
+           
+            dgvRoutes.DataSource = Sortedroutes.BusRoutes;
+
+            txtDeparturePoint.Text = DepartuePoint;
+            txtArrivalPoint.Text = ArrivalPoint;
+
+
         }
 
         private void btnSearch_Click(object sender, EventArgs e)
         {
-
             
-            DateTime? departureDate = null;
-            if (!string.IsNullOrWhiteSpace(txtDepartureDate.Text))
-            {
-                if (DateTime.TryParse(txtDepartureDate.Text, out DateTime parsedDate))
-                {
-                    departureDate = parsedDate;
-                }
-
-            }
-            DateTime? arrivalDate = null;
-            if (!string.IsNullOrWhiteSpace(txtArrivalDate.Text))
-            {
-                if (DateTime.TryParse(txtArrivalDate.Text, out DateTime parsedDate))
-                {
-                    arrivalDate = parsedDate;
-                }
-
-            }
             TimeSpan? departureTime = null;
             if (!string.IsNullOrWhiteSpace(txtDepartureTime.Text))
             {
@@ -61,35 +68,24 @@ namespace Kursova_Hushchyn
                 }
 
             }
-            // Initialize search parameters
-            string departure = string.IsNullOrWhiteSpace(txtDeparture.Text) ? null : txtDeparture.Text;
-            string arrival = string.IsNullOrWhiteSpace(txtArrival.Text) ? null : txtArrival.Text;
-            string intermediate = string.IsNullOrWhiteSpace(txtIntermediate.Text) ? null : txtIntermediate.Text;
+                     
             string model = string.IsNullOrWhiteSpace(txtModel.Text) ? null : txtModel.Text;
             string carrierCompany = string.IsNullOrWhiteSpace(txtCarrierCompany.Text) ? null : txtCarrierCompany.Text;
-            string routeNumber = string.IsNullOrWhiteSpace(txtRouteNumber.Text) ? null : txtRouteNumber.Text;
+
             bool? hasAirConditioner = chbConditioner.Checked ? (bool?)chbConditioner.Checked : null;
             bool? hasToilet = chbToilet.Checked ? (bool?)chbToilet.Checked : null;
             bool? hasPowerOutlets = chbPowerOutlets.Checked ? (bool?)chbPowerOutlets.Checked : null;
             bool? hasInternet = chbInternet.Checked ? (bool?)chbInternet.Checked : null;
             double? priceLow = string.IsNullOrWhiteSpace(txtPriceLow.Text) ? -1 : (double?)double.Parse(txtPriceLow.Text);
             double? priceHigh = string.IsNullOrWhiteSpace(txtPriceHigh.Text) ? -1 : (double?)double.Parse(txtPriceHigh.Text);
-            int? capacity = null;
-            if (!string.IsNullOrWhiteSpace(txtCapacity.Text))
-            {
-                if (int.TryParse(txtCapacity.Text, out int parsedCapacity))
-                {
-                    capacity = parsedCapacity;
-                }
-
-            }
+            
 
             RouteList routes = new RouteList();
-            routes.BusRoutes = routeList.BusRoutes;
+            routes.BusRoutes = Sortedroutes.BusRoutes;
 
             if (model != null)
             {
-                  routes.BusRoutes = routes.SearchRoutesByModel(model);
+                routes.BusRoutes = routes.SearchRoutesByModel(model);
             }
 
             if (hasAirConditioner != null)
@@ -108,10 +104,7 @@ namespace Kursova_Hushchyn
             {
                 routes.BusRoutes = routes.SearchRoutesByInternet();
             }
-            if (routeNumber != null)
-            {
-                routes.BusRoutes = routes.SearchRoutesByRouteNumber(routeNumber);
-            }
+           
             if (carrierCompany != null)
             {
                 routes.BusRoutes = routes.SearchRoutesByCarrierCompany(carrierCompany);
@@ -120,14 +113,7 @@ namespace Kursova_Hushchyn
             {
                 routes.BusRoutes = routes.SearchRoutesByPrice(priceLow, priceHigh);
             }
-            if (departureDate != null)
-            {
-                routes.BusRoutes = routes.SearchRoutesByDepartureDate((DateTime)departureDate);
-            }
-            if (arrivalDate != null)
-            {
-                routes.BusRoutes = routes.SearchRoutesByArrivalDate((DateTime)arrivalDate);
-            }
+
             if (departureTime != null)
             {
                 routes.BusRoutes = routes.SearchRoutesByDepartureTime((TimeSpan)departureTime);
@@ -136,38 +122,9 @@ namespace Kursova_Hushchyn
             {
                 routes.BusRoutes = routes.SearchRoutesByArrivalTime((TimeSpan)arrivalTime);
             }
-            if (departure != null)
-            {
-                routes.BusRoutes = routes.SearchRoutesByDeparture(departure);
-            }
-            if (arrival != null)
-            {
-                routes.BusRoutes = routes.SearchRoutesByArrival(arrival);
-            }
-            /*results.SearchRoutes(
-                    model,hasAirConditioner,hasToilet,hasPowerOutlets,hasInternet,routeNumber,carrierCompany,priceLow,priceHigh,departureDate,arrivalDate,departureTime,arrivalTime,departure,arrival,intermediate
-                );*/
-
-            // Display the routes (implement logic to show the routes in a grid or list)
             dgvRoutes.DataSource = routes.BusRoutes;
-        }
-
-
-
-
-        private void btnView_Click(object sender, EventArgs e)
-        {
-
-            dgvRoutes.DataSource = routeList.BusRoutes;
 
         }
-
-        private void btnExit_Click(object sender, EventArgs e)
-        {
-            //routeList.SaveRoutesToFile("routes.txt");
-            this.Close();
-        }
-
         private void dgvRoutes_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             dgvSchedule.Rows.Clear();
@@ -175,62 +132,48 @@ namespace Kursova_Hushchyn
 
             //Obtain a reference to the newly created DataGridViewRow 
             var row = this.dgvSchedule.Rows[rowIndex];
-            
+
             //Now this won't fail since the row and columns exist 
-           
+            
             if (e.RowIndex >= 0 && e.RowIndex < dgvRoutes.Rows.Count)
             {
-                
+
                 BusRoute selectedRoute = dgvRoutes.Rows[e.RowIndex].DataBoundItem as BusRoute;
                 int countDep = 0;
                 if (selectedRoute != null)
                 {
-                    SelectedRoute = selectedRoute.RouteNumber;
+
+                    txtRouteNumber.Text =selectedRoute.RouteNumber;
                     //string routeNumber = selectedRoute.RouteNumber;
                     //row.Cells["Stop"].Value = selectedRoute.Stops;
-                   
+
                     foreach (TimeSpan arrival in selectedRoute.Arrivals)
                     {
-                        /*if (count%2==0)
-                        {
-                            row.Cells["Stop"].Value = selectedRoute.Stops[i];
-                            i++;
-                            row.Cells["Arrival"].Value = stop;
-                        }
-                        else
-                        {
-                            row.Cells["Departure"].Value = selectedRoute.Departures[i];
-                            if (count < selectedRoute.Arrivals.Count-1)
-                            {
-                                rowIndex = this.dgvSchedule.Rows.Add();
-                                row = this.dgvSchedule.Rows[rowIndex];
-                            }
-                           
-                        }
 
-                       
-                        
-                        count++;*/
                         row.Cells["Arrival"].Value = arrival;
                         row.Cells["Departure"].Value = selectedRoute.Departures[countDep];
                         row.Cells["Stop"].Value = selectedRoute.Stops[countDep];
                         countDep++;
-                        if (countDep< selectedRoute.Arrivals.Count)
+                        if (countDep < selectedRoute.Arrivals.Count)
                         {
                             rowIndex = this.dgvSchedule.Rows.Add();
                             row = this.dgvSchedule.Rows[rowIndex];
                         }
-                        
-
-
-
                     }
-                    
-                    
-
                 }
             }
         }
 
+        private void btnSubmit_Click(object sender, EventArgs e)
+        {
+            string tID = (txtName.Text).Substring(0, 2) + "_" + (txtSurname.Text).Substring(0, 2)
+               + "_" + (txtRouteNumber).Text +"_"+ ((DateTime.Now).Date).ToString();
+            string name = txtName.Text;
+            string surname = txtSurname.Text;
+            DateTime dateTime = DateTime.Parse(txtDOB.Text);
+            string routeNumber = txtRouteNumber.Text;
+            Ticket ticket = new Ticket(tID,name,surname,dateTime,routeNumber);
+            ticketList.AddTicket(ticket);
+        }
     }
 }

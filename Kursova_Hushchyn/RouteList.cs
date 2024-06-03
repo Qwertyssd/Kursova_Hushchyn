@@ -86,6 +86,39 @@ namespace Kursova_Hushchyn
          
             
         }
+        public List<BusRoute> SearchRoutesByDepartureAndArrival(string departurePoint, string arrivalPoint)
+        {
+            List<BusRoute> list = new List<BusRoute>();
+
+            /*foreach (BusRoute bus in BusRoutes)
+            {
+                if (bus.Stops.Last() == arrivalPoint)
+                {
+                    list.Add(bus);
+                }
+            }*/
+            bool cathced = false;
+            foreach (BusRoute route in BusRoutes)
+            {
+                    foreach (string stop in route.Stops)
+                    {
+                        string tmp = stop;
+
+                        if (stop==arrivalPoint && cathced == true)
+                        {
+
+                            list.Add(route);
+                        }
+                        if (stop == departurePoint)
+                        {
+                            cathced = true;
+                        }
+                    }
+                    cathced = false;
+            }
+            return list;
+
+        }
         public List<BusRoute> SearchRoutesByRouteNumber(string routeNumber)
         {
             List<BusRoute> list = new List<BusRoute>();
