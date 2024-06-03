@@ -271,8 +271,8 @@ namespace Kursova_Hushchyn
                 if (bus.RouteNumber == routeNumber)
                 {
                     bus.AvailableSeats--;
-                    list.Add(bus);
                 }
+                list.Add(bus);
             }
             return list;
 

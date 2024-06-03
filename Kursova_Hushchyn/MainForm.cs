@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -20,7 +21,39 @@ namespace Kursova_Hushchyn
             InitializeComponent();
             this.routeList = new RouteList();
             this.ticketList = new TicketList();
-            routeList.LoadRoutesFromFile("routes.txt");
+
+            if (File.Exists("routes.txt"))
+            {
+                FileInfo fileInfo = new FileInfo("routes.txt");
+                if (fileInfo.Length > 0)
+                {
+                    routeList.LoadRoutesFromFile("routes.txt");
+                }
+                else
+                {
+                    MessageBox.Show("Routes file is empty");
+                }
+            }
+            else
+            {
+                MessageBox.Show("Routes file doesn`t exist");
+            }
+            if (File.Exists("tickets.txt"))
+            {
+                FileInfo fileInfo = new FileInfo("tickets.txt");
+                if (fileInfo.Length > 0)
+                {
+                    ticketList.LoadTicketsFromFile("tickets.txt");
+                }
+                else
+                {
+                    MessageBox.Show("Tickets file is empty");
+                }
+            }
+            else
+            {
+                MessageBox.Show("Tickets file doesn`t exist");
+            }
 
             /*var route1 = new BusRoute(
              "Mercedes-Benz Sprinter", 20, true, false, true, true, "A101",
@@ -62,7 +95,7 @@ namespace Kursova_Hushchyn
 
         private void btnFileOperations_Click(object sender, EventArgs e)
         {
-            var fileOperationsForm = new fileOperationsForm(routeList);
+            var fileOperationsForm = new fileOperationsForm(routeList,ticketList);
             fileOperationsForm.Show();
         }
 
