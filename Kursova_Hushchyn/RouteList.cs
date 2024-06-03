@@ -261,7 +261,23 @@ namespace Kursova_Hushchyn
             return list;
         }
 
+        public List<BusRoute> DecreaseSeat(string routeNumber)
+        {
+            List<BusRoute> list = new List<BusRoute>();
 
+
+            foreach (BusRoute bus in BusRoutes)
+            {
+                if (bus.RouteNumber == routeNumber)
+                {
+                    bus.AvailableSeats--;
+                    list.Add(bus);
+                }
+            }
+            return list;
+
+
+        }
 
         public void SaveRoutesToFile(string filePath)
         {

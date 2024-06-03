@@ -18,8 +18,8 @@ namespace Kursova_Hushchyn
         public MainForm()
         {
             InitializeComponent();
-            routeList = new RouteList();
-            ticketList = new TicketList();
+            this.routeList = new RouteList();
+            this.ticketList = new TicketList();
             routeList.LoadRoutesFromFile("routes.txt");
 
             /*var route1 = new BusRoute(
@@ -28,62 +28,12 @@ namespace Kursova_Hushchyn
                 15.50,
                 DateTime.Parse("2023-06-01 08:00"),
                 DateTime.Parse("2023-06-01 12:00"),
-                new List<TimeSpan> { TimeSpan.Parse("02:00:00"), TimeSpan.Parse("01:00:00"), TimeSpan.Parse("01:00:00") },
+                new List<TimeSpan> { TimeSpan.Parse("02:00:00"), TimeSpan.Parse("03:00:00"), TimeSpan.Parse("04:00:00") },
+                new List<TimeSpan> { TimeSpan.Parse("02:20:00"), TimeSpan.Parse("03:20:00"), TimeSpan.Parse("04:20:00") },
                 new List<string> { "City A", "City B", "City C", "City D" },
                 10
             );
-                        var route2 = new BusRoute(
-                "Volvo 9700",
-                50,
-                true,
-                true,
-                false,
-                false,
-                "B202",
-                "Comfortable Travels",
-                30.00,
-                DateTime.Parse("2023-06-02 09:00"),
-                DateTime.Parse("2023-06-02 18:00"),
-                new List<TimeSpan> { TimeSpan.Parse("03:00:00"), TimeSpan.Parse("02:00:00"), TimeSpan.Parse("04:00:00") },
-                new List<string> { "City E", "City F", "City G", "City H" },
-                25
-            );
-                        var route3 = new BusRoute(
-                "MAN Lion's Coach",
-                40,
-                false,
-                true,
-                true,
-                true,
-                "C303",
-                "Budget Bus Lines",
-                20.00,
-                DateTime.Parse("2023-06-03 10:00"),
-                DateTime.Parse("2023-06-03 14:00"),
-                new List<TimeSpan> { TimeSpan.Parse("01:30:00"), TimeSpan.Parse("02:30:00") },
-                new List<string> { "City I", "City J", "City K" },
-                15
-            );
-                        var route4 = new BusRoute(
-                "Setra S 417",
-                45,
-                true,
-                false,
-                false,
-                true,
-                "D404",
-                "Luxury Lines",
-                50.00,
-                DateTime.Parse("2023-06-04 07:00"),
-                DateTime.Parse("2023-06-04 13:00"),
-                new List<TimeSpan> { TimeSpan.Parse("02:00:00"), TimeSpan.Parse("01:00:00"), TimeSpan.Parse("03:00:00") },
-                new List<string> { "City L", "City M", "City N", "City O" },
-                30
-            );
-
-
-            routeList.AddRoute(route1); routeList.AddRoute(route2);
-            routeList.AddRoute(route3); routeList.AddRoute(route4);*/
+            routeList.AddRoute(route1);*/
         }
 
         private void btnAddRoute_Click(object sender, EventArgs e)
@@ -114,6 +64,12 @@ namespace Kursova_Hushchyn
         {
             var fileOperationsForm = new fileOperationsForm(routeList);
             fileOperationsForm.Show();
+        }
+
+        private void btnSearchTickets_Click(object sender, EventArgs e)
+        {
+            SearchTickets searchTickets = new SearchTickets(routeList, ticketList);
+            searchTickets.Show();
         }
     }
 }

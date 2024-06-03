@@ -12,8 +12,8 @@ namespace Kursova_Hushchyn
 {
     public partial class createTicketForm : Form
     {
-        private RouteList routeList;
-        private TicketList ticketList;
+        public RouteList routeList;
+        public TicketList ticketList;
         
         private DateTime DateOfTrip;
         private string DepartuePoint;
@@ -167,13 +167,17 @@ namespace Kursova_Hushchyn
         private void btnSubmit_Click(object sender, EventArgs e)
         {
             string tID = (txtName.Text).Substring(0, 2) + "_" + (txtSurname.Text).Substring(0, 2)
-               + "_" + (txtRouteNumber).Text +"_"+ ((DateTime.Now).Date).ToString();
+               + "_" + (txtRouteNumber).Text +"_"+ ((DateTime.Now).Day).ToString()
+               + "_" + ((DateTime.Now).Month).ToString() + "_" + ((DateTime.Now).Year).ToString();
             string name = txtName.Text;
             string surname = txtSurname.Text;
             DateTime dateTime = DateTime.Parse(txtDOB.Text);
             string routeNumber = txtRouteNumber.Text;
             Ticket ticket = new Ticket(tID,name,surname,dateTime,routeNumber);
             ticketList.AddTicket(ticket);
+            routeList.BusRoutes = routeList.DecreaseSeat(routeNumber);
+            MessageBox.Show("Ticket created sucessfully");
+            this.Close();
         }
     }
 }

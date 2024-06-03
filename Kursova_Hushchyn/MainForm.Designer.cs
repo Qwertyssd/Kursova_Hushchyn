@@ -33,6 +33,7 @@
             this.btnTicketOperations = new System.Windows.Forms.Button();
             this.btnDeleteRoute = new System.Windows.Forms.Button();
             this.btnFileOperations = new System.Windows.Forms.Button();
+            this.btnSearchTickets = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // btnAddRoute
@@ -59,7 +60,7 @@
             // 
             // btnTicketOperations
             // 
-            this.btnTicketOperations.Location = new System.Drawing.Point(350, 196);
+            this.btnTicketOperations.Location = new System.Drawing.Point(350, 104);
             this.btnTicketOperations.Margin = new System.Windows.Forms.Padding(2);
             this.btnTicketOperations.Name = "btnTicketOperations";
             this.btnTicketOperations.Size = new System.Drawing.Size(148, 29);
@@ -90,11 +91,23 @@
             this.btnFileOperations.UseVisualStyleBackColor = true;
             this.btnFileOperations.Click += new System.EventHandler(this.btnFileOperations_Click);
             // 
+            // btnSearchTickets
+            // 
+            this.btnSearchTickets.Location = new System.Drawing.Point(350, 196);
+            this.btnSearchTickets.Margin = new System.Windows.Forms.Padding(2);
+            this.btnSearchTickets.Name = "btnSearchTickets";
+            this.btnSearchTickets.Size = new System.Drawing.Size(148, 29);
+            this.btnSearchTickets.TabIndex = 5;
+            this.btnSearchTickets.Text = "Search Tickets";
+            this.btnSearchTickets.UseVisualStyleBackColor = true;
+            this.btnSearchTickets.Click += new System.EventHandler(this.btnSearchTickets_Click);
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(600, 366);
+            this.Controls.Add(this.btnSearchTickets);
             this.Controls.Add(this.btnFileOperations);
             this.Controls.Add(this.btnDeleteRoute);
             this.Controls.Add(this.btnTicketOperations);
@@ -114,5 +127,6 @@
         private System.Windows.Forms.Button btnTicketOperations;
         private System.Windows.Forms.Button btnDeleteRoute;
         private System.Windows.Forms.Button btnFileOperations;
+        private System.Windows.Forms.Button btnSearchTickets;
     }
 }

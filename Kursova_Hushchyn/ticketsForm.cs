@@ -21,7 +21,7 @@ namespace Kursova_Hushchyn
         {
             InitializeComponent();
             this.routeList = routeList;
-            ticketList = new TicketList();
+            this.ticketList = ticketList;
         }
 
 
@@ -123,7 +123,7 @@ namespace Kursova_Hushchyn
 
             createTicketForm createTicketForm = new createTicketForm(routeList, ticketList,DateOfTrip,DeparturePoint,ArrivalPoint);
             createTicketForm.Show();
-            
-         }
+            this.Close();
+        }
     }
 }
