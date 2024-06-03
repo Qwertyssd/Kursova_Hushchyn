@@ -14,7 +14,9 @@ namespace Kursova_Hushchyn
     {
         private RouteList routeList;
         private TicketList ticketList;
-
+        private string DeparturePoint { get; set; }
+        private string ArrivalPoint { get; set; }
+        private DateTime DateOfTrip { get; set; }
         public ticketsForm(RouteList routeList, TicketList ticketList)
         {
             InitializeComponent();
@@ -31,25 +33,89 @@ namespace Kursova_Hushchyn
             dgvShowDepartures.Rows.Clear();
             foreach (BusRoute route in routeList.BusRoutes)
             {
-                foreach (string stop in route.Stops)
+                if (DateOfTrip.Date==route.DepartureDate)
                 {
-                    string tmp = stop;
-                       
-                    if ((tmp.Substring(0, inpLength)).ToLower()== departure.ToLower())
+
+                    foreach (string stop in route.Stops)
                     {
-                        
-                        int rowIndex = this.dgvShowDepartures.Rows.Add();
-                        var row = this.dgvShowDepartures.Rows[rowIndex];
-                        row.Cells["Departures"].Value = stop;
-                        
+                        string tmp = stop;
+
+                        if ((tmp.Substring(0, inpLength)).ToLower() == departure.ToLower())
+                        {
+
+                            int rowIndex = this.dgvShowDepartures.Rows.Add();
+                            var row = this.dgvShowDepartures.Rows[rowIndex];
+                            row.Cells["Departures"].Value = stop;
+
+                        }
                     }
                 }
             }
         }
 
-        private void dgvShowDepartures_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        private void dgvShowDepartures_CellClick(object sender, DataGridViewCellEventArgs e)
         {
+             
+            if (e.RowIndex >= 0 && e.RowIndex < dgvShowDepartures.Rows.Count)
+            {
 
+                string point = dgvShowDepartures.Rows[e.RowIndex].Cells["Departures"].Value as string;
+                this.DeparturePoint = point;
+            }
+        }
+
+        private void txtArrival_TextChanged(object sender, EventArgs e)
+        {
+            string arrival = txtArrival.Text;
+            int inpLength = arrival.Length;
+            bool cathced = false;
+            dgvShowArrivals.Rows.Clear();
+            foreach (BusRoute route in routeList.BusRoutes)
+            {
+                if (DateOfTrip.Date == route.DepartureDate)
+                {
+                    foreach (string stop in route.Stops)
+                    {
+                        string tmp = stop;
+
+                        if (tmp.Substring(0, inpLength).ToLower() == arrival.ToLower() && cathced == true)
+                        {
+                            int rowIndex = this.dgvShowArrivals.Rows.Add();
+                            var row = this.dgvShowArrivals.Rows[rowIndex];
+                            row.Cells["Arrivals"].Value = stop;
+                        }
+                        if (stop == DeparturePoint)
+                        {
+                            cathced = true;
+                        }
+                    }
+                    cathced = false;
+
+                }
+            }
+        }
+
+        private void dgvShowArrivals_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex >= 0 && e.RowIndex < dgvShowDepartures.Rows.Count)
+            {
+
+                string point = dgvShowArrivals.Rows[e.RowIndex].Cells["Arrivals"].Value as string;
+                this.ArrivalPoint = point;
+            }
+        }
+
+        private void txtDateOfTrip_TextChanged(object sender, EventArgs e)
+        {
+            if (!string.IsNullOrWhiteSpace(txtDateOfTrip.Text))
+            {
+                if (DateTime.TryParse(txtDateOfTrip.Text, out DateTime parsedDate))
+                {
+                    DateOfTrip = parsedDate;
+                    
+
+                }
+            }           
         }
     }
 }
