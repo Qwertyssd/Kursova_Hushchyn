@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -31,6 +32,7 @@ namespace Kursova_Hushchyn
             string departure = txtDeparture.Text;
             int inpLength = departure.Length;
             dgvShowDepartures.Rows.Clear();
+            List<string> list = new List<string>();
             foreach (BusRoute route in routeList.BusRoutes)
             {
                 if (DateOfTrip.Date==route.DepartureDate)
@@ -42,11 +44,20 @@ namespace Kursova_Hushchyn
 
                         if ((tmp.Substring(0, inpLength)).ToLower() == departure.ToLower())
                         {
-
-                            int rowIndex = this.dgvShowDepartures.Rows.Add();
-                            var row = this.dgvShowDepartures.Rows[rowIndex];
-                            row.Cells["Departures"].Value = stop;
-
+                            if (list.Count == 0)
+                            {
+                                list.Add(stop);
+                                int rowIndex = this.dgvShowDepartures.Rows.Add();
+                                var row = this.dgvShowDepartures.Rows[rowIndex];
+                                row.Cells["Departures"].Value = stop;
+                            }
+                            if (list.Contains(stop) == false)
+                            {
+                                list.Add(stop);
+                                int rowIndex = this.dgvShowDepartures.Rows.Add();
+                                var row = this.dgvShowDepartures.Rows[rowIndex];
+                                row.Cells["Departures"].Value = stop;
+                            }
                         }
                     }
                 }
@@ -69,6 +80,7 @@ namespace Kursova_Hushchyn
             string arrival = txtArrival.Text;
             int inpLength = arrival.Length;
             bool cathced = false;
+            List<string> list = new List<string>();
             dgvShowArrivals.Rows.Clear();
             foreach (BusRoute route in routeList.BusRoutes)
             {
@@ -77,13 +89,29 @@ namespace Kursova_Hushchyn
                     foreach (string stop in route.Stops)
                     {
                         string tmp = stop;
-
+                        
                         if (tmp.Substring(0, inpLength).ToLower() == arrival.ToLower() && cathced == true)
                         {
+                            if (list.Count == 0)
+                            {
+                                list.Add(stop);
+                                int rowIndex = this.dgvShowArrivals.Rows.Add();
+                                var row = this.dgvShowArrivals.Rows[rowIndex];
+                                row.Cells["Arrivals"].Value = stop;
+                                continue;
+                            }
+                           
                             
-                            int rowIndex = this.dgvShowArrivals.Rows.Add();
-                            var row = this.dgvShowArrivals.Rows[rowIndex];
-                            row.Cells["Arrivals"].Value = stop;
+                                if (list.Contains(stop)==false)
+                                {
+                                    list.Add(stop);
+                                    int rowIndex = this.dgvShowArrivals.Rows.Add();
+                                    var row = this.dgvShowArrivals.Rows[rowIndex];
+                                    row.Cells["Arrivals"].Value = stop;
+                                }
+                            
+                            
+
                         }
                         if (stop == DeparturePoint)
                         {
@@ -121,10 +149,18 @@ namespace Kursova_Hushchyn
 
         private void btnAddTicket_Click(object sender, EventArgs e)
         {
-            this.Hide();
-            createTicketForm createTicketForm = new createTicketForm(routeList, ticketList,DateOfTrip,DeparturePoint,ArrivalPoint);
-            createTicketForm.ShowDialog();
-            this.Close();
+            if (DeparturePoint != null &&ArrivalPoint!=null)
+            {
+                this.Hide();
+                createTicketForm createTicketForm = new createTicketForm(routeList, ticketList, DateOfTrip, DeparturePoint, ArrivalPoint);
+                createTicketForm.ShowDialog();
+                this.Close();
+            }
+            else
+            {
+                MessageBox.Show("Choose departure and arrival points");
+            }
+
         }
     }
 }
