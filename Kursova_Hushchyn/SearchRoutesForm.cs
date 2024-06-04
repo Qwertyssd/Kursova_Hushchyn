@@ -120,6 +120,7 @@ namespace Kursova_Hushchyn
             {
                 routes.BusRoutes = routes.SearchRoutesByPrice(priceLow, priceHigh);
             }
+           
             if (departureDate != null)
             {
                 routes.BusRoutes = routes.SearchRoutesByDepartureDate((DateTime)departureDate);
@@ -136,11 +137,15 @@ namespace Kursova_Hushchyn
             {
                 routes.BusRoutes = routes.SearchRoutesByArrivalTime((TimeSpan)arrivalTime);
             }
-            if (departure != null)
+            if (departure != null && arrival != null)
+            {
+                routes.BusRoutes = routes.SearchRoutesByDepartureAndArrival(departure, arrival);
+            }
+            else if (departure != null)
             {
                 routes.BusRoutes = routes.SearchRoutesByDeparture(departure);
             }
-            if (arrival != null)
+            else if (arrival != null)
             {
                 routes.BusRoutes = routes.SearchRoutesByArrival(arrival);
             }
@@ -232,5 +237,29 @@ namespace Kursova_Hushchyn
             }
         }
 
+        private void rbHighToLow_CheckedChanged(object sender, EventArgs e)
+        {
+            if (rbHighToLow.Checked == true)
+            {
+                rbLowToHigh.Checked = false;
+
+               routeList.BusRoutes= routeList.SortByPriceHighToLow();
+               
+                dgvRoutes.DataSource=routeList.BusRoutes;
+                dgvRoutes.Refresh();
+            }
+        }
+
+        private void rbLowToHigh_CheckedChanged(object sender, EventArgs e)
+        {
+            if (rbLowToHigh.Checked == true)
+            {
+                rbHighToLow.Checked = false;
+
+                routeList.BusRoutes = routeList.SortByPriceLowToHigh();
+                dgvRoutes.DataSource = routeList.BusRoutes;
+                dgvRoutes.Refresh();
+            }
+        }
     }
 }

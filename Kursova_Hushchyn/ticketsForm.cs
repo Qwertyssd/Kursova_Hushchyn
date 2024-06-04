@@ -80,6 +80,7 @@ namespace Kursova_Hushchyn
 
                         if (tmp.Substring(0, inpLength).ToLower() == arrival.ToLower() && cathced == true)
                         {
+                            
                             int rowIndex = this.dgvShowArrivals.Rows.Add();
                             var row = this.dgvShowArrivals.Rows[rowIndex];
                             row.Cells["Arrivals"].Value = stop;

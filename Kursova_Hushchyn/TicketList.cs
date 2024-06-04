@@ -25,18 +25,74 @@ namespace Kursova_Hushchyn
         
         public List<Ticket> GetTicketsByID(string ticketID)
         {
-            return Tickets.Where(t => t.TicketID == ticketID).ToList();
+           // return Tickets.Where(t => t.TicketID == ticketID).ToList();
+           List<Ticket> list = new List<Ticket>();
+            foreach (Ticket ticket in Tickets)
+            {
+                if (ticket.TicketID==ticketID)
+                {
+                    list.Add(ticket);
+                }
+            }
+            return list;
         }
 
         public List<Ticket> GetTicketsByName(string firstName, string lastName)
         {
-            return Tickets.Where(t => t.FirstName == firstName && t.LastName == lastName).ToList();
+            //return Tickets.Where(t => t.FirstName == firstName && t.LastName == lastName).ToList();
+            List<Ticket> list = new List<Ticket>();
+            foreach (Ticket ticket in Tickets)
+            {
+                if (ticket.FirstName == firstName && ticket.LastName == lastName)
+                {
+                    list.Add(ticket);
+                }
+            }
+            return list;
         }
 
         public List<Ticket> GetTicketsByRouteNumber(string routeNumber)
         {
-            return Tickets.Where(t => t.RouteNumber == routeNumber).ToList();
+            // return Tickets.Where(t => t.RouteNumber == routeNumber).ToList();
+            List<Ticket> list = new List<Ticket>();
+            foreach (Ticket ticket in Tickets)
+            {
+                if (ticket.RouteNumber == routeNumber)
+                {
+                    list.Add(ticket);
+                }
+            }
+            return list;
         }
+
+        public List<Ticket> GetTicketsByDeparturePoint(string departurePoint)
+        {
+            // return Tickets.Where(t => t.RouteNumber == routeNumber).ToList();
+            List<Ticket> list = new List<Ticket>();
+            foreach (Ticket ticket in Tickets)
+            {
+                if (ticket.DeparturePoint==departurePoint)
+                {
+                    list.Add(ticket);
+                }
+            }
+            return list;
+        }
+        public List<Ticket> GetTicketsByArrivalPoint(string arrivalPoint)
+        {
+           
+            List<Ticket> list = new List<Ticket>();
+            foreach (Ticket ticket in Tickets)
+            {
+                if (ticket.ArrivalPoint == arrivalPoint)
+                {
+                    list.Add(ticket);
+                }
+            }
+            return list;
+        }
+        
+
 
         public void SaveTicketsToFile(string filePath)
         {
@@ -49,6 +105,8 @@ namespace Kursova_Hushchyn
                     writer.WriteLine(ticket.LastName);
                     writer.WriteLine(ticket.DateOfBirth);
                     writer.WriteLine(ticket.RouteNumber);
+                    writer.WriteLine(ticket.DeparturePoint);
+                    writer.WriteLine(ticket.ArrivalPoint);
                 }
             }
         }
@@ -64,8 +122,10 @@ namespace Kursova_Hushchyn
                     string surname = reader.ReadLine();
                     DateTime date = DateTime.Parse(reader.ReadLine());
                     string routeNumber = reader.ReadLine();
+                    string departure = reader.ReadLine();
+                    string arrival = reader.ReadLine();
 
-                    Ticket ticket = new Ticket(ticketId,name,surname,date,routeNumber);
+                    Ticket ticket = new Ticket(ticketId,name,surname,date,routeNumber,departure,arrival);
                     Tickets.Add(ticket);
                 }
             }

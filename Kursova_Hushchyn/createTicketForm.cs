@@ -173,11 +173,40 @@ namespace Kursova_Hushchyn
             string surname = txtSurname.Text;
             DateTime dateTime = DateTime.Parse(txtDOB.Text);
             string routeNumber = txtRouteNumber.Text;
-            Ticket ticket = new Ticket(tID,name,surname,dateTime,routeNumber);
+            string departure = txtDeparturePoint.Text;
+            string arrival = txtArrivalPoint.Text;
+            Ticket ticket = new Ticket(tID,name,surname,dateTime,routeNumber,departure,arrival);
             ticketList.AddTicket(ticket);
             routeList.BusRoutes = routeList.DecreaseSeat(routeNumber);
             MessageBox.Show("Ticket created sucessfully");
             this.Close();
+        }
+
+       
+
+        private void rbHighToLow_CheckedChanged(object sender, EventArgs e)
+        {
+            if (rbHighToLow.Checked == true)
+            {
+                rbLowToHigh.Checked = false;
+
+                Sortedroutes.BusRoutes = Sortedroutes.SortByPriceHighToLow();
+
+                dgvRoutes.DataSource = Sortedroutes.BusRoutes;
+                dgvRoutes.Refresh();
+            }
+        }
+
+        private void rbLowToHigh_CheckedChanged(object sender, EventArgs e)
+        {
+            if (rbLowToHigh.Checked == true)
+            {
+                rbHighToLow.Checked = false;
+
+                Sortedroutes.BusRoutes = Sortedroutes.SortByPriceLowToHigh();
+                dgvRoutes.DataSource = Sortedroutes.BusRoutes;
+                dgvRoutes.Refresh();
+            }
         }
     }
 }

@@ -30,6 +30,8 @@
         {
             this.components = new System.ComponentModel.Container();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.txtRouteNumber = new System.Windows.Forms.TextBox();
+            this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.txtDeparturePoint = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
@@ -66,6 +68,9 @@
             this.txtArrivalTime = new System.Windows.Forms.MaskedTextBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.btnSearch = new System.Windows.Forms.Button();
+            this.rbHighToLow = new System.Windows.Forms.RadioButton();
+            this.gbSorts = new System.Windows.Forms.GroupBox();
+            this.rbLowToHigh = new System.Windows.Forms.RadioButton();
             this.routeNumberDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.carrierCompanyDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.priceDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -74,14 +79,13 @@
             this.availableSeatsDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.modelDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.routeListBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.label5 = new System.Windows.Forms.Label();
-            this.txtRouteNumber = new System.Windows.Forms.TextBox();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvRoutes)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.busRoutesBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvSchedule)).BeginInit();
             this.gbOptions.SuspendLayout();
             this.groupBox2.SuspendLayout();
+            this.gbSorts.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.routeListBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
@@ -104,6 +108,22 @@
             this.groupBox1.Size = new System.Drawing.Size(222, 268);
             this.groupBox1.TabIndex = 8;
             this.groupBox1.TabStop = false;
+            // 
+            // txtRouteNumber
+            // 
+            this.txtRouteNumber.Location = new System.Drawing.Point(97, 222);
+            this.txtRouteNumber.Name = "txtRouteNumber";
+            this.txtRouteNumber.Size = new System.Drawing.Size(100, 20);
+            this.txtRouteNumber.TabIndex = 12;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(10, 229);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(76, 13);
+            this.label5.TabIndex = 11;
+            this.label5.Text = "Route Number";
             // 
             // label6
             // 
@@ -454,6 +474,41 @@
             this.btnSearch.UseVisualStyleBackColor = true;
             this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
             // 
+            // rbHighToLow
+            // 
+            this.rbHighToLow.AutoSize = true;
+            this.rbHighToLow.Location = new System.Drawing.Point(6, 46);
+            this.rbHighToLow.Name = "rbHighToLow";
+            this.rbHighToLow.Size = new System.Drawing.Size(86, 17);
+            this.rbHighToLow.TabIndex = 54;
+            this.rbHighToLow.TabStop = true;
+            this.rbHighToLow.Text = "High To Low";
+            this.rbHighToLow.UseVisualStyleBackColor = true;
+            this.rbHighToLow.CheckedChanged += new System.EventHandler(this.rbHighToLow_CheckedChanged);
+            // 
+            // gbSorts
+            // 
+            this.gbSorts.Controls.Add(this.rbLowToHigh);
+            this.gbSorts.Controls.Add(this.rbHighToLow);
+            this.gbSorts.Location = new System.Drawing.Point(35, 521);
+            this.gbSorts.Name = "gbSorts";
+            this.gbSorts.Size = new System.Drawing.Size(268, 110);
+            this.gbSorts.TabIndex = 55;
+            this.gbSorts.TabStop = false;
+            this.gbSorts.Text = "groupBox3";
+            // 
+            // rbLowToHigh
+            // 
+            this.rbLowToHigh.AutoSize = true;
+            this.rbLowToHigh.Location = new System.Drawing.Point(6, 71);
+            this.rbLowToHigh.Name = "rbLowToHigh";
+            this.rbLowToHigh.Size = new System.Drawing.Size(86, 17);
+            this.rbLowToHigh.TabIndex = 55;
+            this.rbLowToHigh.TabStop = true;
+            this.rbLowToHigh.Text = "Low To High";
+            this.rbLowToHigh.UseVisualStyleBackColor = true;
+            this.rbLowToHigh.CheckedChanged += new System.EventHandler(this.rbLowToHigh_CheckedChanged);
+            // 
             // routeNumberDataGridViewTextBoxColumn
             // 
             this.routeNumberDataGridViewTextBoxColumn.DataPropertyName = "RouteNumber";
@@ -500,27 +555,12 @@
             // 
             this.routeListBindingSource.DataSource = typeof(Kursova_Hushchyn.RouteList);
             // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(10, 229);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(76, 13);
-            this.label5.TabIndex = 11;
-            this.label5.Text = "Route Number";
-            // 
-            // txtRouteNumber
-            // 
-            this.txtRouteNumber.Location = new System.Drawing.Point(97, 222);
-            this.txtRouteNumber.Name = "txtRouteNumber";
-            this.txtRouteNumber.Size = new System.Drawing.Size(100, 20);
-            this.txtRouteNumber.TabIndex = 12;
-            // 
             // createTicketForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1141, 654);
+            this.Controls.Add(this.gbSorts);
             this.Controls.Add(this.btnSearch);
             this.Controls.Add(this.dgvSchedule);
             this.Controls.Add(this.groupBox2);
@@ -540,6 +580,8 @@
             this.gbOptions.PerformLayout();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
+            this.gbSorts.ResumeLayout(false);
+            this.gbSorts.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.routeListBindingSource)).EndInit();
             this.ResumeLayout(false);
 
@@ -594,5 +636,8 @@
         private System.Windows.Forms.Button btnSearch;
         private System.Windows.Forms.TextBox txtRouteNumber;
         private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.RadioButton rbHighToLow;
+        private System.Windows.Forms.GroupBox gbSorts;
+        private System.Windows.Forms.RadioButton rbLowToHigh;
     }
 }

@@ -31,20 +31,7 @@ namespace Kursova_Hushchyn
         {
             this.components = new System.ComponentModel.Container();
             this.dgvRoutes = new System.Windows.Forms.DataGridView();
-            this.routeNumberDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.carrierCompanyDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.priceDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.departureDateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.arrivalDateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.availableSeatsDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.modelDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.passengerCapacityDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.hasAirConditionerDataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.hasToiletDataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.hasPowerOutletsDataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.hasInternetDataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.busRoutesBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.routeListBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.btnSearch = new System.Windows.Forms.Button();
             this.btnExit = new System.Windows.Forms.Button();
             this.gbOptions = new System.Windows.Forms.GroupBox();
@@ -85,13 +72,30 @@ namespace Kursova_Hushchyn
             this.Departure = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Stop = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnView = new System.Windows.Forms.Button();
+            this.gbSorts = new System.Windows.Forms.GroupBox();
+            this.rbLowToHigh = new System.Windows.Forms.RadioButton();
+            this.rbHighToLow = new System.Windows.Forms.RadioButton();
+            this.routeNumberDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.carrierCompanyDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.priceDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.departureDateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.arrivalDateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.availableSeatsDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.modelDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.passengerCapacityDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.hasAirConditionerDataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.hasToiletDataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.hasPowerOutletsDataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.hasInternetDataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.routeListBindingSource = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.dgvRoutes)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.busRoutesBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.routeListBindingSource)).BeginInit();
             this.gbOptions.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvSchedule)).BeginInit();
+            this.gbSorts.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.routeListBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // dgvRoutes
@@ -118,86 +122,10 @@ namespace Kursova_Hushchyn
             this.dgvRoutes.TabIndex = 0;
             this.dgvRoutes.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvRoutes_CellClick);
             // 
-            // routeNumberDataGridViewTextBoxColumn
-            // 
-            this.routeNumberDataGridViewTextBoxColumn.DataPropertyName = "RouteNumber";
-            this.routeNumberDataGridViewTextBoxColumn.HeaderText = "RouteNumber";
-            this.routeNumberDataGridViewTextBoxColumn.Name = "routeNumberDataGridViewTextBoxColumn";
-            // 
-            // carrierCompanyDataGridViewTextBoxColumn
-            // 
-            this.carrierCompanyDataGridViewTextBoxColumn.DataPropertyName = "CarrierCompany";
-            this.carrierCompanyDataGridViewTextBoxColumn.HeaderText = "CarrierCompany";
-            this.carrierCompanyDataGridViewTextBoxColumn.Name = "carrierCompanyDataGridViewTextBoxColumn";
-            // 
-            // priceDataGridViewTextBoxColumn
-            // 
-            this.priceDataGridViewTextBoxColumn.DataPropertyName = "Price";
-            this.priceDataGridViewTextBoxColumn.HeaderText = "Price";
-            this.priceDataGridViewTextBoxColumn.Name = "priceDataGridViewTextBoxColumn";
-            // 
-            // departureDateDataGridViewTextBoxColumn
-            // 
-            this.departureDateDataGridViewTextBoxColumn.DataPropertyName = "DepartureDate";
-            this.departureDateDataGridViewTextBoxColumn.HeaderText = "DepartureDate";
-            this.departureDateDataGridViewTextBoxColumn.Name = "departureDateDataGridViewTextBoxColumn";
-            // 
-            // arrivalDateDataGridViewTextBoxColumn
-            // 
-            this.arrivalDateDataGridViewTextBoxColumn.DataPropertyName = "ArrivalDate";
-            this.arrivalDateDataGridViewTextBoxColumn.HeaderText = "ArrivalDate";
-            this.arrivalDateDataGridViewTextBoxColumn.Name = "arrivalDateDataGridViewTextBoxColumn";
-            // 
-            // availableSeatsDataGridViewTextBoxColumn
-            // 
-            this.availableSeatsDataGridViewTextBoxColumn.DataPropertyName = "AvailableSeats";
-            this.availableSeatsDataGridViewTextBoxColumn.HeaderText = "AvailableSeats";
-            this.availableSeatsDataGridViewTextBoxColumn.Name = "availableSeatsDataGridViewTextBoxColumn";
-            // 
-            // modelDataGridViewTextBoxColumn
-            // 
-            this.modelDataGridViewTextBoxColumn.DataPropertyName = "Model";
-            this.modelDataGridViewTextBoxColumn.HeaderText = "Model";
-            this.modelDataGridViewTextBoxColumn.Name = "modelDataGridViewTextBoxColumn";
-            // 
-            // passengerCapacityDataGridViewTextBoxColumn
-            // 
-            this.passengerCapacityDataGridViewTextBoxColumn.DataPropertyName = "PassengerCapacity";
-            this.passengerCapacityDataGridViewTextBoxColumn.HeaderText = "PassengerCapacity";
-            this.passengerCapacityDataGridViewTextBoxColumn.Name = "passengerCapacityDataGridViewTextBoxColumn";
-            // 
-            // hasAirConditionerDataGridViewCheckBoxColumn
-            // 
-            this.hasAirConditionerDataGridViewCheckBoxColumn.DataPropertyName = "HasAirConditioner";
-            this.hasAirConditionerDataGridViewCheckBoxColumn.HeaderText = "HasAirConditioner";
-            this.hasAirConditionerDataGridViewCheckBoxColumn.Name = "hasAirConditionerDataGridViewCheckBoxColumn";
-            // 
-            // hasToiletDataGridViewCheckBoxColumn
-            // 
-            this.hasToiletDataGridViewCheckBoxColumn.DataPropertyName = "HasToilet";
-            this.hasToiletDataGridViewCheckBoxColumn.HeaderText = "HasToilet";
-            this.hasToiletDataGridViewCheckBoxColumn.Name = "hasToiletDataGridViewCheckBoxColumn";
-            // 
-            // hasPowerOutletsDataGridViewCheckBoxColumn
-            // 
-            this.hasPowerOutletsDataGridViewCheckBoxColumn.DataPropertyName = "HasPowerOutlets";
-            this.hasPowerOutletsDataGridViewCheckBoxColumn.HeaderText = "HasPowerOutlets";
-            this.hasPowerOutletsDataGridViewCheckBoxColumn.Name = "hasPowerOutletsDataGridViewCheckBoxColumn";
-            // 
-            // hasInternetDataGridViewCheckBoxColumn
-            // 
-            this.hasInternetDataGridViewCheckBoxColumn.DataPropertyName = "HasInternet";
-            this.hasInternetDataGridViewCheckBoxColumn.HeaderText = "HasInternet";
-            this.hasInternetDataGridViewCheckBoxColumn.Name = "hasInternetDataGridViewCheckBoxColumn";
-            // 
             // busRoutesBindingSource
             // 
             this.busRoutesBindingSource.DataMember = "BusRoutes";
             this.busRoutesBindingSource.DataSource = this.routeListBindingSource;
-            // 
-            // routeListBindingSource
-            // 
-            this.routeListBindingSource.DataSource = typeof(Kursova_Hushchyn.RouteList);
             // 
             // btnSearch
             // 
@@ -225,11 +153,11 @@ namespace Kursova_Hushchyn
             this.gbOptions.Controls.Add(this.chbToilet);
             this.gbOptions.Controls.Add(this.chbInternet);
             this.gbOptions.Controls.Add(this.chbConditioner);
-            this.gbOptions.Location = new System.Drawing.Point(12, 399);
+            this.gbOptions.Location = new System.Drawing.Point(11, 353);
             this.gbOptions.Margin = new System.Windows.Forms.Padding(2);
             this.gbOptions.Name = "gbOptions";
             this.gbOptions.Padding = new System.Windows.Forms.Padding(2);
-            this.gbOptions.Size = new System.Drawing.Size(176, 152);
+            this.gbOptions.Size = new System.Drawing.Size(176, 158);
             this.gbOptions.TabIndex = 6;
             this.gbOptions.TabStop = false;
             this.gbOptions.Text = "Options";
@@ -604,11 +532,123 @@ namespace Kursova_Hushchyn
             this.btnView.UseVisualStyleBackColor = true;
             this.btnView.Click += new System.EventHandler(this.btnView_Click);
             // 
+            // gbSorts
+            // 
+            this.gbSorts.Controls.Add(this.rbLowToHigh);
+            this.gbSorts.Controls.Add(this.rbHighToLow);
+            this.gbSorts.Location = new System.Drawing.Point(15, 510);
+            this.gbSorts.Name = "gbSorts";
+            this.gbSorts.Size = new System.Drawing.Size(172, 127);
+            this.gbSorts.TabIndex = 56;
+            this.gbSorts.TabStop = false;
+            this.gbSorts.Text = "groupBox3";
+            // 
+            // rbLowToHigh
+            // 
+            this.rbLowToHigh.AutoSize = true;
+            this.rbLowToHigh.Location = new System.Drawing.Point(6, 71);
+            this.rbLowToHigh.Name = "rbLowToHigh";
+            this.rbLowToHigh.Size = new System.Drawing.Size(86, 17);
+            this.rbLowToHigh.TabIndex = 55;
+            this.rbLowToHigh.TabStop = true;
+            this.rbLowToHigh.Text = "Low To High";
+            this.rbLowToHigh.UseVisualStyleBackColor = true;
+            this.rbLowToHigh.CheckedChanged += new System.EventHandler(this.rbLowToHigh_CheckedChanged);
+            // 
+            // rbHighToLow
+            // 
+            this.rbHighToLow.AutoSize = true;
+            this.rbHighToLow.Location = new System.Drawing.Point(6, 46);
+            this.rbHighToLow.Name = "rbHighToLow";
+            this.rbHighToLow.Size = new System.Drawing.Size(86, 17);
+            this.rbHighToLow.TabIndex = 54;
+            this.rbHighToLow.TabStop = true;
+            this.rbHighToLow.Text = "High To Low";
+            this.rbHighToLow.UseVisualStyleBackColor = true;
+            this.rbHighToLow.CheckedChanged += new System.EventHandler(this.rbHighToLow_CheckedChanged);
+            // 
+            // routeNumberDataGridViewTextBoxColumn
+            // 
+            this.routeNumberDataGridViewTextBoxColumn.DataPropertyName = "RouteNumber";
+            this.routeNumberDataGridViewTextBoxColumn.HeaderText = "RouteNumber";
+            this.routeNumberDataGridViewTextBoxColumn.Name = "routeNumberDataGridViewTextBoxColumn";
+            // 
+            // carrierCompanyDataGridViewTextBoxColumn
+            // 
+            this.carrierCompanyDataGridViewTextBoxColumn.DataPropertyName = "CarrierCompany";
+            this.carrierCompanyDataGridViewTextBoxColumn.HeaderText = "CarrierCompany";
+            this.carrierCompanyDataGridViewTextBoxColumn.Name = "carrierCompanyDataGridViewTextBoxColumn";
+            // 
+            // priceDataGridViewTextBoxColumn
+            // 
+            this.priceDataGridViewTextBoxColumn.DataPropertyName = "Price";
+            this.priceDataGridViewTextBoxColumn.HeaderText = "Price";
+            this.priceDataGridViewTextBoxColumn.Name = "priceDataGridViewTextBoxColumn";
+            // 
+            // departureDateDataGridViewTextBoxColumn
+            // 
+            this.departureDateDataGridViewTextBoxColumn.DataPropertyName = "DepartureDate";
+            this.departureDateDataGridViewTextBoxColumn.HeaderText = "DepartureDate";
+            this.departureDateDataGridViewTextBoxColumn.Name = "departureDateDataGridViewTextBoxColumn";
+            // 
+            // arrivalDateDataGridViewTextBoxColumn
+            // 
+            this.arrivalDateDataGridViewTextBoxColumn.DataPropertyName = "ArrivalDate";
+            this.arrivalDateDataGridViewTextBoxColumn.HeaderText = "ArrivalDate";
+            this.arrivalDateDataGridViewTextBoxColumn.Name = "arrivalDateDataGridViewTextBoxColumn";
+            // 
+            // availableSeatsDataGridViewTextBoxColumn
+            // 
+            this.availableSeatsDataGridViewTextBoxColumn.DataPropertyName = "AvailableSeats";
+            this.availableSeatsDataGridViewTextBoxColumn.HeaderText = "AvailableSeats";
+            this.availableSeatsDataGridViewTextBoxColumn.Name = "availableSeatsDataGridViewTextBoxColumn";
+            // 
+            // modelDataGridViewTextBoxColumn
+            // 
+            this.modelDataGridViewTextBoxColumn.DataPropertyName = "Model";
+            this.modelDataGridViewTextBoxColumn.HeaderText = "Model";
+            this.modelDataGridViewTextBoxColumn.Name = "modelDataGridViewTextBoxColumn";
+            // 
+            // passengerCapacityDataGridViewTextBoxColumn
+            // 
+            this.passengerCapacityDataGridViewTextBoxColumn.DataPropertyName = "PassengerCapacity";
+            this.passengerCapacityDataGridViewTextBoxColumn.HeaderText = "PassengerCapacity";
+            this.passengerCapacityDataGridViewTextBoxColumn.Name = "passengerCapacityDataGridViewTextBoxColumn";
+            // 
+            // hasAirConditionerDataGridViewCheckBoxColumn
+            // 
+            this.hasAirConditionerDataGridViewCheckBoxColumn.DataPropertyName = "HasAirConditioner";
+            this.hasAirConditionerDataGridViewCheckBoxColumn.HeaderText = "HasAirConditioner";
+            this.hasAirConditionerDataGridViewCheckBoxColumn.Name = "hasAirConditionerDataGridViewCheckBoxColumn";
+            // 
+            // hasToiletDataGridViewCheckBoxColumn
+            // 
+            this.hasToiletDataGridViewCheckBoxColumn.DataPropertyName = "HasToilet";
+            this.hasToiletDataGridViewCheckBoxColumn.HeaderText = "HasToilet";
+            this.hasToiletDataGridViewCheckBoxColumn.Name = "hasToiletDataGridViewCheckBoxColumn";
+            // 
+            // hasPowerOutletsDataGridViewCheckBoxColumn
+            // 
+            this.hasPowerOutletsDataGridViewCheckBoxColumn.DataPropertyName = "HasPowerOutlets";
+            this.hasPowerOutletsDataGridViewCheckBoxColumn.HeaderText = "HasPowerOutlets";
+            this.hasPowerOutletsDataGridViewCheckBoxColumn.Name = "hasPowerOutletsDataGridViewCheckBoxColumn";
+            // 
+            // hasInternetDataGridViewCheckBoxColumn
+            // 
+            this.hasInternetDataGridViewCheckBoxColumn.DataPropertyName = "HasInternet";
+            this.hasInternetDataGridViewCheckBoxColumn.HeaderText = "HasInternet";
+            this.hasInternetDataGridViewCheckBoxColumn.Name = "hasInternetDataGridViewCheckBoxColumn";
+            // 
+            // routeListBindingSource
+            // 
+            this.routeListBindingSource.DataSource = typeof(Kursova_Hushchyn.RouteList);
+            // 
             // SearchRoutesForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1281, 661);
+            this.Controls.Add(this.gbSorts);
             this.Controls.Add(this.btnView);
             this.Controls.Add(this.dgvSchedule);
             this.Controls.Add(this.groupBox2);
@@ -621,7 +661,6 @@ namespace Kursova_Hushchyn
             this.Text = "UKR BUS";
             ((System.ComponentModel.ISupportInitialize)(this.dgvRoutes)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.busRoutesBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.routeListBindingSource)).EndInit();
             this.gbOptions.ResumeLayout(false);
             this.gbOptions.PerformLayout();
             this.groupBox1.ResumeLayout(false);
@@ -629,6 +668,9 @@ namespace Kursova_Hushchyn
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvSchedule)).EndInit();
+            this.gbSorts.ResumeLayout(false);
+            this.gbSorts.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.routeListBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -690,5 +732,8 @@ namespace Kursova_Hushchyn
         private System.Windows.Forms.DataGridViewTextBoxColumn Arrival;
         private System.Windows.Forms.DataGridViewTextBoxColumn Departure;
         private System.Windows.Forms.DataGridViewTextBoxColumn Stop;
+        private System.Windows.Forms.GroupBox gbSorts;
+        private System.Windows.Forms.RadioButton rbLowToHigh;
+        private System.Windows.Forms.RadioButton rbHighToLow;
     }
 }

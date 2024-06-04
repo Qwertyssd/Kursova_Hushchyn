@@ -32,11 +32,11 @@
             this.dgvShowDepartures = new System.Windows.Forms.DataGridView();
             this.Departures = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dgvShowArrivals = new System.Windows.Forms.DataGridView();
+            this.Arrivals = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.txtDeparture = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.txtArrival = new System.Windows.Forms.TextBox();
-            this.Arrivals = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.txtDateOfTrip = new System.Windows.Forms.MaskedTextBox();
             this.label8 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvShowDepartures)).BeginInit();
@@ -45,7 +45,7 @@
             // 
             // btnAddTicket
             // 
-            this.btnAddTicket.Location = new System.Drawing.Point(680, 407);
+            this.btnAddTicket.Location = new System.Drawing.Point(293, 307);
             this.btnAddTicket.Name = "btnAddTicket";
             this.btnAddTicket.Size = new System.Drawing.Size(108, 31);
             this.btnAddTicket.TabIndex = 0;
@@ -58,7 +58,7 @@
             this.dgvShowDepartures.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvShowDepartures.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Departures});
-            this.dgvShowDepartures.Location = new System.Drawing.Point(292, 124);
+            this.dgvShowDepartures.Location = new System.Drawing.Point(17, 105);
             this.dgvShowDepartures.Name = "dgvShowDepartures";
             this.dgvShowDepartures.Size = new System.Drawing.Size(176, 150);
             this.dgvShowDepartures.TabIndex = 8;
@@ -74,15 +74,20 @@
             this.dgvShowArrivals.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvShowArrivals.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Arrivals});
-            this.dgvShowArrivals.Location = new System.Drawing.Point(532, 124);
+            this.dgvShowArrivals.Location = new System.Drawing.Point(257, 105);
             this.dgvShowArrivals.Name = "dgvShowArrivals";
             this.dgvShowArrivals.Size = new System.Drawing.Size(144, 150);
             this.dgvShowArrivals.TabIndex = 9;
             this.dgvShowArrivals.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvShowArrivals_CellClick);
             // 
+            // Arrivals
+            // 
+            this.Arrivals.HeaderText = "Arrivals";
+            this.Arrivals.Name = "Arrivals";
+            // 
             // txtDeparture
             // 
-            this.txtDeparture.Location = new System.Drawing.Point(292, 89);
+            this.txtDeparture.Location = new System.Drawing.Point(17, 70);
             this.txtDeparture.Name = "txtDeparture";
             this.txtDeparture.Size = new System.Drawing.Size(176, 20);
             this.txtDeparture.TabIndex = 10;
@@ -91,7 +96,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(292, 51);
+            this.label4.Location = new System.Drawing.Point(17, 32);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(78, 13);
             this.label4.TabIndex = 11;
@@ -100,7 +105,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(529, 51);
+            this.label5.Location = new System.Drawing.Point(254, 32);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(63, 13);
             this.label5.TabIndex = 12;
@@ -108,20 +113,15 @@
             // 
             // txtArrival
             // 
-            this.txtArrival.Location = new System.Drawing.Point(532, 89);
+            this.txtArrival.Location = new System.Drawing.Point(257, 70);
             this.txtArrival.Name = "txtArrival";
             this.txtArrival.Size = new System.Drawing.Size(134, 20);
             this.txtArrival.TabIndex = 13;
             this.txtArrival.TextChanged += new System.EventHandler(this.txtArrival_TextChanged);
             // 
-            // Arrivals
-            // 
-            this.Arrivals.HeaderText = "Arrivals";
-            this.Arrivals.Name = "Arrivals";
-            // 
             // txtDateOfTrip
             // 
-            this.txtDateOfTrip.Location = new System.Drawing.Point(371, 337);
+            this.txtDateOfTrip.Location = new System.Drawing.Point(96, 318);
             this.txtDateOfTrip.Mask = "00/00/0000";
             this.txtDateOfTrip.Name = "txtDateOfTrip";
             this.txtDateOfTrip.Size = new System.Drawing.Size(100, 20);
@@ -132,7 +132,7 @@
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(302, 344);
+            this.label8.Location = new System.Drawing.Point(27, 325);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(63, 13);
             this.label8.TabIndex = 14;
@@ -142,7 +142,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(430, 375);
             this.Controls.Add(this.txtDateOfTrip);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.txtArrival);

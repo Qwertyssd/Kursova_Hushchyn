@@ -13,15 +13,20 @@ namespace Kursova_Hushchyn
         public string LastName { get; set; }
         public DateTime DateOfBirth { get; set; }
         public string RouteNumber { get; set; }
+        public string DeparturePoint { get; set; }
+        public string ArrivalPoint { get; set; }
 
-        public Ticket(string ticketID, string firstName, string lastName, DateTime dateOfBirth, string routeNumber)
+        
+
+        public Ticket(string ticketID, string firstName, string lastName, DateTime dateOfBirth, string routeNumber,string departure,string arrival)
         {
             TicketID = ticketID;
             FirstName = firstName;
             LastName = lastName;
             DateOfBirth = dateOfBirth;
             RouteNumber = routeNumber;
-            
+            DeparturePoint = departure;
+            ArrivalPoint = arrival;
         }
     }
 

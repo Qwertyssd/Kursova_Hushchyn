@@ -66,7 +66,19 @@ namespace Kursova_Hushchyn
         {
             List<BusRoute> list = new List<BusRoute>();
 
-            list.Where(r => r.Stops.First() == departurePoint).ToList();
+          
+            
+            foreach (BusRoute route in BusRoutes)
+            {
+                int count = route.Stops.Count;
+                foreach (var stop in route.Stops)
+                {
+                    if (stop == departurePoint && stop != route.Stops[count-1])
+                    {
+                        list.Add(route);
+                    }
+                }
+            }
             return list;
         }
 
@@ -77,14 +89,16 @@ namespace Kursova_Hushchyn
 
             foreach (BusRoute bus in BusRoutes)
             {
-                if (bus.Stops.Last() == arrivalPoint)
+                int count = bus.Stops.Count;
+                foreach (var stop in bus.Stops)
                 {
-                    list.Add(bus);
+                    if (stop == arrivalPoint && stop != bus.Stops[0])
+                    {
+                        list.Add(bus);
+                    }
                 }
             }
             return list;
-         
-            
         }
         public List<BusRoute> SearchRoutesByDepartureAndArrival(string departurePoint, string arrivalPoint)
         {
@@ -278,7 +292,41 @@ namespace Kursova_Hushchyn
 
 
         }
+        public List<BusRoute> SortByPriceHighToLow()
+        {
+            List<BusRoute> list = BusRoutes;
+            for (int i = 0; i < list.Count; i++)
+            {
+                for (int j = 0; j < list.Count - 1; j++)
+                {
+                    if (list[j].Price < list[j + 1].Price)
+                    {
+                        BusRoute tmp = list[j + 1];
+                        list[j + 1] = list[j];
+                        list[j] = tmp;
+                    }
+                }
+            }
+            return list;
+        }
+        public List<BusRoute> SortByPriceLowToHigh()
+        {
 
+            List<BusRoute> list = BusRoutes;
+            for (int i = 0; i < list.Count; i++)
+            {
+                for (int j = 0; j < list.Count - 1; j++)
+                {
+                    if (list[j].Price > list[j + 1].Price)
+                    {
+                        BusRoute tmp = list[j+1];
+                        list[j+1] = list[j];
+                        list[j] = tmp;
+                    }
+                }
+            }
+            return list;
+        }
         public void SaveRoutesToFile(string filePath)
         {
             using (StreamWriter writer = new StreamWriter(filePath))

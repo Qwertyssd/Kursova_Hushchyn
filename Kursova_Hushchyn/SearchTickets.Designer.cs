@@ -30,13 +30,15 @@
         {
             this.components = new System.ComponentModel.Container();
             this.dgvTickets = new System.Windows.Forms.DataGridView();
+            this.ticketsBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.ticketListBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.ticketIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DeparturePoint = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ArrivalPoint = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.firstNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.lastNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dateOfBirthDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.routeNumberDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ticketsBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.ticketListBindingSource = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.dgvTickets)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ticketsBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ticketListBindingSource)).BeginInit();
@@ -48,6 +50,8 @@
             this.dgvTickets.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvTickets.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.ticketIDDataGridViewTextBoxColumn,
+            this.DeparturePoint,
+            this.ArrivalPoint,
             this.firstNameDataGridViewTextBoxColumn,
             this.lastNameDataGridViewTextBoxColumn,
             this.dateOfBirthDataGridViewTextBoxColumn,
@@ -55,14 +59,35 @@
             this.dgvTickets.DataSource = this.ticketsBindingSource;
             this.dgvTickets.Location = new System.Drawing.Point(12, 35);
             this.dgvTickets.Name = "dgvTickets";
-            this.dgvTickets.Size = new System.Drawing.Size(546, 150);
+            this.dgvTickets.Size = new System.Drawing.Size(749, 210);
             this.dgvTickets.TabIndex = 0;
+            // 
+            // ticketsBindingSource
+            // 
+            this.ticketsBindingSource.DataMember = "Tickets";
+            this.ticketsBindingSource.DataSource = this.ticketListBindingSource;
+            // 
+            // ticketListBindingSource
+            // 
+            this.ticketListBindingSource.DataSource = typeof(Kursova_Hushchyn.TicketList);
             // 
             // ticketIDDataGridViewTextBoxColumn
             // 
             this.ticketIDDataGridViewTextBoxColumn.DataPropertyName = "TicketID";
             this.ticketIDDataGridViewTextBoxColumn.HeaderText = "TicketID";
             this.ticketIDDataGridViewTextBoxColumn.Name = "ticketIDDataGridViewTextBoxColumn";
+            // 
+            // DeparturePoint
+            // 
+            this.DeparturePoint.DataPropertyName = "DeparturePoint";
+            this.DeparturePoint.HeaderText = "DeparturePoint";
+            this.DeparturePoint.Name = "DeparturePoint";
+            // 
+            // ArrivalPoint
+            // 
+            this.ArrivalPoint.DataPropertyName = "ArrivalPoint";
+            this.ArrivalPoint.HeaderText = "ArrivalPoint";
+            this.ArrivalPoint.Name = "ArrivalPoint";
             // 
             // firstNameDataGridViewTextBoxColumn
             // 
@@ -88,15 +113,6 @@
             this.routeNumberDataGridViewTextBoxColumn.HeaderText = "RouteNumber";
             this.routeNumberDataGridViewTextBoxColumn.Name = "routeNumberDataGridViewTextBoxColumn";
             // 
-            // ticketsBindingSource
-            // 
-            this.ticketsBindingSource.DataMember = "Tickets";
-            this.ticketsBindingSource.DataSource = this.ticketListBindingSource;
-            // 
-            // ticketListBindingSource
-            // 
-            this.ticketListBindingSource.DataSource = typeof(Kursova_Hushchyn.TicketList);
-            // 
             // SearchTickets
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -116,12 +132,14 @@
         #endregion
 
         private System.Windows.Forms.DataGridView dgvTickets;
+        private System.Windows.Forms.BindingSource ticketsBindingSource;
+        private System.Windows.Forms.BindingSource ticketListBindingSource;
         private System.Windows.Forms.DataGridViewTextBoxColumn ticketIDDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn DeparturePoint;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ArrivalPoint;
         private System.Windows.Forms.DataGridViewTextBoxColumn firstNameDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn lastNameDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn dateOfBirthDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn routeNumberDataGridViewTextBoxColumn;
-        private System.Windows.Forms.BindingSource ticketsBindingSource;
-        private System.Windows.Forms.BindingSource ticketListBindingSource;
     }
 }
