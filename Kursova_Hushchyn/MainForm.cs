@@ -13,47 +13,16 @@ namespace Kursova_Hushchyn
 {
     public partial class MainForm : Form
     {
-        public RouteList routeList;
+        private RouteList routeList;
         private TicketList ticketList;
 
-        public MainForm()
+        public MainForm(RouteList routeList, TicketList ticketList)
         {
             InitializeComponent();
-            this.routeList = new RouteList();
-            this.ticketList = new TicketList();
+            this.routeList = routeList;
+            this.ticketList = ticketList;
 
-            if (File.Exists("routes.txt"))
-            {
-                FileInfo fileInfo = new FileInfo("routes.txt");
-                if (fileInfo.Length > 0)
-                {
-                    routeList.LoadRoutesFromFile("routes.txt");
-                }
-                else
-                {
-                    MessageBox.Show("Routes file is empty");
-                }
-            }
-            else
-            {
-                MessageBox.Show("Routes file doesn`t exist");
-            }
-            if (File.Exists("tickets.txt"))
-            {
-                FileInfo fileInfo = new FileInfo("tickets.txt");
-                if (fileInfo.Length > 0)
-                {
-                    ticketList.LoadTicketsFromFile("tickets.txt");
-                }
-                else
-                {
-                    MessageBox.Show("Tickets file is empty");
-                }
-            }
-            else
-            {
-                MessageBox.Show("Tickets file doesn`t exist");
-            }
+            
 
             /*var route1 = new BusRoute(
              "Mercedes-Benz Sprinter", 20, true, false, true, true, "A101",
@@ -71,38 +40,56 @@ namespace Kursova_Hushchyn
 
         private void btnAddRoute_Click(object sender, EventArgs e)
         {
+            this.Hide();
             var addRouteForm = new AddRouteForm(routeList);
-            addRouteForm.Show();
+            addRouteForm.ShowDialog();
+           addRouteForm = null;
+            this.Show();
         }
 
         private void btnSearchRoutes_Click(object sender, EventArgs e)
         {
+            this.Hide();
             var searchRoutesForm = new SearchRoutesForm(routeList);
-            searchRoutesForm.Show();
+            searchRoutesForm.ShowDialog();
+            this.Show();
         }
 
         private void btnTicketOperations_Click(object sender, EventArgs e)
         {
+            this.Hide();
             var ticketsForm = new ticketsForm(routeList, ticketList);
-            ticketsForm.Show();
+            ticketsForm.ShowDialog();
+            this.Show();
         }
 
         private void btnDeleteRoute_Click(object sender, EventArgs e)
         {
-            var deleteRouteForm = new deleteRouteForm(routeList);
-            deleteRouteForm.Show();
+            this.Hide();
+            var deleteRouteForm = new deleteRouteForm(routeList,ticketList);
+            deleteRouteForm.ShowDialog();
+            this.Show();
         }
 
         private void btnFileOperations_Click(object sender, EventArgs e)
         {
+            this.Hide();
             var fileOperationsForm = new fileOperationsForm(routeList,ticketList);
-            fileOperationsForm.Show();
+            fileOperationsForm.ShowDialog();
+            this.Show();
         }
 
         private void btnSearchTickets_Click(object sender, EventArgs e)
         {
+            this.Hide();
             SearchTickets searchTickets = new SearchTickets(routeList, ticketList);
-            searchTickets.Show();
+            searchTickets.ShowDialog();
+            this.Show();
+        }
+
+        private void btnExit_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

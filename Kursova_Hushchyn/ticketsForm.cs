@@ -121,9 +121,9 @@ namespace Kursova_Hushchyn
 
         private void btnAddTicket_Click(object sender, EventArgs e)
         {
-
+            this.Hide();
             createTicketForm createTicketForm = new createTicketForm(routeList, ticketList,DateOfTrip,DeparturePoint,ArrivalPoint);
-            createTicketForm.Show();
+            createTicketForm.ShowDialog();
             this.Close();
         }
     }

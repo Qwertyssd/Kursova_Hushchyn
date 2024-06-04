@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -9,12 +10,12 @@ namespace Kursova_Hushchyn
 {
     public class TicketList
     {
-        //public RouteList list { get; set; }
+       
         public List<Ticket> Tickets { get; set; }
 
         public TicketList()
         {
-            //list = new RouteList();
+            
             Tickets = new List<Ticket>();
         }
         public void AddTicket(Ticket ticket)
@@ -22,10 +23,55 @@ namespace Kursova_Hushchyn
           Tickets.Add(ticket);
 
         }
-        
+        public List<Ticket> DeleteTicketByRouteNumber(string routeNumber)
+        {
+            List<Ticket> list = new List<Ticket>();
+            
+            foreach (Ticket ticket in Tickets)
+            {
+                if (routeNumber!=ticket.RouteNumber)
+                {
+                    list.Add(ticket);
+                }
+            }
+            return list;
+
+        }
+        public List<Ticket> DeleteTicketByModel(string model,List<BusRoute> routes)
+        {
+            TicketList list = this;
+
+            foreach (BusRoute bus in routes)
+            {
+                if (bus.Model==model)
+                {
+                    string number = bus.RouteNumber;
+                    list.Tickets = list.DeleteTicketByRouteNumber(number);
+                }
+            }
+            
+            return list.Tickets;
+
+        }
+        public List<Ticket> DeleteTicketByCarrierCompany(string carrierCompany, List<BusRoute> routes)
+        {
+            TicketList list = this;
+
+            foreach (BusRoute bus in routes)
+            {
+                if (bus.CarrierCompany == carrierCompany)
+                {
+                    string number = bus.RouteNumber;
+                    list.Tickets = list.DeleteTicketByRouteNumber(number);
+                }
+            }
+
+            return list.Tickets;
+
+        }
         public List<Ticket> GetTicketsByID(string ticketID)
         {
-           // return Tickets.Where(t => t.TicketID == ticketID).ToList();
+           
            List<Ticket> list = new List<Ticket>();
             foreach (Ticket ticket in Tickets)
             {
@@ -37,9 +83,9 @@ namespace Kursova_Hushchyn
             return list;
         }
 
-        public List<Ticket> GetTicketsByName(string firstName, string lastName)
+        public List<Ticket> GetTicketsByPassenger(string firstName, string lastName)
         {
-            //return Tickets.Where(t => t.FirstName == firstName && t.LastName == lastName).ToList();
+            
             List<Ticket> list = new List<Ticket>();
             foreach (Ticket ticket in Tickets)
             {
@@ -50,10 +96,26 @@ namespace Kursova_Hushchyn
             }
             return list;
         }
-
+        public List<Ticket> GetTicketsByPassenger(string name, int type)
+        {
+            List<Ticket> list = new List<Ticket>();
+            foreach (Ticket ticket in Tickets)
+            {
+                if (ticket.FirstName == name && type == 1)
+                {
+                    list.Add(ticket);
+                }
+                if (ticket.LastName == name && type == 2)
+                {
+                    list.Add(ticket);
+                }
+            }
+            return list;
+        }
+        
         public List<Ticket> GetTicketsByRouteNumber(string routeNumber)
         {
-            // return Tickets.Where(t => t.RouteNumber == routeNumber).ToList();
+           
             List<Ticket> list = new List<Ticket>();
             foreach (Ticket ticket in Tickets)
             {
@@ -67,7 +129,7 @@ namespace Kursova_Hushchyn
 
         public List<Ticket> GetTicketsByDeparturePoint(string departurePoint)
         {
-            // return Tickets.Where(t => t.RouteNumber == routeNumber).ToList();
+          
             List<Ticket> list = new List<Ticket>();
             foreach (Ticket ticket in Tickets)
             {

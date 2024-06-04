@@ -79,6 +79,7 @@ namespace Kursova_Hushchyn
 
                 routeList.AddRoute(route);
                 MessageBox.Show("Route added successfully!");
+                
                 this.Close();
             }
             catch (Exception ex)

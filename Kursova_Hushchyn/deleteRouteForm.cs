@@ -13,10 +13,12 @@ namespace Kursova_Hushchyn
     public partial class deleteRouteForm : Form
     {
         private RouteList routeList;
-        public deleteRouteForm(RouteList routeList)
+        private TicketList ticketList;
+        public deleteRouteForm(RouteList routeList, TicketList ticketList)
         {
             InitializeComponent();
             this.routeList = routeList;
+            this.ticketList = ticketList;
         }
 
         private void btnDelete_Click(object sender, EventArgs e)
@@ -27,14 +29,25 @@ namespace Kursova_Hushchyn
             }
             else
             {
-                RouteList routes = new RouteList();
-                routes.BusRoutes = routeList.BusRoutes;
+               
                 string routeNumber = txtRouteNumber.Text;
                 string model = txtModel.Text;
                 string carrierCompany = txtCarrier.Text;
                 if (routeNumber != null)
                 {
-                    routes.RemoveRouteByRouteNumber(routeNumber);
+                    routeList.BusRoutes = routeList.RemoveRouteByRouteNumber(routeNumber);
+                    ticketList.Tickets = ticketList.DeleteTicketByRouteNumber(routeNumber);
+                }
+                if (model!=null)
+                {
+                    ticketList.Tickets = ticketList.DeleteTicketByModel(model, routeList.BusRoutes);
+                    routeList.BusRoutes = routeList.RemoveRouteByModel(model);
+                    
+                }
+                if (carrierCompany!=null)
+                {
+                    ticketList.Tickets = ticketList.DeleteTicketByCarrierCompany(carrierCompany, routeList.BusRoutes);
+                    routeList.BusRoutes = routeList.RemoveRouteByCarrierCompany(carrierCompany);
                 }
                 MessageBox.Show("Route deleted successfully!");
             }

@@ -23,44 +23,50 @@ namespace Kursova_Hushchyn
             BusRoutes.Add(busTmp);    
         }
 
-        public void RemoveRouteByRouteNumber(string routeNumber)
+        public List<BusRoute> RemoveRouteByRouteNumber(string routeNumber)
         {
-            
-            if (BusRoutes.Count==1&& BusRoutes[0].RouteNumber == routeNumber)
-            {
-                BusRoutes.Remove(BusRoutes[0]);
-                return;
-            }
-            foreach (BusRoute route in BusRoutes)
-            {
-                if (route.RouteNumber==routeNumber)
-                {
-                    BusRoutes.Remove(route);
-                }
-            }
-        }
-        public void RemoveRouteByModel(string model)
-        {
-            foreach (BusRoute route in BusRoutes)
-            {
-                if (route.Model == model)
-                {
-                    BusRoutes.Remove(route);
-                }
-            }
-        }
-        
-        public void RemoveRouteByCarrierCompany(string carrierCompany)
-        {
-            foreach (BusRoute route in BusRoutes)
-            {
-                if (route.CarrierCompany == carrierCompany)
-                {
-                    BusRoutes.Remove(route);
-                }
-            }
-        }
+            List<BusRoute> list = new List<BusRoute>();
 
+            
+            foreach (BusRoute route in BusRoutes)
+            {
+                if (route.RouteNumber!=routeNumber)
+                {
+                   list.Add(route);
+                }
+            }
+            return list;
+        }
+        public List<BusRoute> RemoveRouteByModel(string model)
+        {
+            List<BusRoute> list = new List<BusRoute>();
+
+
+            foreach (BusRoute route in BusRoutes)
+            {
+                if (route.Model != model)
+                {
+                    list.Add(route);
+                }
+            }
+            return list;
+        }
+        public List<BusRoute> RemoveRouteByCarrierCompany(string carrierCompany)
+        {
+            List<BusRoute> list = new List<BusRoute>();
+
+
+            foreach (BusRoute route in BusRoutes)
+            {
+                if (route.CarrierCompany != carrierCompany)
+                {
+                    list.Add(route);
+                }
+            }
+            return list;
+        }
+       
+        
 
         public List<BusRoute> SearchRoutesByDeparture(string departurePoint)
         {
