@@ -39,92 +39,114 @@
             this.txtArrival = new System.Windows.Forms.TextBox();
             this.txtDateOfTrip = new System.Windows.Forms.MaskedTextBox();
             this.label8 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvShowDepartures)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvShowArrivals)).BeginInit();
             this.SuspendLayout();
             // 
             // btnAddTicket
             // 
-            this.btnAddTicket.Location = new System.Drawing.Point(293, 307);
+            this.btnAddTicket.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(54)))), ((int)(((byte)(133)))));
+            this.btnAddTicket.ForeColor = System.Drawing.Color.White;
+            this.btnAddTicket.Location = new System.Drawing.Point(557, 531);
+            this.btnAddTicket.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.btnAddTicket.Name = "btnAddTicket";
-            this.btnAddTicket.Size = new System.Drawing.Size(108, 31);
+            this.btnAddTicket.Size = new System.Drawing.Size(198, 55);
             this.btnAddTicket.TabIndex = 0;
             this.btnAddTicket.Text = "Book A Ticket";
-            this.btnAddTicket.UseVisualStyleBackColor = true;
+            this.btnAddTicket.UseVisualStyleBackColor = false;
             this.btnAddTicket.Click += new System.EventHandler(this.btnAddTicket_Click);
             // 
             // dgvShowDepartures
             // 
+            this.dgvShowDepartures.BackgroundColor = System.Drawing.SystemColors.Control;
             this.dgvShowDepartures.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvShowDepartures.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Departures});
-            this.dgvShowDepartures.Location = new System.Drawing.Point(17, 105);
+            this.dgvShowDepartures.Location = new System.Drawing.Point(32, 231);
+            this.dgvShowDepartures.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.dgvShowDepartures.Name = "dgvShowDepartures";
-            this.dgvShowDepartures.Size = new System.Drawing.Size(176, 150);
+            this.dgvShowDepartures.RowHeadersWidth = 51;
+            this.dgvShowDepartures.Size = new System.Drawing.Size(264, 266);
             this.dgvShowDepartures.TabIndex = 8;
             this.dgvShowDepartures.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvShowDepartures_CellClick);
             // 
             // Departures
             // 
             this.Departures.HeaderText = "Departures";
+            this.Departures.MinimumWidth = 6;
             this.Departures.Name = "Departures";
+            this.Departures.Width = 125;
             // 
             // dgvShowArrivals
             // 
+            this.dgvShowArrivals.BackgroundColor = System.Drawing.SystemColors.Control;
             this.dgvShowArrivals.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvShowArrivals.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Arrivals});
-            this.dgvShowArrivals.Location = new System.Drawing.Point(257, 105);
+            this.dgvShowArrivals.Location = new System.Drawing.Point(402, 231);
+            this.dgvShowArrivals.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.dgvShowArrivals.Name = "dgvShowArrivals";
-            this.dgvShowArrivals.Size = new System.Drawing.Size(144, 150);
+            this.dgvShowArrivals.RowHeadersWidth = 51;
+            this.dgvShowArrivals.Size = new System.Drawing.Size(264, 266);
             this.dgvShowArrivals.TabIndex = 9;
             this.dgvShowArrivals.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvShowArrivals_CellClick);
             // 
             // Arrivals
             // 
             this.Arrivals.HeaderText = "Arrivals";
+            this.Arrivals.MinimumWidth = 6;
             this.Arrivals.Name = "Arrivals";
+            this.Arrivals.Width = 125;
             // 
             // txtDeparture
             // 
-            this.txtDeparture.Location = new System.Drawing.Point(17, 70);
+            this.txtDeparture.Location = new System.Drawing.Point(32, 172);
+            this.txtDeparture.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.txtDeparture.Name = "txtDeparture";
-            this.txtDeparture.Size = new System.Drawing.Size(176, 20);
+            this.txtDeparture.Size = new System.Drawing.Size(264, 30);
             this.txtDeparture.TabIndex = 10;
             this.txtDeparture.TextChanged += new System.EventHandler(this.txtDeparture_TextChanged);
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(17, 32);
+            this.label4.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(54)))), ((int)(((byte)(133)))));
+            this.label4.Location = new System.Drawing.Point(28, 127);
+            this.label4.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(78, 13);
+            this.label4.Size = new System.Drawing.Size(135, 23);
             this.label4.TabIndex = 11;
             this.label4.Text = "Deparure Point";
             // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(254, 32);
+            this.label5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(54)))), ((int)(((byte)(133)))));
+            this.label5.Location = new System.Drawing.Point(398, 127);
+            this.label5.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(63, 13);
+            this.label5.Size = new System.Drawing.Size(112, 23);
             this.label5.TabIndex = 12;
             this.label5.Text = "Arrival Point";
             // 
             // txtArrival
             // 
-            this.txtArrival.Location = new System.Drawing.Point(257, 70);
+            this.txtArrival.Location = new System.Drawing.Point(402, 172);
+            this.txtArrival.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.txtArrival.Name = "txtArrival";
-            this.txtArrival.Size = new System.Drawing.Size(134, 20);
+            this.txtArrival.Size = new System.Drawing.Size(264, 30);
             this.txtArrival.TabIndex = 13;
             this.txtArrival.TextChanged += new System.EventHandler(this.txtArrival_TextChanged);
             // 
             // txtDateOfTrip
             // 
-            this.txtDateOfTrip.Location = new System.Drawing.Point(96, 318);
+            this.txtDateOfTrip.Location = new System.Drawing.Point(147, 509);
+            this.txtDateOfTrip.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.txtDateOfTrip.Mask = "00/00/0000";
             this.txtDateOfTrip.Name = "txtDateOfTrip";
-            this.txtDateOfTrip.Size = new System.Drawing.Size(100, 20);
+            this.txtDateOfTrip.Size = new System.Drawing.Size(149, 30);
             this.txtDateOfTrip.TabIndex = 15;
             this.txtDateOfTrip.ValidatingType = typeof(System.DateTime);
             this.txtDateOfTrip.TextChanged += new System.EventHandler(this.txtDateOfTrip_TextChanged);
@@ -132,17 +154,33 @@
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(27, 325);
+            this.label8.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(54)))), ((int)(((byte)(133)))));
+            this.label8.Location = new System.Drawing.Point(28, 516);
+            this.label8.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(63, 13);
+            this.label8.Size = new System.Drawing.Size(107, 23);
             this.label8.TabIndex = 14;
             this.label8.Text = "Date of Trip";
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(54)))), ((int)(((byte)(133)))));
+            this.label1.Font = new System.Drawing.Font("Noto Sans Armenian", 20F, System.Drawing.FontStyle.Bold);
+            this.label1.ForeColor = System.Drawing.SystemColors.ControlLight;
+            this.label1.Location = new System.Drawing.Point(0, 30);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(789, 46);
+            this.label1.TabIndex = 16;
+            this.label1.Text = "                             FIND TICKETS                          ";
+            // 
             // ticketsForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 23F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(430, 375);
+            this.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.ClientSize = new System.Drawing.Size(788, 606);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.txtDateOfTrip);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.txtArrival);
@@ -152,8 +190,10 @@
             this.Controls.Add(this.dgvShowArrivals);
             this.Controls.Add(this.dgvShowDepartures);
             this.Controls.Add(this.btnAddTicket);
+            this.Font = new System.Drawing.Font("Noto Sans Armenian", 10F, System.Drawing.FontStyle.Bold);
+            this.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.Name = "ticketsForm";
-            this.Text = "ticketsForm";
+            this.Text = "Find Bus";
             ((System.ComponentModel.ISupportInitialize)(this.dgvShowDepartures)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvShowArrivals)).EndInit();
             this.ResumeLayout(false);
@@ -174,5 +214,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Arrivals;
         private System.Windows.Forms.MaskedTextBox txtDateOfTrip;
         private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Label label1;
     }
 }

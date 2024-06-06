@@ -31,7 +31,6 @@ namespace Kursova_Hushchyn
         {
             this.components = new System.ComponentModel.Container();
             this.dgvRoutes = new System.Windows.Forms.DataGridView();
-            this.busRoutesBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.btnSearch = new System.Windows.Forms.Button();
             this.btnExit = new System.Windows.Forms.Button();
             this.gbOptions = new System.Windows.Forms.GroupBox();
@@ -87,20 +86,22 @@ namespace Kursova_Hushchyn
             this.hasToiletDataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.hasPowerOutletsDataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.hasInternetDataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.busRoutesBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.routeListBindingSource = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.dgvRoutes)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.busRoutesBindingSource)).BeginInit();
             this.gbOptions.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvSchedule)).BeginInit();
             this.gbSorts.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.busRoutesBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.routeListBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // dgvRoutes
             // 
             this.dgvRoutes.AutoGenerateColumns = false;
+            this.dgvRoutes.BackgroundColor = System.Drawing.SystemColors.Control;
             this.dgvRoutes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvRoutes.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.routeNumberDataGridViewTextBoxColumn,
@@ -116,48 +117,56 @@ namespace Kursova_Hushchyn
             this.hasPowerOutletsDataGridViewCheckBoxColumn,
             this.hasInternetDataGridViewCheckBoxColumn});
             this.dgvRoutes.DataSource = this.busRoutesBindingSource;
-            this.dgvRoutes.Location = new System.Drawing.Point(12, 22);
+            this.dgvRoutes.Location = new System.Drawing.Point(18, 30);
+            this.dgvRoutes.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.dgvRoutes.Name = "dgvRoutes";
-            this.dgvRoutes.Size = new System.Drawing.Size(1257, 308);
+            this.dgvRoutes.RowHeadersWidth = 51;
+            this.dgvRoutes.Size = new System.Drawing.Size(1732, 426);
             this.dgvRoutes.TabIndex = 0;
             this.dgvRoutes.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvRoutes_CellClick);
             // 
-            // busRoutesBindingSource
-            // 
-            this.busRoutesBindingSource.DataMember = "BusRoutes";
-            this.busRoutesBindingSource.DataSource = this.routeListBindingSource;
-            // 
             // btnSearch
             // 
-            this.btnSearch.Location = new System.Drawing.Point(1148, 611);
+            this.btnSearch.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(54)))), ((int)(((byte)(133)))));
+            this.btnSearch.Font = new System.Drawing.Font("Noto Sans Armenian", 10F, System.Drawing.FontStyle.Bold);
+            this.btnSearch.ForeColor = System.Drawing.Color.White;
+            this.btnSearch.Location = new System.Drawing.Point(1159, 764);
+            this.btnSearch.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnSearch.Name = "btnSearch";
-            this.btnSearch.Size = new System.Drawing.Size(121, 38);
+            this.btnSearch.Size = new System.Drawing.Size(181, 53);
             this.btnSearch.TabIndex = 1;
             this.btnSearch.Text = "Search";
-            this.btnSearch.UseVisualStyleBackColor = true;
+            this.btnSearch.UseVisualStyleBackColor = false;
             this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
             // 
             // btnExit
             // 
-            this.btnExit.Location = new System.Drawing.Point(783, 611);
+            this.btnExit.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(54)))), ((int)(((byte)(133)))));
+            this.btnExit.Font = new System.Drawing.Font("Noto Sans Armenian", 10F, System.Drawing.FontStyle.Bold);
+            this.btnExit.ForeColor = System.Drawing.Color.White;
+            this.btnExit.Location = new System.Drawing.Point(1569, 764);
+            this.btnExit.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnExit.Name = "btnExit";
-            this.btnExit.Size = new System.Drawing.Size(121, 38);
+            this.btnExit.Size = new System.Drawing.Size(181, 53);
             this.btnExit.TabIndex = 2;
             this.btnExit.Text = "Exit";
-            this.btnExit.UseVisualStyleBackColor = true;
+            this.btnExit.UseVisualStyleBackColor = false;
             this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
             // 
             // gbOptions
             // 
+            this.gbOptions.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(54)))), ((int)(((byte)(133)))));
             this.gbOptions.Controls.Add(this.chbPowerOutlets);
             this.gbOptions.Controls.Add(this.chbToilet);
             this.gbOptions.Controls.Add(this.chbInternet);
             this.gbOptions.Controls.Add(this.chbConditioner);
-            this.gbOptions.Location = new System.Drawing.Point(11, 353);
-            this.gbOptions.Margin = new System.Windows.Forms.Padding(2);
+            this.gbOptions.Font = new System.Drawing.Font("Noto Sans Armenian", 10F, System.Drawing.FontStyle.Bold);
+            this.gbOptions.ForeColor = System.Drawing.Color.White;
+            this.gbOptions.Location = new System.Drawing.Point(16, 482);
+            this.gbOptions.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.gbOptions.Name = "gbOptions";
-            this.gbOptions.Padding = new System.Windows.Forms.Padding(2);
-            this.gbOptions.Size = new System.Drawing.Size(176, 158);
+            this.gbOptions.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.gbOptions.Size = new System.Drawing.Size(264, 171);
             this.gbOptions.TabIndex = 6;
             this.gbOptions.TabStop = false;
             this.gbOptions.Text = "Options";
@@ -165,10 +174,11 @@ namespace Kursova_Hushchyn
             // chbPowerOutlets
             // 
             this.chbPowerOutlets.AutoSize = true;
-            this.chbPowerOutlets.Location = new System.Drawing.Point(4, 81);
-            this.chbPowerOutlets.Margin = new System.Windows.Forms.Padding(2);
+            this.chbPowerOutlets.Font = new System.Drawing.Font("Noto Sans Armenian", 9F);
+            this.chbPowerOutlets.Location = new System.Drawing.Point(8, 130);
+            this.chbPowerOutlets.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.chbPowerOutlets.Name = "chbPowerOutlets";
-            this.chbPowerOutlets.Size = new System.Drawing.Size(92, 17);
+            this.chbPowerOutlets.Size = new System.Drawing.Size(125, 24);
             this.chbPowerOutlets.TabIndex = 5;
             this.chbPowerOutlets.Text = "Power Outlets";
             this.chbPowerOutlets.UseVisualStyleBackColor = true;
@@ -176,10 +186,11 @@ namespace Kursova_Hushchyn
             // chbToilet
             // 
             this.chbToilet.AutoSize = true;
-            this.chbToilet.Location = new System.Drawing.Point(4, 39);
-            this.chbToilet.Margin = new System.Windows.Forms.Padding(2);
+            this.chbToilet.Font = new System.Drawing.Font("Noto Sans Armenian", 9F);
+            this.chbToilet.Location = new System.Drawing.Point(6, 62);
+            this.chbToilet.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.chbToilet.Name = "chbToilet";
-            this.chbToilet.Size = new System.Drawing.Size(52, 17);
+            this.chbToilet.Size = new System.Drawing.Size(67, 24);
             this.chbToilet.TabIndex = 3;
             this.chbToilet.Text = "Toilet";
             this.chbToilet.UseVisualStyleBackColor = true;
@@ -187,10 +198,11 @@ namespace Kursova_Hushchyn
             // chbInternet
             // 
             this.chbInternet.AutoSize = true;
-            this.chbInternet.Location = new System.Drawing.Point(4, 60);
-            this.chbInternet.Margin = new System.Windows.Forms.Padding(2);
+            this.chbInternet.Font = new System.Drawing.Font("Noto Sans Armenian", 9F);
+            this.chbInternet.Location = new System.Drawing.Point(8, 94);
+            this.chbInternet.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.chbInternet.Name = "chbInternet";
-            this.chbInternet.Size = new System.Drawing.Size(62, 17);
+            this.chbInternet.Size = new System.Drawing.Size(79, 24);
             this.chbInternet.TabIndex = 4;
             this.chbInternet.Text = "Internet";
             this.chbInternet.UseVisualStyleBackColor = true;
@@ -198,110 +210,107 @@ namespace Kursova_Hushchyn
             // chbConditioner
             // 
             this.chbConditioner.AutoSize = true;
-            this.chbConditioner.Location = new System.Drawing.Point(4, 18);
-            this.chbConditioner.Margin = new System.Windows.Forms.Padding(2);
+            this.chbConditioner.Font = new System.Drawing.Font("Noto Sans Armenian", 9F);
+            this.chbConditioner.Location = new System.Drawing.Point(8, 29);
+            this.chbConditioner.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.chbConditioner.Name = "chbConditioner";
-            this.chbConditioner.Size = new System.Drawing.Size(79, 17);
+            this.chbConditioner.Size = new System.Drawing.Size(107, 24);
             this.chbConditioner.TabIndex = 2;
             this.chbConditioner.Text = "Conditioner";
             this.chbConditioner.UseVisualStyleBackColor = true;
             // 
             // txtDeparture
             // 
-            this.txtDeparture.Location = new System.Drawing.Point(133, 182);
-            this.txtDeparture.Margin = new System.Windows.Forms.Padding(2);
+            this.txtDeparture.Location = new System.Drawing.Point(199, 191);
+            this.txtDeparture.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtDeparture.Name = "txtDeparture";
-            this.txtDeparture.Size = new System.Drawing.Size(102, 20);
+            this.txtDeparture.Size = new System.Drawing.Size(151, 28);
             this.txtDeparture.TabIndex = 41;
             // 
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(22, 185);
-            this.label7.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label7.Location = new System.Drawing.Point(21, 201);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(81, 13);
+            this.label7.Size = new System.Drawing.Size(112, 20);
             this.label7.TabIndex = 40;
             this.label7.Text = "Departure Point";
             // 
             // txtArrivalDate
             // 
-            this.txtArrivalDate.Location = new System.Drawing.Point(133, 150);
-            this.txtArrivalDate.Margin = new System.Windows.Forms.Padding(2);
+            this.txtArrivalDate.Location = new System.Drawing.Point(199, 146);
+            this.txtArrivalDate.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtArrivalDate.Mask = "00/00/0000";
             this.txtArrivalDate.Name = "txtArrivalDate";
-            this.txtArrivalDate.Size = new System.Drawing.Size(102, 20);
+            this.txtArrivalDate.Size = new System.Drawing.Size(151, 28);
             this.txtArrivalDate.TabIndex = 39;
             this.txtArrivalDate.ValidatingType = typeof(System.DateTime);
             // 
             // txtDepartureDate
             // 
-            this.txtDepartureDate.Location = new System.Drawing.Point(133, 117);
-            this.txtDepartureDate.Margin = new System.Windows.Forms.Padding(2);
+            this.txtDepartureDate.Location = new System.Drawing.Point(199, 104);
+            this.txtDepartureDate.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtDepartureDate.Mask = "00/00/0000";
             this.txtDepartureDate.Name = "txtDepartureDate";
-            this.txtDepartureDate.Size = new System.Drawing.Size(102, 20);
+            this.txtDepartureDate.Size = new System.Drawing.Size(151, 28);
             this.txtDepartureDate.TabIndex = 38;
             this.txtDepartureDate.ValidatingType = typeof(System.DateTime);
             // 
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(22, 157);
-            this.label6.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label6.Location = new System.Drawing.Point(22, 153);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(62, 13);
+            this.label6.Size = new System.Drawing.Size(84, 20);
             this.label6.TabIndex = 37;
             this.label6.Text = "Arrival Date";
             // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(22, 124);
-            this.label5.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label5.Location = new System.Drawing.Point(21, 114);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(80, 13);
+            this.label5.Size = new System.Drawing.Size(109, 20);
             this.label5.TabIndex = 36;
             this.label5.Text = "Departure Date";
             // 
             // txtCarrierCompany
             // 
-            this.txtCarrierCompany.Location = new System.Drawing.Point(133, 44);
-            this.txtCarrierCompany.Margin = new System.Windows.Forms.Padding(2);
+            this.txtCarrierCompany.Location = new System.Drawing.Point(199, 22);
+            this.txtCarrierCompany.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtCarrierCompany.Name = "txtCarrierCompany";
-            this.txtCarrierCompany.Size = new System.Drawing.Size(102, 20);
+            this.txtCarrierCompany.Size = new System.Drawing.Size(151, 28);
             this.txtCarrierCompany.TabIndex = 33;
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(22, 51);
-            this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label3.Location = new System.Drawing.Point(21, 29);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(84, 13);
+            this.label3.Size = new System.Drawing.Size(122, 20);
             this.label3.TabIndex = 32;
             this.label3.Text = "Carrier Company";
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(22, 87);
-            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label1.Location = new System.Drawing.Point(21, 69);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(100, 13);
+            this.label1.Size = new System.Drawing.Size(138, 20);
             this.label1.TabIndex = 29;
             this.label1.Text = "Passenger capacity";
             // 
             // txtCapacity
             // 
-            this.txtCapacity.Location = new System.Drawing.Point(133, 80);
-            this.txtCapacity.Margin = new System.Windows.Forms.Padding(2);
+            this.txtCapacity.Location = new System.Drawing.Point(199, 62);
+            this.txtCapacity.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtCapacity.Name = "txtCapacity";
-            this.txtCapacity.Size = new System.Drawing.Size(102, 20);
+            this.txtCapacity.Size = new System.Drawing.Size(151, 28);
             this.txtCapacity.TabIndex = 28;
             // 
             // groupBox1
             // 
+            this.groupBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(54)))), ((int)(((byte)(133)))));
             this.groupBox1.Controls.Add(this.txtIntermediate);
             this.groupBox1.Controls.Add(this.label10);
             this.groupBox1.Controls.Add(this.txtArrival);
@@ -316,104 +325,104 @@ namespace Kursova_Hushchyn
             this.groupBox1.Controls.Add(this.txtCarrierCompany);
             this.groupBox1.Controls.Add(this.label6);
             this.groupBox1.Controls.Add(this.label5);
-            this.groupBox1.Location = new System.Drawing.Point(193, 353);
+            this.groupBox1.Font = new System.Drawing.Font("Noto Sans Armenian", 9F);
+            this.groupBox1.ForeColor = System.Drawing.Color.White;
+            this.groupBox1.Location = new System.Drawing.Point(289, 482);
+            this.groupBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(255, 284);
+            this.groupBox1.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox1.Size = new System.Drawing.Size(388, 338);
             this.groupBox1.TabIndex = 44;
             this.groupBox1.TabStop = false;
             // 
             // txtIntermediate
             // 
-            this.txtIntermediate.Location = new System.Drawing.Point(133, 251);
-            this.txtIntermediate.Margin = new System.Windows.Forms.Padding(2);
+            this.txtIntermediate.Location = new System.Drawing.Point(199, 286);
+            this.txtIntermediate.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtIntermediate.Name = "txtIntermediate";
-            this.txtIntermediate.Size = new System.Drawing.Size(102, 20);
+            this.txtIntermediate.Size = new System.Drawing.Size(151, 28);
             this.txtIntermediate.TabIndex = 45;
             // 
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(22, 258);
-            this.label10.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label10.Location = new System.Drawing.Point(21, 286);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(92, 13);
+            this.label10.Size = new System.Drawing.Size(127, 20);
             this.label10.TabIndex = 44;
             this.label10.Text = "Intermediate Point";
             // 
             // txtArrival
             // 
-            this.txtArrival.Location = new System.Drawing.Point(133, 212);
-            this.txtArrival.Margin = new System.Windows.Forms.Padding(2);
+            this.txtArrival.Location = new System.Drawing.Point(199, 242);
+            this.txtArrival.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtArrival.Name = "txtArrival";
-            this.txtArrival.Size = new System.Drawing.Size(102, 20);
+            this.txtArrival.Size = new System.Drawing.Size(151, 28);
             this.txtArrival.TabIndex = 43;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(22, 219);
-            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label2.Location = new System.Drawing.Point(22, 253);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(63, 13);
+            this.label2.Size = new System.Drawing.Size(87, 20);
             this.label2.TabIndex = 42;
             this.label2.Text = "Arrival Point";
             // 
             // txtPriceLow
             // 
-            this.txtPriceLow.Location = new System.Drawing.Point(142, 109);
-            this.txtPriceLow.Margin = new System.Windows.Forms.Padding(2);
+            this.txtPriceLow.Location = new System.Drawing.Point(189, 107);
+            this.txtPriceLow.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtPriceLow.Name = "txtPriceLow";
-            this.txtPriceLow.Size = new System.Drawing.Size(102, 20);
+            this.txtPriceLow.Size = new System.Drawing.Size(151, 28);
             this.txtPriceLow.TabIndex = 35;
             // 
             // txtModel
             // 
-            this.txtModel.Location = new System.Drawing.Point(142, 75);
-            this.txtModel.Margin = new System.Windows.Forms.Padding(2);
+            this.txtModel.Location = new System.Drawing.Point(189, 62);
+            this.txtModel.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtModel.Name = "txtModel";
-            this.txtModel.Size = new System.Drawing.Size(102, 20);
+            this.txtModel.Size = new System.Drawing.Size(151, 28);
             this.txtModel.TabIndex = 43;
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(26, 116);
-            this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label4.Location = new System.Drawing.Point(39, 110);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(51, 13);
+            this.label4.Size = new System.Drawing.Size(71, 20);
             this.label4.TabIndex = 34;
             this.label4.Text = "Price Min";
             // 
             // txtRouteNumber
             // 
-            this.txtRouteNumber.Location = new System.Drawing.Point(142, 43);
-            this.txtRouteNumber.Margin = new System.Windows.Forms.Padding(2);
+            this.txtRouteNumber.Location = new System.Drawing.Point(189, 22);
+            this.txtRouteNumber.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtRouteNumber.Name = "txtRouteNumber";
-            this.txtRouteNumber.Size = new System.Drawing.Size(102, 20);
+            this.txtRouteNumber.Size = new System.Drawing.Size(151, 28);
             this.txtRouteNumber.TabIndex = 43;
             // 
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(26, 82);
-            this.label9.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label9.Location = new System.Drawing.Point(39, 69);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(36, 13);
+            this.label9.Size = new System.Drawing.Size(50, 20);
             this.label9.TabIndex = 42;
             this.label9.Text = "Model";
             // 
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(26, 50);
-            this.label8.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label8.Location = new System.Drawing.Point(39, 29);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(76, 13);
+            this.label8.Size = new System.Drawing.Size(106, 20);
             this.label8.TabIndex = 42;
             this.label8.Text = "Route Number";
             // 
             // groupBox2
             // 
+            this.groupBox2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(54)))), ((int)(((byte)(133)))));
             this.groupBox2.Controls.Add(this.txtArrivalTime);
             this.groupBox2.Controls.Add(this.label11);
             this.groupBox2.Controls.Add(this.txtDepartureTime);
@@ -426,129 +435,149 @@ namespace Kursova_Hushchyn
             this.groupBox2.Controls.Add(this.label4);
             this.groupBox2.Controls.Add(this.txtModel);
             this.groupBox2.Controls.Add(this.txtPriceLow);
-            this.groupBox2.Location = new System.Drawing.Point(463, 353);
+            this.groupBox2.Font = new System.Drawing.Font("Noto Sans Armenian", 9F);
+            this.groupBox2.ForeColor = System.Drawing.Color.White;
+            this.groupBox2.Location = new System.Drawing.Point(685, 482);
+            this.groupBox2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(294, 284);
+            this.groupBox2.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox2.Size = new System.Drawing.Size(457, 335);
             this.groupBox2.TabIndex = 45;
             this.groupBox2.TabStop = false;
             // 
             // txtArrivalTime
             // 
-            this.txtArrivalTime.Location = new System.Drawing.Point(142, 211);
-            this.txtArrivalTime.Margin = new System.Windows.Forms.Padding(2);
+            this.txtArrivalTime.Location = new System.Drawing.Point(189, 246);
+            this.txtArrivalTime.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtArrivalTime.Mask = "00:00";
             this.txtArrivalTime.Name = "txtArrivalTime";
-            this.txtArrivalTime.Size = new System.Drawing.Size(102, 20);
+            this.txtArrivalTime.Size = new System.Drawing.Size(151, 28);
             this.txtArrivalTime.TabIndex = 49;
             this.txtArrivalTime.ValidatingType = typeof(System.DateTime);
             // 
             // label11
             // 
             this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(26, 145);
-            this.label11.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label11.Location = new System.Drawing.Point(39, 153);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(54, 13);
+            this.label11.Size = new System.Drawing.Size(75, 20);
             this.label11.TabIndex = 45;
             this.label11.Text = "Price Max";
             // 
             // txtDepartureTime
             // 
-            this.txtDepartureTime.Location = new System.Drawing.Point(142, 178);
-            this.txtDepartureTime.Margin = new System.Windows.Forms.Padding(2);
+            this.txtDepartureTime.Location = new System.Drawing.Point(189, 195);
+            this.txtDepartureTime.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtDepartureTime.Mask = "00:00";
             this.txtDepartureTime.Name = "txtDepartureTime";
-            this.txtDepartureTime.Size = new System.Drawing.Size(102, 20);
+            this.txtDepartureTime.Size = new System.Drawing.Size(151, 28);
             this.txtDepartureTime.TabIndex = 48;
             this.txtDepartureTime.ValidatingType = typeof(System.DateTime);
             // 
             // label12
             // 
             this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(26, 218);
-            this.label12.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label12.Location = new System.Drawing.Point(39, 253);
             this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(62, 13);
+            this.label12.Size = new System.Drawing.Size(86, 20);
             this.label12.TabIndex = 47;
             this.label12.Text = "Arrival Time";
             // 
             // txtPriceHigh
             // 
-            this.txtPriceHigh.Location = new System.Drawing.Point(142, 138);
-            this.txtPriceHigh.Margin = new System.Windows.Forms.Padding(2);
+            this.txtPriceHigh.Location = new System.Drawing.Point(189, 150);
+            this.txtPriceHigh.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtPriceHigh.Name = "txtPriceHigh";
-            this.txtPriceHigh.Size = new System.Drawing.Size(102, 20);
+            this.txtPriceHigh.Size = new System.Drawing.Size(151, 28);
             this.txtPriceHigh.TabIndex = 44;
             // 
             // label13
             // 
             this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(26, 185);
-            this.label13.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label13.Location = new System.Drawing.Point(39, 198);
             this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(80, 13);
+            this.label13.Size = new System.Drawing.Size(111, 20);
             this.label13.TabIndex = 46;
             this.label13.Text = "Departure Time";
             // 
             // dgvSchedule
             // 
             this.dgvSchedule.AllowUserToAddRows = false;
+            this.dgvSchedule.BackgroundColor = System.Drawing.SystemColors.Control;
             this.dgvSchedule.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvSchedule.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Arrival,
             this.Departure,
             this.Stop});
-            this.dgvSchedule.Location = new System.Drawing.Point(783, 355);
+            this.dgvSchedule.Location = new System.Drawing.Point(1159, 482);
+            this.dgvSchedule.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.dgvSchedule.Name = "dgvSchedule";
-            this.dgvSchedule.Size = new System.Drawing.Size(410, 230);
+            this.dgvSchedule.RowHeadersWidth = 51;
+            this.dgvSchedule.Size = new System.Drawing.Size(591, 255);
             this.dgvSchedule.TabIndex = 47;
             // 
             // Arrival
             // 
             this.Arrival.HeaderText = "Arrival";
+            this.Arrival.MinimumWidth = 6;
             this.Arrival.Name = "Arrival";
             this.Arrival.ReadOnly = true;
+            this.Arrival.Width = 125;
             // 
             // Departure
             // 
             this.Departure.HeaderText = "Departure";
+            this.Departure.MinimumWidth = 6;
             this.Departure.Name = "Departure";
             this.Departure.ReadOnly = true;
+            this.Departure.Width = 125;
             // 
             // Stop
             // 
             this.Stop.HeaderText = "Stop";
+            this.Stop.MinimumWidth = 6;
             this.Stop.Name = "Stop";
             this.Stop.ReadOnly = true;
             this.Stop.Width = 165;
             // 
             // btnView
             // 
-            this.btnView.Location = new System.Drawing.Point(969, 611);
+            this.btnView.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(54)))), ((int)(((byte)(133)))));
+            this.btnView.Font = new System.Drawing.Font("Noto Sans Armenian", 10F, System.Drawing.FontStyle.Bold);
+            this.btnView.ForeColor = System.Drawing.Color.White;
+            this.btnView.Location = new System.Drawing.Point(1359, 764);
+            this.btnView.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnView.Name = "btnView";
-            this.btnView.Size = new System.Drawing.Size(121, 38);
+            this.btnView.Size = new System.Drawing.Size(181, 53);
             this.btnView.TabIndex = 48;
             this.btnView.Text = "View All";
-            this.btnView.UseVisualStyleBackColor = true;
+            this.btnView.UseVisualStyleBackColor = false;
             this.btnView.Click += new System.EventHandler(this.btnView_Click);
             // 
             // gbSorts
             // 
+            this.gbSorts.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(54)))), ((int)(((byte)(133)))));
             this.gbSorts.Controls.Add(this.rbLowToHigh);
             this.gbSorts.Controls.Add(this.rbHighToLow);
-            this.gbSorts.Location = new System.Drawing.Point(15, 510);
+            this.gbSorts.Font = new System.Drawing.Font("Noto Sans Armenian", 10F, System.Drawing.FontStyle.Bold);
+            this.gbSorts.ForeColor = System.Drawing.Color.White;
+            this.gbSorts.Location = new System.Drawing.Point(16, 660);
+            this.gbSorts.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.gbSorts.Name = "gbSorts";
-            this.gbSorts.Size = new System.Drawing.Size(172, 127);
+            this.gbSorts.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.gbSorts.Size = new System.Drawing.Size(264, 157);
             this.gbSorts.TabIndex = 56;
             this.gbSorts.TabStop = false;
-            this.gbSorts.Text = "groupBox3";
+            this.gbSorts.Text = "Price";
             // 
             // rbLowToHigh
             // 
             this.rbLowToHigh.AutoSize = true;
-            this.rbLowToHigh.Location = new System.Drawing.Point(6, 71);
+            this.rbLowToHigh.Font = new System.Drawing.Font("Noto Sans Armenian", 9F);
+            this.rbLowToHigh.Location = new System.Drawing.Point(8, 81);
+            this.rbLowToHigh.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.rbLowToHigh.Name = "rbLowToHigh";
-            this.rbLowToHigh.Size = new System.Drawing.Size(86, 17);
+            this.rbLowToHigh.Size = new System.Drawing.Size(114, 24);
             this.rbLowToHigh.TabIndex = 55;
             this.rbLowToHigh.TabStop = true;
             this.rbLowToHigh.Text = "Low To High";
@@ -558,9 +587,11 @@ namespace Kursova_Hushchyn
             // rbHighToLow
             // 
             this.rbHighToLow.AutoSize = true;
-            this.rbHighToLow.Location = new System.Drawing.Point(6, 46);
+            this.rbHighToLow.Font = new System.Drawing.Font("Noto Sans Armenian", 9F);
+            this.rbHighToLow.Location = new System.Drawing.Point(8, 41);
+            this.rbHighToLow.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.rbHighToLow.Name = "rbHighToLow";
-            this.rbHighToLow.Size = new System.Drawing.Size(86, 17);
+            this.rbHighToLow.Size = new System.Drawing.Size(114, 24);
             this.rbHighToLow.TabIndex = 54;
             this.rbHighToLow.TabStop = true;
             this.rbHighToLow.Text = "High To Low";
@@ -571,73 +602,102 @@ namespace Kursova_Hushchyn
             // 
             this.routeNumberDataGridViewTextBoxColumn.DataPropertyName = "RouteNumber";
             this.routeNumberDataGridViewTextBoxColumn.HeaderText = "RouteNumber";
+            this.routeNumberDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.routeNumberDataGridViewTextBoxColumn.Name = "routeNumberDataGridViewTextBoxColumn";
+            this.routeNumberDataGridViewTextBoxColumn.Width = 125;
             // 
             // carrierCompanyDataGridViewTextBoxColumn
             // 
             this.carrierCompanyDataGridViewTextBoxColumn.DataPropertyName = "CarrierCompany";
             this.carrierCompanyDataGridViewTextBoxColumn.HeaderText = "CarrierCompany";
+            this.carrierCompanyDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.carrierCompanyDataGridViewTextBoxColumn.Name = "carrierCompanyDataGridViewTextBoxColumn";
+            this.carrierCompanyDataGridViewTextBoxColumn.Width = 125;
             // 
             // priceDataGridViewTextBoxColumn
             // 
             this.priceDataGridViewTextBoxColumn.DataPropertyName = "Price";
             this.priceDataGridViewTextBoxColumn.HeaderText = "Price";
+            this.priceDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.priceDataGridViewTextBoxColumn.Name = "priceDataGridViewTextBoxColumn";
+            this.priceDataGridViewTextBoxColumn.Width = 125;
             // 
             // departureDateDataGridViewTextBoxColumn
             // 
             this.departureDateDataGridViewTextBoxColumn.DataPropertyName = "DepartureDate";
             this.departureDateDataGridViewTextBoxColumn.HeaderText = "DepartureDate";
+            this.departureDateDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.departureDateDataGridViewTextBoxColumn.Name = "departureDateDataGridViewTextBoxColumn";
+            this.departureDateDataGridViewTextBoxColumn.Width = 125;
             // 
             // arrivalDateDataGridViewTextBoxColumn
             // 
             this.arrivalDateDataGridViewTextBoxColumn.DataPropertyName = "ArrivalDate";
             this.arrivalDateDataGridViewTextBoxColumn.HeaderText = "ArrivalDate";
+            this.arrivalDateDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.arrivalDateDataGridViewTextBoxColumn.Name = "arrivalDateDataGridViewTextBoxColumn";
+            this.arrivalDateDataGridViewTextBoxColumn.Width = 125;
             // 
             // availableSeatsDataGridViewTextBoxColumn
             // 
             this.availableSeatsDataGridViewTextBoxColumn.DataPropertyName = "AvailableSeats";
             this.availableSeatsDataGridViewTextBoxColumn.HeaderText = "AvailableSeats";
+            this.availableSeatsDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.availableSeatsDataGridViewTextBoxColumn.Name = "availableSeatsDataGridViewTextBoxColumn";
+            this.availableSeatsDataGridViewTextBoxColumn.Width = 125;
             // 
             // modelDataGridViewTextBoxColumn
             // 
             this.modelDataGridViewTextBoxColumn.DataPropertyName = "Model";
             this.modelDataGridViewTextBoxColumn.HeaderText = "Model";
+            this.modelDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.modelDataGridViewTextBoxColumn.Name = "modelDataGridViewTextBoxColumn";
+            this.modelDataGridViewTextBoxColumn.Width = 125;
             // 
             // passengerCapacityDataGridViewTextBoxColumn
             // 
             this.passengerCapacityDataGridViewTextBoxColumn.DataPropertyName = "PassengerCapacity";
             this.passengerCapacityDataGridViewTextBoxColumn.HeaderText = "PassengerCapacity";
+            this.passengerCapacityDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.passengerCapacityDataGridViewTextBoxColumn.Name = "passengerCapacityDataGridViewTextBoxColumn";
+            this.passengerCapacityDataGridViewTextBoxColumn.Width = 125;
             // 
             // hasAirConditionerDataGridViewCheckBoxColumn
             // 
             this.hasAirConditionerDataGridViewCheckBoxColumn.DataPropertyName = "HasAirConditioner";
             this.hasAirConditionerDataGridViewCheckBoxColumn.HeaderText = "HasAirConditioner";
+            this.hasAirConditionerDataGridViewCheckBoxColumn.MinimumWidth = 6;
             this.hasAirConditionerDataGridViewCheckBoxColumn.Name = "hasAirConditionerDataGridViewCheckBoxColumn";
+            this.hasAirConditionerDataGridViewCheckBoxColumn.Width = 125;
             // 
             // hasToiletDataGridViewCheckBoxColumn
             // 
             this.hasToiletDataGridViewCheckBoxColumn.DataPropertyName = "HasToilet";
             this.hasToiletDataGridViewCheckBoxColumn.HeaderText = "HasToilet";
+            this.hasToiletDataGridViewCheckBoxColumn.MinimumWidth = 6;
             this.hasToiletDataGridViewCheckBoxColumn.Name = "hasToiletDataGridViewCheckBoxColumn";
+            this.hasToiletDataGridViewCheckBoxColumn.Width = 125;
             // 
             // hasPowerOutletsDataGridViewCheckBoxColumn
             // 
             this.hasPowerOutletsDataGridViewCheckBoxColumn.DataPropertyName = "HasPowerOutlets";
             this.hasPowerOutletsDataGridViewCheckBoxColumn.HeaderText = "HasPowerOutlets";
+            this.hasPowerOutletsDataGridViewCheckBoxColumn.MinimumWidth = 6;
             this.hasPowerOutletsDataGridViewCheckBoxColumn.Name = "hasPowerOutletsDataGridViewCheckBoxColumn";
+            this.hasPowerOutletsDataGridViewCheckBoxColumn.Width = 125;
             // 
             // hasInternetDataGridViewCheckBoxColumn
             // 
             this.hasInternetDataGridViewCheckBoxColumn.DataPropertyName = "HasInternet";
             this.hasInternetDataGridViewCheckBoxColumn.HeaderText = "HasInternet";
+            this.hasInternetDataGridViewCheckBoxColumn.MinimumWidth = 6;
             this.hasInternetDataGridViewCheckBoxColumn.Name = "hasInternetDataGridViewCheckBoxColumn";
+            this.hasInternetDataGridViewCheckBoxColumn.Width = 125;
+            // 
+            // busRoutesBindingSource
+            // 
+            this.busRoutesBindingSource.DataMember = "BusRoutes";
+            this.busRoutesBindingSource.DataSource = this.routeListBindingSource;
             // 
             // routeListBindingSource
             // 
@@ -645,9 +705,10 @@ namespace Kursova_Hushchyn
             // 
             // SearchRoutesForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1281, 661);
+            this.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.ClientSize = new System.Drawing.Size(1773, 868);
             this.Controls.Add(this.gbSorts);
             this.Controls.Add(this.btnView);
             this.Controls.Add(this.dgvSchedule);
@@ -657,10 +718,12 @@ namespace Kursova_Hushchyn
             this.Controls.Add(this.btnExit);
             this.Controls.Add(this.btnSearch);
             this.Controls.Add(this.dgvRoutes);
+            this.Font = new System.Drawing.Font("Noto Sans Armenian", 7.8F, System.Drawing.FontStyle.Bold);
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "SearchRoutesForm";
+            this.ShowIcon = false;
             this.Text = "UKR BUS";
             ((System.ComponentModel.ISupportInitialize)(this.dgvRoutes)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.busRoutesBindingSource)).EndInit();
             this.gbOptions.ResumeLayout(false);
             this.gbOptions.PerformLayout();
             this.groupBox1.ResumeLayout(false);
@@ -670,6 +733,7 @@ namespace Kursova_Hushchyn
             ((System.ComponentModel.ISupportInitialize)(this.dgvSchedule)).EndInit();
             this.gbSorts.ResumeLayout(false);
             this.gbSorts.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.busRoutesBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.routeListBindingSource)).EndInit();
             this.ResumeLayout(false);
 

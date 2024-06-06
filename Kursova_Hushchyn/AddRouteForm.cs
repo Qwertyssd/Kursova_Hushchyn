@@ -111,5 +111,7 @@ namespace Kursova_Hushchyn
             txtCapacity.Clear();
             txtStopsDuration.Clear();
         }
+
+
     }
 }
