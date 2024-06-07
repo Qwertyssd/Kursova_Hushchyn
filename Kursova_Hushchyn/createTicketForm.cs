@@ -307,14 +307,38 @@ namespace Kursova_Hushchyn
                     MoveFocusDown();
                     e.Handled = true;
                     break;
-                    case Keys.Enter:
-                    Search();
+                case Keys.Enter:
+                    if (ActiveControl is TextBox || ActiveControl is ComboBox)
+                    {
+                        SelectNextControl(ActiveControl, true, true, true, true);
+                    }
+                    else
+                    {
+                        Search();
+                    }
+                    e.Handled = true;
+                    break;
+                case Keys.Tab:
+                    if (e.Shift)
+                    {
+
+                        this.SelectNextControl(this.ActiveControl, false, true, true, true);
+                    }
+                    else
+                    {
+
+                        this.SelectNextControl(this.ActiveControl, true, true, true, true);
+                    }
                     e.Handled = true;
                     break;
 
 
             }
         }
-       
+
+        private void btnClose_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

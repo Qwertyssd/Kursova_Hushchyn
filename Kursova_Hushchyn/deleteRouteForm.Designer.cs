@@ -37,6 +37,7 @@
             this.txtCarrier = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.txtTicketNumber = new System.Windows.Forms.TextBox();
+            this.btnClose = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // btnDelete
@@ -48,7 +49,7 @@
             this.btnDelete.Margin = new System.Windows.Forms.Padding(4);
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.Size = new System.Drawing.Size(158, 51);
-            this.btnDelete.TabIndex = 0;
+            this.btnDelete.TabIndex = 6;
             this.btnDelete.Text = "Delete";
             this.btnDelete.UseVisualStyleBackColor = false;
             this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
@@ -59,7 +60,7 @@
             this.txtRouteNumber.Margin = new System.Windows.Forms.Padding(4);
             this.txtRouteNumber.Name = "txtRouteNumber";
             this.txtRouteNumber.Size = new System.Drawing.Size(250, 19);
-            this.txtRouteNumber.TabIndex = 1;
+            this.txtRouteNumber.TabIndex = 2;
             // 
             // label1
             // 
@@ -108,7 +109,7 @@
             this.txtCarrier.Margin = new System.Windows.Forms.Padding(4);
             this.txtCarrier.Name = "txtCarrier";
             this.txtCarrier.Size = new System.Drawing.Size(250, 19);
-            this.txtCarrier.TabIndex = 5;
+            this.txtCarrier.TabIndex = 4;
             // 
             // label4
             // 
@@ -127,7 +128,20 @@
             this.txtTicketNumber.Margin = new System.Windows.Forms.Padding(4);
             this.txtTicketNumber.Name = "txtTicketNumber";
             this.txtTicketNumber.Size = new System.Drawing.Size(250, 19);
-            this.txtTicketNumber.TabIndex = 8;
+            this.txtTicketNumber.TabIndex = 1;
+            // 
+            // btnClose
+            // 
+            this.btnClose.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(54)))), ((int)(((byte)(133)))));
+            this.btnClose.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold);
+            this.btnClose.ForeColor = System.Drawing.Color.White;
+            this.btnClose.Location = new System.Drawing.Point(21, 237);
+            this.btnClose.Margin = new System.Windows.Forms.Padding(4);
+            this.btnClose.Name = "btnClose";
+            this.btnClose.Size = new System.Drawing.Size(158, 51);
+            this.btnClose.TabIndex = 7;
+            this.btnClose.Text = "Close";
+            this.btnClose.UseVisualStyleBackColor = false;
             // 
             // deleteRouteForm
             // 
@@ -135,6 +149,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlLight;
             this.ClientSize = new System.Drawing.Size(507, 354);
+            this.Controls.Add(this.btnClose);
             this.Controls.Add(this.txtTicketNumber);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
@@ -166,5 +181,6 @@
         private System.Windows.Forms.TextBox txtCarrier;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TextBox txtTicketNumber;
+        private System.Windows.Forms.Button btnClose;
     }
 }

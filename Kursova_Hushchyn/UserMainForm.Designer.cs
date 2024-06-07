@@ -45,7 +45,7 @@
             this.btnSearchTickets.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.btnSearchTickets.Name = "btnSearchTickets";
             this.btnSearchTickets.Size = new System.Drawing.Size(271, 52);
-            this.btnSearchTickets.TabIndex = 7;
+            this.btnSearchTickets.TabIndex = 2;
             this.btnSearchTickets.Text = "Search Tickets";
             this.btnSearchTickets.UseVisualStyleBackColor = false;
             this.btnSearchTickets.Click += new System.EventHandler(this.btnSearchTickets_Click);
@@ -58,7 +58,7 @@
             this.btnSearchRoutes.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.btnSearchRoutes.Name = "btnSearchRoutes";
             this.btnSearchRoutes.Size = new System.Drawing.Size(271, 52);
-            this.btnSearchRoutes.TabIndex = 6;
+            this.btnSearchRoutes.TabIndex = 1;
             this.btnSearchRoutes.Text = "Search Routes";
             this.btnSearchRoutes.UseVisualStyleBackColor = false;
             this.btnSearchRoutes.Click += new System.EventHandler(this.btnSearchRoutes_Click);
@@ -71,7 +71,7 @@
             this.btnTicketOperations.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.btnTicketOperations.Name = "btnTicketOperations";
             this.btnTicketOperations.Size = new System.Drawing.Size(271, 52);
-            this.btnTicketOperations.TabIndex = 8;
+            this.btnTicketOperations.TabIndex = 3;
             this.btnTicketOperations.Text = "Ticket Operations";
             this.btnTicketOperations.UseVisualStyleBackColor = false;
             this.btnTicketOperations.Click += new System.EventHandler(this.btnTicketOperations_Click);
@@ -84,7 +84,7 @@
             this.btnExit.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.btnExit.Name = "btnExit";
             this.btnExit.Size = new System.Drawing.Size(260, 59);
-            this.btnExit.TabIndex = 9;
+            this.btnExit.TabIndex = 6;
             this.btnExit.Text = "Exit";
             this.btnExit.UseVisualStyleBackColor = false;
             this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
@@ -110,7 +110,7 @@
             this.btnAddMoney.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.btnAddMoney.Name = "btnAddMoney";
             this.btnAddMoney.Size = new System.Drawing.Size(162, 52);
-            this.btnAddMoney.TabIndex = 11;
+            this.btnAddMoney.TabIndex = 4;
             this.btnAddMoney.Text = "Add Money";
             this.btnAddMoney.UseVisualStyleBackColor = false;
             this.btnAddMoney.Click += new System.EventHandler(this.btnAddMoney_Click);
@@ -121,7 +121,7 @@
             this.txtMoney.Mask = "000000.00";
             this.txtMoney.Name = "txtMoney";
             this.txtMoney.Size = new System.Drawing.Size(100, 23);
-            this.txtMoney.TabIndex = 12;
+            this.txtMoney.TabIndex = 5;
             // 
             // UserMainForm
             // 

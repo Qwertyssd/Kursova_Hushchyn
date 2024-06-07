@@ -35,6 +35,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
+            this.btnClose = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // btnSave
@@ -45,7 +46,7 @@
             this.btnSave.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(228, 35);
-            this.btnSave.TabIndex = 0;
+            this.btnSave.TabIndex = 1;
             this.btnSave.Text = "Routes To File";
             this.btnSave.UseVisualStyleBackColor = false;
             this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
@@ -58,7 +59,7 @@
             this.btnUpload.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnUpload.Name = "btnUpload";
             this.btnUpload.Size = new System.Drawing.Size(228, 35);
-            this.btnUpload.TabIndex = 1;
+            this.btnUpload.TabIndex = 3;
             this.btnUpload.Text = "Routes From File";
             this.btnUpload.UseVisualStyleBackColor = false;
             this.btnUpload.Click += new System.EventHandler(this.btnUpload_Click);
@@ -71,7 +72,7 @@
             this.btnUploadTickets.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnUploadTickets.Name = "btnUploadTickets";
             this.btnUploadTickets.Size = new System.Drawing.Size(228, 35);
-            this.btnUploadTickets.TabIndex = 3;
+            this.btnUploadTickets.TabIndex = 4;
             this.btnUploadTickets.Text = "Tickets From File";
             this.btnUploadTickets.UseVisualStyleBackColor = false;
             this.btnUploadTickets.Click += new System.EventHandler(this.btnUploadTickets_Click);
@@ -123,12 +124,26 @@
             this.label3.TabIndex = 6;
             this.label3.Text = "Upload:";
             // 
+            // btnClose
+            // 
+            this.btnClose.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(54)))), ((int)(((byte)(133)))));
+            this.btnClose.ForeColor = System.Drawing.Color.White;
+            this.btnClose.Location = new System.Drawing.Point(617, 413);
+            this.btnClose.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.btnClose.Name = "btnClose";
+            this.btnClose.Size = new System.Drawing.Size(168, 51);
+            this.btnClose.TabIndex = 5;
+            this.btnClose.Text = "Close";
+            this.btnClose.UseVisualStyleBackColor = false;
+            this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
+            // 
             // fileOperationsForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlLight;
             this.ClientSize = new System.Drawing.Size(873, 488);
+            this.Controls.Add(this.btnClose);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
@@ -158,5 +173,6 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Button btnClose;
     }
 }

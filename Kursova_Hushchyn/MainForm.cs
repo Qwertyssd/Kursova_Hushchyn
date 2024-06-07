@@ -96,15 +96,31 @@ namespace Kursova_Hushchyn
         {
             switch (e.KeyCode)
             {
-               
-                  
+
+                case Keys.Enter:
+                   
+                        SelectNextControl(ActiveControl, true, true, true, true);
+                    e.Handled = true;
+                    break;
                 case Keys.F1:
                     ShowHelp();
                     e.Handled = true; break;
                 case Keys.Escape:
                     this.Close();
                     e.Handled = true; break;
+                case Keys.Tab:
+                    if (e.Shift)
+                    {
 
+                        this.SelectNextControl(this.ActiveControl, false, true, true, true);
+                    }
+                    else
+                    {
+
+                        this.SelectNextControl(this.ActiveControl, true, true, true, true);
+                    }
+                    e.Handled = true;
+                    break;
             }
         }
         private void ShowHelp()

@@ -113,6 +113,19 @@ namespace Kursova_Hushchyn
                     MoveFocusRight();
                     e.Handled = true;
                     break;
+                case Keys.Tab:
+                    if (e.Shift)
+                    {
+
+                        this.SelectNextControl(this.ActiveControl, false, true, true, true);
+                    }
+                    else
+                    {
+
+                        this.SelectNextControl(this.ActiveControl, true, true, true, true);
+                    }
+                    e.Handled = true;
+                    break;
             }
         }
         private void MoveFocusUp()
@@ -163,5 +176,9 @@ namespace Kursova_Hushchyn
 
         }
 
+        private void btnClose_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

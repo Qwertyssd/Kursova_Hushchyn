@@ -138,7 +138,7 @@ namespace Kursova_Hushchyn
 
         private void ShowHelp()
         {
-            // Implement help display logic here
+            
             MessageBox.Show("Input your email and password in given fields", "Help", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
@@ -147,7 +147,15 @@ namespace Kursova_Hushchyn
             switch (e.KeyCode)
             {
                 case Keys.Enter:
-                    LogIn();
+                    if (ActiveControl is TextBox || ActiveControl is ComboBox || ActiveControl is DateTimePicker)
+                    {
+                        SelectNextControl(ActiveControl, true, true, true, true);
+                    }
+                    else
+                    {
+                        LogIn();
+                    }
+                  
                     e.Handled = true; break;
                 case Keys.F1:
                     ShowHelp();

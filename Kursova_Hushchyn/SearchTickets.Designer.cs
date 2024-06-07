@@ -53,7 +53,7 @@
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.btnViewAll = new System.Windows.Forms.Button();
             this.btnSearch = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btnClose = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvTickets)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ticketsBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ticketListBindingSource)).BeginInit();
@@ -197,7 +197,7 @@
             this.txtName.Margin = new System.Windows.Forms.Padding(4);
             this.txtName.Name = "txtName";
             this.txtName.Size = new System.Drawing.Size(148, 23);
-            this.txtName.TabIndex = 5;
+            this.txtName.TabIndex = 1;
             // 
             // txtDeparture
             // 
@@ -205,7 +205,7 @@
             this.txtDeparture.Margin = new System.Windows.Forms.Padding(4);
             this.txtDeparture.Name = "txtDeparture";
             this.txtDeparture.Size = new System.Drawing.Size(148, 23);
-            this.txtDeparture.TabIndex = 6;
+            this.txtDeparture.TabIndex = 4;
             // 
             // txtArrival
             // 
@@ -213,7 +213,7 @@
             this.txtArrival.Margin = new System.Windows.Forms.Padding(4);
             this.txtArrival.Name = "txtArrival";
             this.txtArrival.Size = new System.Drawing.Size(148, 23);
-            this.txtArrival.TabIndex = 7;
+            this.txtArrival.TabIndex = 5;
             // 
             // txtSurname
             // 
@@ -221,7 +221,7 @@
             this.txtSurname.Margin = new System.Windows.Forms.Padding(4);
             this.txtSurname.Name = "txtSurname";
             this.txtSurname.Size = new System.Drawing.Size(148, 23);
-            this.txtSurname.TabIndex = 8;
+            this.txtSurname.TabIndex = 2;
             // 
             // txtRouteNumber
             // 
@@ -229,7 +229,7 @@
             this.txtRouteNumber.Margin = new System.Windows.Forms.Padding(4);
             this.txtRouteNumber.Name = "txtRouteNumber";
             this.txtRouteNumber.Size = new System.Drawing.Size(148, 23);
-            this.txtRouteNumber.TabIndex = 10;
+            this.txtRouteNumber.TabIndex = 3;
             // 
             // label5
             // 
@@ -289,7 +289,7 @@
             this.btnViewAll.Margin = new System.Windows.Forms.Padding(4);
             this.btnViewAll.Name = "btnViewAll";
             this.btnViewAll.Size = new System.Drawing.Size(130, 46);
-            this.btnViewAll.TabIndex = 13;
+            this.btnViewAll.TabIndex = 7;
             this.btnViewAll.Text = "View All";
             this.btnViewAll.UseVisualStyleBackColor = false;
             this.btnViewAll.Click += new System.EventHandler(this.btnViewAll_Click);
@@ -303,23 +303,24 @@
             this.btnSearch.Margin = new System.Windows.Forms.Padding(4);
             this.btnSearch.Name = "btnSearch";
             this.btnSearch.Size = new System.Drawing.Size(130, 46);
-            this.btnSearch.TabIndex = 14;
+            this.btnSearch.TabIndex = 6;
             this.btnSearch.Text = "Search";
             this.btnSearch.UseVisualStyleBackColor = false;
             this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
             // 
-            // button1
+            // btnClose
             // 
-            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(54)))), ((int)(((byte)(133)))));
-            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold);
-            this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.Location = new System.Drawing.Point(816, 423);
-            this.button1.Margin = new System.Windows.Forms.Padding(4);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(130, 46);
-            this.button1.TabIndex = 15;
-            this.button1.Text = "Exit";
-            this.button1.UseVisualStyleBackColor = false;
+            this.btnClose.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(54)))), ((int)(((byte)(133)))));
+            this.btnClose.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold);
+            this.btnClose.ForeColor = System.Drawing.Color.White;
+            this.btnClose.Location = new System.Drawing.Point(816, 423);
+            this.btnClose.Margin = new System.Windows.Forms.Padding(4);
+            this.btnClose.Name = "btnClose";
+            this.btnClose.Size = new System.Drawing.Size(130, 46);
+            this.btnClose.TabIndex = 8;
+            this.btnClose.Text = "Exit";
+            this.btnClose.UseVisualStyleBackColor = false;
+            this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
             // 
             // SearchTickets
             // 
@@ -327,7 +328,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlLight;
             this.ClientSize = new System.Drawing.Size(950, 503);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.btnClose);
             this.Controls.Add(this.btnSearch);
             this.Controls.Add(this.btnViewAll);
             this.Controls.Add(this.groupBox2);
@@ -377,6 +378,6 @@
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.Button btnViewAll;
         private System.Windows.Forms.Button btnSearch;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnClose;
     }
 }

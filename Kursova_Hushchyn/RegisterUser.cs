@@ -110,7 +110,15 @@ namespace Kursova_Hushchyn
             switch (e.KeyCode)
             {
                 case Keys.Enter:
-                    Submit();
+                    if (ActiveControl is TextBox || ActiveControl is ComboBox)
+                    {
+                        SelectNextControl(ActiveControl, true, true, true, true);
+                    }
+                    else
+                    {
+                        Submit();
+                    }
+                   
                     e.Handled = true;
                     break;
                 case Keys.F1:
@@ -135,6 +143,19 @@ namespace Kursova_Hushchyn
                     break;
                 case Keys.Right:
                     MoveFocusRight();
+                    e.Handled = true;
+                    break;
+                case Keys.Tab:
+                    if (e.Shift)
+                    {
+
+                        this.SelectNextControl(this.ActiveControl, false, true, true, true);
+                    }
+                    else
+                    {
+
+                        this.SelectNextControl(this.ActiveControl, true, true, true, true);
+                    }
                     e.Handled = true;
                     break;
             }

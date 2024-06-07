@@ -115,7 +115,28 @@ namespace Kursova_Hushchyn
                     e.Handled = true;
                     break;
                 case Keys.Enter:
-                    Delete(); e.Handled = true;
+                    if (ActiveControl is TextBox || ActiveControl is ComboBox)
+                    {
+                        SelectNextControl(ActiveControl, true, true, true, true);
+                    }
+                    else
+                    {
+                        Delete();
+                    }
+                     e.Handled = true;
+                    break;
+                case Keys.Tab:
+                    if (e.Shift)
+                    {
+
+                        this.SelectNextControl(this.ActiveControl, false, true, true, true);
+                    }
+                    else
+                    {
+
+                        this.SelectNextControl(this.ActiveControl, true, true, true, true);
+                    }
+                    e.Handled = true;
                     break;
 
             }

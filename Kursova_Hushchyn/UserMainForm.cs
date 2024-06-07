@@ -91,7 +91,15 @@ namespace Kursova_Hushchyn
             switch (e.KeyCode)
             {
                 case Keys.Enter:
-                    AddMoney();
+                    if (ActiveControl is TextBox || ActiveControl is ComboBox || ActiveControl is DateTimePicker)
+                    {
+                        SelectNextControl(ActiveControl, true, true, true, true);
+                    }
+                    else
+                    {
+                        AddMoney();
+                    }
+                   
                     e.Handled = true; break;
                 case Keys.F1:
                     ShowHelp();
@@ -99,7 +107,20 @@ namespace Kursova_Hushchyn
                 case Keys.Escape:
                     this.Close();
                     e.Handled = true; break;
-               
+                case Keys.Tab:
+                    if (e.Shift)
+                    {
+
+                        this.SelectNextControl(this.ActiveControl, false, true, true, true);
+                    }
+                    else
+                    {
+
+                        this.SelectNextControl(this.ActiveControl, true, true, true, true);
+                    }
+                    e.Handled = true;
+                    break;
+
             }
         }
         private void ShowHelp()

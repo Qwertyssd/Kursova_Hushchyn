@@ -61,14 +61,14 @@
             this.txtName.Location = new System.Drawing.Point(97, 79);
             this.txtName.Name = "txtName";
             this.txtName.Size = new System.Drawing.Size(100, 20);
-            this.txtName.TabIndex = 18;
+            this.txtName.TabIndex = 1;
             // 
             // txtSurname
             // 
             this.txtSurname.Location = new System.Drawing.Point(371, 79);
             this.txtSurname.Name = "txtSurname";
             this.txtSurname.Size = new System.Drawing.Size(100, 20);
-            this.txtSurname.TabIndex = 19;
+            this.txtSurname.TabIndex = 4;
             // 
             // txtDate
             // 
@@ -76,7 +76,7 @@
             this.txtDate.Mask = "00/00/0000";
             this.txtDate.Name = "txtDate";
             this.txtDate.Size = new System.Drawing.Size(100, 20);
-            this.txtDate.TabIndex = 20;
+            this.txtDate.TabIndex = 2;
             this.txtDate.ValidatingType = typeof(System.DateTime);
             // 
             // label2
@@ -93,7 +93,7 @@
             this.txtEmail.Location = new System.Drawing.Point(371, 116);
             this.txtEmail.Name = "txtEmail";
             this.txtEmail.Size = new System.Drawing.Size(100, 20);
-            this.txtEmail.TabIndex = 22;
+            this.txtEmail.TabIndex = 5;
             // 
             // label3
             // 
@@ -128,7 +128,7 @@
             this.txtMoney.Mask = "________.__";
             this.txtMoney.Name = "txtMoney";
             this.txtMoney.Size = new System.Drawing.Size(100, 20);
-            this.txtMoney.TabIndex = 26;
+            this.txtMoney.TabIndex = 6;
             // 
             // label6
             // 
@@ -144,7 +144,7 @@
             this.btnSubmit.Location = new System.Drawing.Point(371, 205);
             this.btnSubmit.Name = "btnSubmit";
             this.btnSubmit.Size = new System.Drawing.Size(118, 39);
-            this.btnSubmit.TabIndex = 28;
+            this.btnSubmit.TabIndex = 7;
             this.btnSubmit.Text = "Submit";
             this.btnSubmit.UseVisualStyleBackColor = true;
             this.btnSubmit.Click += new System.EventHandler(this.btnSubmit_Click);
@@ -164,7 +164,7 @@
             this.maskedTextBox1.Mask = "00/00/0000";
             this.maskedTextBox1.Name = "maskedTextBox1";
             this.maskedTextBox1.Size = new System.Drawing.Size(100, 20);
-            this.maskedTextBox1.TabIndex = 30;
+            this.maskedTextBox1.TabIndex = 3;
             this.maskedTextBox1.ValidatingType = typeof(System.DateTime);
             // 
             // RegisterUser

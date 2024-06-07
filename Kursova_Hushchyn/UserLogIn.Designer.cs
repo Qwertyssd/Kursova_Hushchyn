@@ -42,14 +42,14 @@
             this.txtEmail.Location = new System.Drawing.Point(41, 132);
             this.txtEmail.Name = "txtEmail";
             this.txtEmail.Size = new System.Drawing.Size(154, 20);
-            this.txtEmail.TabIndex = 0;
+            this.txtEmail.TabIndex = 1;
             // 
             // txtPassword
             // 
             this.txtPassword.Location = new System.Drawing.Point(238, 132);
             this.txtPassword.Name = "txtPassword";
             this.txtPassword.Size = new System.Drawing.Size(153, 20);
-            this.txtPassword.TabIndex = 1;
+            this.txtPassword.TabIndex = 2;
             // 
             // btnLogIn
             // 
@@ -59,7 +59,7 @@
             this.btnLogIn.Location = new System.Drawing.Point(310, 232);
             this.btnLogIn.Name = "btnLogIn";
             this.btnLogIn.Size = new System.Drawing.Size(80, 30);
-            this.btnLogIn.TabIndex = 2;
+            this.btnLogIn.TabIndex = 4;
             this.btnLogIn.Text = "Log In";
             this.btnLogIn.UseVisualStyleBackColor = false;
             this.btnLogIn.Click += new System.EventHandler(this.btnLogIn_Click);

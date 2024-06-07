@@ -47,7 +47,7 @@
             this.btnAddRoute.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnAddRoute.Name = "btnAddRoute";
             this.btnAddRoute.Size = new System.Drawing.Size(190, 37);
-            this.btnAddRoute.TabIndex = 0;
+            this.btnAddRoute.TabIndex = 4;
             this.btnAddRoute.Text = "Add Route";
             this.btnAddRoute.UseVisualStyleBackColor = false;
             this.btnAddRoute.Click += new System.EventHandler(this.btnAddRoute_Click);
@@ -61,7 +61,7 @@
             this.btnSearchRoutes.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnSearchRoutes.Name = "btnSearchRoutes";
             this.btnSearchRoutes.Size = new System.Drawing.Size(190, 36);
-            this.btnSearchRoutes.TabIndex = 1;
+            this.btnSearchRoutes.TabIndex = 3;
             this.btnSearchRoutes.Text = "Search Routes";
             this.btnSearchRoutes.UseVisualStyleBackColor = false;
             this.btnSearchRoutes.Click += new System.EventHandler(this.btnSearchRoutes_Click);
@@ -74,7 +74,7 @@
             this.btnTicketOperations.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnTicketOperations.Name = "btnTicketOperations";
             this.btnTicketOperations.Size = new System.Drawing.Size(190, 36);
-            this.btnTicketOperations.TabIndex = 2;
+            this.btnTicketOperations.TabIndex = 5;
             this.btnTicketOperations.Text = "Ticket Operations";
             this.btnTicketOperations.UseVisualStyleBackColor = false;
             this.btnTicketOperations.Click += new System.EventHandler(this.btnTicketOperations_Click);
@@ -87,7 +87,7 @@
             this.btnDeleteRoute.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnDeleteRoute.Name = "btnDeleteRoute";
             this.btnDeleteRoute.Size = new System.Drawing.Size(190, 40);
-            this.btnDeleteRoute.TabIndex = 3;
+            this.btnDeleteRoute.TabIndex = 6;
             this.btnDeleteRoute.Text = "Delete Route";
             this.btnDeleteRoute.UseVisualStyleBackColor = false;
             this.btnDeleteRoute.Click += new System.EventHandler(this.btnDeleteRoute_Click);
@@ -100,7 +100,7 @@
             this.btnFileOperations.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnFileOperations.Name = "btnFileOperations";
             this.btnFileOperations.Size = new System.Drawing.Size(209, 46);
-            this.btnFileOperations.TabIndex = 4;
+            this.btnFileOperations.TabIndex = 1;
             this.btnFileOperations.Text = "File Management";
             this.btnFileOperations.UseVisualStyleBackColor = false;
             this.btnFileOperations.Click += new System.EventHandler(this.btnFileOperations_Click);
@@ -113,7 +113,7 @@
             this.btnSearchTickets.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnSearchTickets.Name = "btnSearchTickets";
             this.btnSearchTickets.Size = new System.Drawing.Size(190, 37);
-            this.btnSearchTickets.TabIndex = 5;
+            this.btnSearchTickets.TabIndex = 2;
             this.btnSearchTickets.Text = "Search Tickets";
             this.btnSearchTickets.UseVisualStyleBackColor = false;
             this.btnSearchTickets.Click += new System.EventHandler(this.btnSearchTickets_Click);
@@ -127,7 +127,7 @@
             this.btnExit.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnExit.Name = "btnExit";
             this.btnExit.Size = new System.Drawing.Size(134, 48);
-            this.btnExit.TabIndex = 6;
+            this.btnExit.TabIndex = 7;
             this.btnExit.Text = "Exit";
             this.btnExit.UseVisualStyleBackColor = false;
             this.btnExit.Click += new System.EventHandler(this.btnExit_Click);

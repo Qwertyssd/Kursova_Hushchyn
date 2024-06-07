@@ -218,7 +218,14 @@ namespace Kursova_Hushchyn
             switch (e.KeyCode)
             {
                 case Keys.Enter:
-                    AddTicket();
+                    if (ActiveControl is TextBox || ActiveControl is ComboBox)
+                    {
+                        SelectNextControl(ActiveControl, true, true, true, true);
+                    }
+                    else
+                    {
+                        AddTicket();
+                    }
                     e.Handled = true;
                     break;
                 case Keys.F1:
@@ -245,8 +252,26 @@ namespace Kursova_Hushchyn
                     MoveFocusRight();
                     e.Handled = true;
                     break;
+                case Keys.Tab:
+                    if (e.Shift)
+                    {
+
+                        this.SelectNextControl(this.ActiveControl, false, true, true, true);
+                    }
+                    else
+                    {
+
+                        this.SelectNextControl(this.ActiveControl, true, true, true, true);
+                    }
+                    e.Handled = true;
+                    break;
             }
 
+        }
+
+        private void btnClose_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

@@ -241,7 +241,7 @@ namespace Kursova_Hushchyn
             this.btnSearch.Margin = new System.Windows.Forms.Padding(4);
             this.btnSearch.Name = "btnSearch";
             this.btnSearch.Size = new System.Drawing.Size(181, 53);
-            this.btnSearch.TabIndex = 1;
+            this.btnSearch.TabIndex = 21;
             this.btnSearch.Text = "Search";
             this.btnSearch.UseVisualStyleBackColor = false;
             this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
@@ -255,7 +255,7 @@ namespace Kursova_Hushchyn
             this.btnExit.Margin = new System.Windows.Forms.Padding(4);
             this.btnExit.Name = "btnExit";
             this.btnExit.Size = new System.Drawing.Size(181, 53);
-            this.btnExit.TabIndex = 2;
+            this.btnExit.TabIndex = 23;
             this.btnExit.Text = "Exit";
             this.btnExit.UseVisualStyleBackColor = false;
             this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
@@ -286,7 +286,7 @@ namespace Kursova_Hushchyn
             this.chbPowerOutlets.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.chbPowerOutlets.Name = "chbPowerOutlets";
             this.chbPowerOutlets.Size = new System.Drawing.Size(102, 19);
-            this.chbPowerOutlets.TabIndex = 5;
+            this.chbPowerOutlets.TabIndex = 4;
             this.chbPowerOutlets.Text = "Power Outlets";
             this.chbPowerOutlets.UseVisualStyleBackColor = true;
             // 
@@ -298,7 +298,7 @@ namespace Kursova_Hushchyn
             this.chbToilet.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.chbToilet.Name = "chbToilet";
             this.chbToilet.Size = new System.Drawing.Size(56, 19);
-            this.chbToilet.TabIndex = 3;
+            this.chbToilet.TabIndex = 2;
             this.chbToilet.Text = "Toilet";
             this.chbToilet.UseVisualStyleBackColor = true;
             // 
@@ -310,7 +310,7 @@ namespace Kursova_Hushchyn
             this.chbInternet.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.chbInternet.Name = "chbInternet";
             this.chbInternet.Size = new System.Drawing.Size(67, 19);
-            this.chbInternet.TabIndex = 4;
+            this.chbInternet.TabIndex = 3;
             this.chbInternet.Text = "Internet";
             this.chbInternet.UseVisualStyleBackColor = true;
             // 
@@ -322,7 +322,7 @@ namespace Kursova_Hushchyn
             this.chbConditioner.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.chbConditioner.Name = "chbConditioner";
             this.chbConditioner.Size = new System.Drawing.Size(89, 19);
-            this.chbConditioner.TabIndex = 2;
+            this.chbConditioner.TabIndex = 1;
             this.chbConditioner.Text = "Conditioner";
             this.chbConditioner.UseVisualStyleBackColor = true;
             // 
@@ -332,7 +332,7 @@ namespace Kursova_Hushchyn
             this.txtDeparture.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtDeparture.Name = "txtDeparture";
             this.txtDeparture.Size = new System.Drawing.Size(151, 21);
-            this.txtDeparture.TabIndex = 41;
+            this.txtDeparture.TabIndex = 11;
             // 
             // label7
             // 
@@ -350,7 +350,7 @@ namespace Kursova_Hushchyn
             this.txtArrivalDate.Mask = "00/00/0000";
             this.txtArrivalDate.Name = "txtArrivalDate";
             this.txtArrivalDate.Size = new System.Drawing.Size(151, 21);
-            this.txtArrivalDate.TabIndex = 39;
+            this.txtArrivalDate.TabIndex = 10;
             this.txtArrivalDate.ValidatingType = typeof(System.DateTime);
             // 
             // txtDepartureDate
@@ -360,7 +360,7 @@ namespace Kursova_Hushchyn
             this.txtDepartureDate.Mask = "00/00/0000";
             this.txtDepartureDate.Name = "txtDepartureDate";
             this.txtDepartureDate.Size = new System.Drawing.Size(151, 21);
-            this.txtDepartureDate.TabIndex = 38;
+            this.txtDepartureDate.TabIndex = 9;
             this.txtDepartureDate.ValidatingType = typeof(System.DateTime);
             // 
             // label6
@@ -387,7 +387,7 @@ namespace Kursova_Hushchyn
             this.txtCarrierCompany.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtCarrierCompany.Name = "txtCarrierCompany";
             this.txtCarrierCompany.Size = new System.Drawing.Size(151, 21);
-            this.txtCarrierCompany.TabIndex = 33;
+            this.txtCarrierCompany.TabIndex = 7;
             // 
             // label3
             // 
@@ -413,7 +413,7 @@ namespace Kursova_Hushchyn
             this.txtCapacity.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtCapacity.Name = "txtCapacity";
             this.txtCapacity.Size = new System.Drawing.Size(151, 21);
-            this.txtCapacity.TabIndex = 28;
+            this.txtCapacity.TabIndex = 8;
             // 
             // groupBox1
             // 
@@ -448,7 +448,7 @@ namespace Kursova_Hushchyn
             this.txtIntermediate.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtIntermediate.Name = "txtIntermediate";
             this.txtIntermediate.Size = new System.Drawing.Size(151, 21);
-            this.txtIntermediate.TabIndex = 45;
+            this.txtIntermediate.TabIndex = 13;
             // 
             // label10
             // 
@@ -465,7 +465,7 @@ namespace Kursova_Hushchyn
             this.txtArrival.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtArrival.Name = "txtArrival";
             this.txtArrival.Size = new System.Drawing.Size(151, 21);
-            this.txtArrival.TabIndex = 43;
+            this.txtArrival.TabIndex = 12;
             // 
             // label2
             // 
@@ -482,7 +482,7 @@ namespace Kursova_Hushchyn
             this.txtPriceLow.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtPriceLow.Name = "txtPriceLow";
             this.txtPriceLow.Size = new System.Drawing.Size(151, 21);
-            this.txtPriceLow.TabIndex = 35;
+            this.txtPriceLow.TabIndex = 16;
             // 
             // txtModel
             // 
@@ -490,7 +490,7 @@ namespace Kursova_Hushchyn
             this.txtModel.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtModel.Name = "txtModel";
             this.txtModel.Size = new System.Drawing.Size(151, 21);
-            this.txtModel.TabIndex = 43;
+            this.txtModel.TabIndex = 15;
             // 
             // label4
             // 
@@ -507,7 +507,7 @@ namespace Kursova_Hushchyn
             this.txtRouteNumber.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtRouteNumber.Name = "txtRouteNumber";
             this.txtRouteNumber.Size = new System.Drawing.Size(151, 21);
-            this.txtRouteNumber.TabIndex = 43;
+            this.txtRouteNumber.TabIndex = 14;
             // 
             // label9
             // 
@@ -559,7 +559,7 @@ namespace Kursova_Hushchyn
             this.txtArrivalTime.Mask = "00:00";
             this.txtArrivalTime.Name = "txtArrivalTime";
             this.txtArrivalTime.Size = new System.Drawing.Size(151, 21);
-            this.txtArrivalTime.TabIndex = 49;
+            this.txtArrivalTime.TabIndex = 19;
             this.txtArrivalTime.ValidatingType = typeof(System.DateTime);
             // 
             // label11
@@ -578,7 +578,7 @@ namespace Kursova_Hushchyn
             this.txtDepartureTime.Mask = "00:00";
             this.txtDepartureTime.Name = "txtDepartureTime";
             this.txtDepartureTime.Size = new System.Drawing.Size(151, 21);
-            this.txtDepartureTime.TabIndex = 48;
+            this.txtDepartureTime.TabIndex = 18;
             this.txtDepartureTime.ValidatingType = typeof(System.DateTime);
             // 
             // label12
@@ -596,7 +596,7 @@ namespace Kursova_Hushchyn
             this.txtPriceHigh.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtPriceHigh.Name = "txtPriceHigh";
             this.txtPriceHigh.Size = new System.Drawing.Size(151, 21);
-            this.txtPriceHigh.TabIndex = 44;
+            this.txtPriceHigh.TabIndex = 17;
             // 
             // label13
             // 
@@ -622,7 +622,7 @@ namespace Kursova_Hushchyn
             this.dgvSchedule.Name = "dgvSchedule";
             this.dgvSchedule.RowHeadersWidth = 51;
             this.dgvSchedule.Size = new System.Drawing.Size(591, 255);
-            this.dgvSchedule.TabIndex = 47;
+            this.dgvSchedule.TabIndex = 20;
             // 
             // Arrival
             // 
@@ -667,7 +667,7 @@ namespace Kursova_Hushchyn
             this.btnView.Margin = new System.Windows.Forms.Padding(4);
             this.btnView.Name = "btnView";
             this.btnView.Size = new System.Drawing.Size(181, 53);
-            this.btnView.TabIndex = 48;
+            this.btnView.TabIndex = 22;
             this.btnView.Text = "View All";
             this.btnView.UseVisualStyleBackColor = false;
             this.btnView.Click += new System.EventHandler(this.btnView_Click);
@@ -696,7 +696,7 @@ namespace Kursova_Hushchyn
             this.rbLowToHigh.Margin = new System.Windows.Forms.Padding(4);
             this.rbLowToHigh.Name = "rbLowToHigh";
             this.rbLowToHigh.Size = new System.Drawing.Size(94, 19);
-            this.rbLowToHigh.TabIndex = 55;
+            this.rbLowToHigh.TabIndex = 6;
             this.rbLowToHigh.TabStop = true;
             this.rbLowToHigh.Text = "Low To High";
             this.rbLowToHigh.UseVisualStyleBackColor = true;
@@ -710,7 +710,7 @@ namespace Kursova_Hushchyn
             this.rbHighToLow.Margin = new System.Windows.Forms.Padding(4);
             this.rbHighToLow.Name = "rbHighToLow";
             this.rbHighToLow.Size = new System.Drawing.Size(94, 19);
-            this.rbHighToLow.TabIndex = 54;
+            this.rbHighToLow.TabIndex = 5;
             this.rbHighToLow.TabStop = true;
             this.rbHighToLow.Text = "High To Low";
             this.rbHighToLow.UseVisualStyleBackColor = true;
