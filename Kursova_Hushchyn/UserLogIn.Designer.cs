@@ -128,6 +128,7 @@
             this.Name = "UserLogIn";
             this.ShowIcon = false;
             this.Text = "UserLogIn";
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.UserLogIn_KeyDown);
             this.ResumeLayout(false);
             this.PerformLayout();
 

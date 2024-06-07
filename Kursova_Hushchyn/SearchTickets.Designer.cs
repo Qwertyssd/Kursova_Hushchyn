@@ -76,7 +76,7 @@
             this.routeNumberDataGridViewTextBoxColumn});
             this.dgvTickets.DataSource = this.ticketsBindingSource;
             this.dgvTickets.Location = new System.Drawing.Point(12, 37);
-            this.dgvTickets.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dgvTickets.Margin = new System.Windows.Forms.Padding(4);
             this.dgvTickets.Name = "dgvTickets";
             this.dgvTickets.RowHeadersWidth = 51;
             this.dgvTickets.Size = new System.Drawing.Size(934, 290);
@@ -150,95 +150,95 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Noto Sans Armenian", 9F);
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F);
             this.label1.Location = new System.Drawing.Point(8, 36);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(49, 20);
+            this.label1.Size = new System.Drawing.Size(41, 15);
             this.label1.TabIndex = 1;
             this.label1.Text = "Name";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Noto Sans Armenian", 9F);
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F);
             this.label2.Location = new System.Drawing.Point(8, 72);
             this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(69, 20);
+            this.label2.Size = new System.Drawing.Size(58, 15);
             this.label2.TabIndex = 2;
             this.label2.Text = "Surname";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Noto Sans Armenian", 9F);
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F);
             this.label3.Location = new System.Drawing.Point(12, 103);
             this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(49, 20);
+            this.label3.Size = new System.Drawing.Size(40, 15);
             this.label3.TabIndex = 4;
             this.label3.Text = "Arrival";
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Noto Sans Armenian", 9F);
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F);
             this.label4.Location = new System.Drawing.Point(12, 72);
             this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(74, 20);
+            this.label4.Size = new System.Drawing.Size(62, 15);
             this.label4.TabIndex = 3;
             this.label4.Text = "Departure";
             // 
             // txtName
             // 
             this.txtName.Location = new System.Drawing.Point(90, 31);
-            this.txtName.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtName.Margin = new System.Windows.Forms.Padding(4);
             this.txtName.Name = "txtName";
-            this.txtName.Size = new System.Drawing.Size(148, 30);
+            this.txtName.Size = new System.Drawing.Size(148, 23);
             this.txtName.TabIndex = 5;
             // 
             // txtDeparture
             // 
             this.txtDeparture.Location = new System.Drawing.Point(141, 67);
-            this.txtDeparture.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtDeparture.Margin = new System.Windows.Forms.Padding(4);
             this.txtDeparture.Name = "txtDeparture";
-            this.txtDeparture.Size = new System.Drawing.Size(148, 30);
+            this.txtDeparture.Size = new System.Drawing.Size(148, 23);
             this.txtDeparture.TabIndex = 6;
             // 
             // txtArrival
             // 
             this.txtArrival.Location = new System.Drawing.Point(141, 102);
-            this.txtArrival.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtArrival.Margin = new System.Windows.Forms.Padding(4);
             this.txtArrival.Name = "txtArrival";
-            this.txtArrival.Size = new System.Drawing.Size(148, 30);
+            this.txtArrival.Size = new System.Drawing.Size(148, 23);
             this.txtArrival.TabIndex = 7;
             // 
             // txtSurname
             // 
             this.txtSurname.Location = new System.Drawing.Point(90, 71);
-            this.txtSurname.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtSurname.Margin = new System.Windows.Forms.Padding(4);
             this.txtSurname.Name = "txtSurname";
-            this.txtSurname.Size = new System.Drawing.Size(148, 30);
+            this.txtSurname.Size = new System.Drawing.Size(148, 23);
             this.txtSurname.TabIndex = 8;
             // 
             // txtRouteNumber
             // 
             this.txtRouteNumber.Location = new System.Drawing.Point(141, 31);
-            this.txtRouteNumber.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtRouteNumber.Margin = new System.Windows.Forms.Padding(4);
             this.txtRouteNumber.Name = "txtRouteNumber";
-            this.txtRouteNumber.Size = new System.Drawing.Size(148, 30);
+            this.txtRouteNumber.Size = new System.Drawing.Size(148, 23);
             this.txtRouteNumber.TabIndex = 10;
             // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Noto Sans Armenian", 9F);
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F);
             this.label5.Location = new System.Drawing.Point(12, 36);
             this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(106, 20);
+            this.label5.Size = new System.Drawing.Size(88, 15);
             this.label5.TabIndex = 9;
             this.label5.Text = "Route Number";
             // 
@@ -249,12 +249,12 @@
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.txtSurname);
-            this.groupBox1.Font = new System.Drawing.Font("Noto Sans Armenian", 10F, System.Drawing.FontStyle.Bold);
+            this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold);
             this.groupBox1.ForeColor = System.Drawing.Color.White;
             this.groupBox1.Location = new System.Drawing.Point(15, 342);
-            this.groupBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox1.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox1.Padding = new System.Windows.Forms.Padding(4);
             this.groupBox1.Size = new System.Drawing.Size(258, 138);
             this.groupBox1.TabIndex = 11;
             this.groupBox1.TabStop = false;
@@ -269,12 +269,12 @@
             this.groupBox2.Controls.Add(this.txtArrival);
             this.groupBox2.Controls.Add(this.txtDeparture);
             this.groupBox2.Controls.Add(this.label4);
-            this.groupBox2.Font = new System.Drawing.Font("Noto Sans Armenian", 10F, System.Drawing.FontStyle.Bold);
+            this.groupBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold);
             this.groupBox2.ForeColor = System.Drawing.Color.White;
             this.groupBox2.Location = new System.Drawing.Point(309, 342);
-            this.groupBox2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox2.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox2.Padding = new System.Windows.Forms.Padding(4);
             this.groupBox2.Size = new System.Drawing.Size(300, 138);
             this.groupBox2.TabIndex = 12;
             this.groupBox2.TabStop = false;
@@ -283,10 +283,10 @@
             // btnViewAll
             // 
             this.btnViewAll.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(54)))), ((int)(((byte)(133)))));
-            this.btnViewAll.Font = new System.Drawing.Font("Noto Sans Armenian", 10F, System.Drawing.FontStyle.Bold);
+            this.btnViewAll.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold);
             this.btnViewAll.ForeColor = System.Drawing.Color.White;
             this.btnViewAll.Location = new System.Drawing.Point(637, 423);
-            this.btnViewAll.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnViewAll.Margin = new System.Windows.Forms.Padding(4);
             this.btnViewAll.Name = "btnViewAll";
             this.btnViewAll.Size = new System.Drawing.Size(130, 46);
             this.btnViewAll.TabIndex = 13;
@@ -297,10 +297,10 @@
             // btnSearch
             // 
             this.btnSearch.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(54)))), ((int)(((byte)(133)))));
-            this.btnSearch.Font = new System.Drawing.Font("Noto Sans Armenian", 10F, System.Drawing.FontStyle.Bold);
+            this.btnSearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold);
             this.btnSearch.ForeColor = System.Drawing.Color.White;
             this.btnSearch.Location = new System.Drawing.Point(637, 352);
-            this.btnSearch.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnSearch.Margin = new System.Windows.Forms.Padding(4);
             this.btnSearch.Name = "btnSearch";
             this.btnSearch.Size = new System.Drawing.Size(130, 46);
             this.btnSearch.TabIndex = 14;
@@ -311,10 +311,10 @@
             // button1
             // 
             this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(54)))), ((int)(((byte)(133)))));
-            this.button1.Font = new System.Drawing.Font("Noto Sans Armenian", 10F, System.Drawing.FontStyle.Bold);
+            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold);
             this.button1.ForeColor = System.Drawing.Color.White;
             this.button1.Location = new System.Drawing.Point(816, 423);
-            this.button1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.button1.Margin = new System.Windows.Forms.Padding(4);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(130, 46);
             this.button1.TabIndex = 15;
@@ -323,7 +323,7 @@
             // 
             // SearchTickets
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlLight;
             this.ClientSize = new System.Drawing.Size(950, 503);
@@ -333,12 +333,13 @@
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.dgvTickets);
-            this.Font = new System.Drawing.Font("Noto Sans Armenian", 7.8F, System.Drawing.FontStyle.Bold);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "SearchTickets";
             this.ShowIcon = false;
             this.Text = "SearchTickets";
             this.Load += new System.EventHandler(this.SearchTickets_Load);
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.SearchTickets_KeyDown);
             ((System.ComponentModel.ISupportInitialize)(this.dgvTickets)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ticketsBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ticketListBindingSource)).EndInit();

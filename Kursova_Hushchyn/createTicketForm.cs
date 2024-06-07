@@ -23,7 +23,7 @@ namespace Kursova_Hushchyn
         public createTicketForm(RouteList routeList, TicketList ticketList, DateTime dateOfTrip, string departuePoint, string arrivalPoint, User user)
         {
             InitializeComponent();
-           
+            this.KeyPreview = true;
             this.user = user;
             this.routeList = routeList;
             this.ticketList = ticketList; 
@@ -50,9 +50,9 @@ namespace Kursova_Hushchyn
 
         }
 
-        private void btnSearch_Click(object sender, EventArgs e)
+        private void Search()
         {
-            
+
             TimeSpan? departureTime = null;
             if (!string.IsNullOrWhiteSpace(txtDepartureTime.Text))
             {
@@ -71,7 +71,7 @@ namespace Kursova_Hushchyn
                 }
 
             }
-                     
+
             string model = string.IsNullOrWhiteSpace(txtModel.Text) ? null : txtModel.Text;
             string carrierCompany = string.IsNullOrWhiteSpace(txtCarrierCompany.Text) ? null : txtCarrierCompany.Text;
 
@@ -81,7 +81,7 @@ namespace Kursova_Hushchyn
             bool? hasInternet = chbInternet.Checked ? (bool?)chbInternet.Checked : null;
             double? priceLow = string.IsNullOrWhiteSpace(txtPriceLow.Text) ? -1 : (double?)double.Parse(txtPriceLow.Text);
             double? priceHigh = string.IsNullOrWhiteSpace(txtPriceHigh.Text) ? -1 : (double?)double.Parse(txtPriceHigh.Text);
-            
+
 
             RouteList routes = new RouteList();
             routes.BusRoutes = Sortedroutes.BusRoutes;
@@ -107,7 +107,7 @@ namespace Kursova_Hushchyn
             {
                 routes.BusRoutes = routes.SearchRoutesByInternet();
             }
-           
+
             if (carrierCompany != null)
             {
                 routes.BusRoutes = routes.SearchRoutesByCarrierCompany(carrierCompany);
@@ -126,7 +126,11 @@ namespace Kursova_Hushchyn
                 routes.BusRoutes = routes.SearchRoutesByArrivalTime((TimeSpan)arrivalTime);
             }
             dgvRoutes.DataSource = routes.BusRoutes;
+        }
+        private void btnSearch_Click(object sender, EventArgs e)
+        {
 
+            Search();
         }
         private void dgvRoutes_CellClick(object sender, DataGridViewCellEventArgs e)
         {
@@ -236,5 +240,81 @@ namespace Kursova_Hushchyn
         }
 
 
+        private void MoveFocusUp()
+        {
+           
+            if (ActiveControl == txtArrivalTime)
+                txtDepartureTime.Focus();
+            else if (ActiveControl == txtDepartureTime)
+                txtPriceHigh.Focus();
+            else if (ActiveControl == txtPriceHigh)
+                txtPriceLow.Focus();
+            else if (ActiveControl == txtPriceLow)
+                txtModel.Focus();
+           
+            else if (ActiveControl == txtModel)
+                txtCarrierCompany.Focus();
+            else if (ActiveControl == txtDOB)
+                txtSurname.Focus();
+             else if (ActiveControl == txtSurname)
+                txtSurname.Focus();
+
+
+        }
+
+        private void MoveFocusDown()
+        {
+            if (ActiveControl == txtCarrierCompany)
+                txtModel.Focus();
+            else if (ActiveControl == txtModel)
+                txtPriceLow.Focus();
+            else if (ActiveControl == txtPriceLow)
+                txtPriceHigh.Focus();
+            else if (ActiveControl == txtPriceHigh)
+                txtDepartureTime.Focus();
+            else if (ActiveControl == txtDepartureTime)
+                txtArrivalTime.Focus();
+            else if (ActiveControl == txtSurname)
+                txtDOB.Focus();
+            else if (ActiveControl == txtDOB)
+                txtCarrierCompany.Focus();
+        }
+
+        private void ShowHelp()
+        {
+
+            MessageBox.Show("Menu for creating ticket", "Help", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        }
+
+        private void createTicketForm_KeyDown(object sender, KeyEventArgs e)
+        {
+            switch (e.KeyCode)
+            {
+
+                case Keys.F1:
+                    ShowHelp();
+                    e.Handled = true;
+                    break;
+                case Keys.Escape:
+                    this.Close();
+                    e.Handled = true;
+                    break;
+                case Keys.Up:
+                    MoveFocusUp();
+                    e.Handled = true;
+                    break;
+                case Keys.Down:
+                    MoveFocusDown();
+                    e.Handled = true;
+                    break;
+                    case Keys.Enter:
+                    Search();
+                    e.Handled = true;
+                    break;
+
+
+            }
+        }
+       
     }
 }

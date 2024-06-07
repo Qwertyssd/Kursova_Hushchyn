@@ -13,22 +13,25 @@ namespace Kursova_Hushchyn
 {
     public partial class UserLogIn : Form
     {
-        
-        
+
+
         private RouteList routeList;
         private TicketList ticketList;
         private TicketList userTickets;
         private User finalUser;
         public UserList userList;
+
         public UserLogIn()
         {
 
             InitializeComponent();
+            this.KeyDown += new KeyEventHandler(UserLogIn_KeyDown);
+            this.KeyPreview = true;
             this.routeList = new RouteList();
             this.ticketList = new TicketList();
             this.userTickets = new TicketList();
             this.userList = new UserList();
-           
+
             if (File.Exists("routes.txt"))
             {
                 FileInfo fileInfo = new FileInfo("routes.txt");
@@ -63,7 +66,7 @@ namespace Kursova_Hushchyn
                 if (fileInfo.Length > 0)
                 {
                     ticketList.LoadTicketsFromFile("tickets.txt");
-                   
+
                 }
                 else
                 {
@@ -78,15 +81,21 @@ namespace Kursova_Hushchyn
 
         private void btnLogIn_Click(object sender, EventArgs e)
         {
-            bool gotThrough = false;        
+
+            LogIn();
+        }
+
+        public void LogIn()
+        {
+            bool gotThrough = false;
             foreach (User user in userList.Users)
             {
-                if (user.Email==txtEmail.Text&&user.Password == txtPassword.Text)
+                if (user.Email == txtEmail.Text && user.Password == txtPassword.Text)
                 {
-                    if (user.IsAdmin==true)
+                    if (user.IsAdmin == true)
                     {
                         gotThrough = true;
-                        MainForm mainForm = new MainForm(this.routeList,this.ticketList,this.userList,user);
+                        MainForm mainForm = new MainForm(this.routeList, this.ticketList, this.userList, user);
                         this.Hide();
                         mainForm.ShowDialog();
                         this.Close();
@@ -94,7 +103,7 @@ namespace Kursova_Hushchyn
                     }
                     if (user.IsAdmin == false)
                     {
-                        if (ticketList.GetTicketsByPassenger(user.FirstName, user.LastName).Count!=0)
+                        if (ticketList.GetTicketsByPassenger(user.FirstName, user.LastName).Count != 0)
                         {
                             userTickets.Tickets = ticketList.GetTicketsByPassenger(user.FirstName, user.LastName);
                         }
@@ -102,18 +111,19 @@ namespace Kursova_Hushchyn
                         {
                             userTickets.Tickets = null;
                         }
-                       
+
                         gotThrough = true;
-                        UserMainForm userMain = new UserMainForm(this.routeList, this.ticketList,this.userTickets,this.userList, user);
+                        UserMainForm userMain = new UserMainForm(this.routeList, this.ticketList, this.userTickets, this.userList, user);
                         this.Hide();
                         userMain.ShowDialog();
                         this.Close();
                     }
                 }
             }
-            if (gotThrough==false) 
+            if (gotThrough == false)
             {
                 MessageBox.Show("Incorrect Password or Email");
+                return;
             }
         }
 
@@ -123,6 +133,35 @@ namespace Kursova_Hushchyn
             this.Hide();
             register.ShowDialog();
             this.Show();
+        }
+
+
+        private void ShowHelp()
+        {
+            // Implement help display logic here
+            MessageBox.Show("Input your email and password in given fields", "Help", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        }
+
+        private void UserLogIn_KeyDown(object sender, KeyEventArgs e)
+        {
+            switch (e.KeyCode)
+            {
+                case Keys.Enter:
+                    LogIn();
+                    e.Handled = true; break;
+                case Keys.F1:
+                    ShowHelp();
+                    e.Handled = true; break;
+                case Keys.Escape:
+                    this.Close();
+                    e.Handled = true; break;
+                case Keys.Left:
+                    txtEmail.Focus();
+                    e.Handled = true; break;
+                case Keys.Right:
+                    txtPassword.Focus();
+                    e.Handled = true; break;
+            }
         }
     }
 }

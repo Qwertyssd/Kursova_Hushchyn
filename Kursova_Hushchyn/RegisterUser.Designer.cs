@@ -188,6 +188,7 @@
             this.Controls.Add(this.label1);
             this.Name = "RegisterUser";
             this.Text = "RegisterUser";
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.RegisterUser_KeyDown);
             this.ResumeLayout(false);
             this.PerformLayout();
 

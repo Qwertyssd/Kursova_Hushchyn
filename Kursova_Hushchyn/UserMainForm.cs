@@ -20,6 +20,9 @@ namespace Kursova_Hushchyn
         public UserMainForm(RouteList routeList, TicketList ticketList, TicketList userTicketList, UserList userList, User user)
         {
             InitializeComponent();
+            
+            this.KeyPreview = true; 
+           
             this.routeList = routeList;
             this.ticketList = ticketList;
             this.userTicketList = userTicketList;
@@ -29,12 +32,15 @@ namespace Kursova_Hushchyn
 
         private void btnSearchRoutes_Click(object sender, EventArgs e)
         {
+            SearchRoutes();
+        }
+        public void SearchRoutes()
+        {
             this.Hide();
             var searchRoutesForm = new SearchRoutesForm(routeList);
             searchRoutesForm.ShowDialog();
             this.Show();
         }
-
         private void btnSearchTickets_Click(object sender, EventArgs e)
         {
             this.Hide();
@@ -65,7 +71,44 @@ namespace Kursova_Hushchyn
 
         private void btnAddMoney_Click(object sender, EventArgs e)
         {
-            user.Money = double.Parse(txtMoney.Text);
+
+            AddMoney();
         }
+        private void AddMoney()
+        {
+            if (string.IsNullOrWhiteSpace(txtMoney.Text))
+            {
+                user.Money = double.Parse(txtMoney.Text);
+            }
+
+            else 
+            {
+                MessageBox.Show("Input amount of money");
+            }
+        }
+        private void UserMainForm_KeyDown(object sender, KeyEventArgs e)
+        {
+            switch (e.KeyCode)
+            {
+                case Keys.Enter:
+                    AddMoney();
+                    e.Handled = true; break;
+                case Keys.F1:
+                    ShowHelp();
+                    e.Handled = true; break;
+                case Keys.Escape:
+                    this.Close();
+                    e.Handled = true; break;
+               
+            }
+        }
+        private void ShowHelp()
+        {
+            
+            MessageBox.Show("Menu for navigating", "Help", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        }
+
+        
+           
     }
 }

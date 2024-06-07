@@ -19,12 +19,13 @@ namespace Kursova_Hushchyn
         {
             InitializeComponent();
             this.routeList = routeList;
+          
+            this.KeyPreview = true;
         }
 
-        private void btnSearch_Click(object sender, EventArgs e)
+        private void Search()
         {
 
-            
             DateTime? departureDate = null;
             if (!string.IsNullOrWhiteSpace(txtDepartureDate.Text))
             {
@@ -61,7 +62,7 @@ namespace Kursova_Hushchyn
                 }
 
             }
-            // Initialize search parameters
+
             string departure = string.IsNullOrWhiteSpace(txtDeparture.Text) ? null : txtDeparture.Text;
             string arrival = string.IsNullOrWhiteSpace(txtArrival.Text) ? null : txtArrival.Text;
             string intermediate = string.IsNullOrWhiteSpace(txtIntermediate.Text) ? null : txtIntermediate.Text;
@@ -89,7 +90,7 @@ namespace Kursova_Hushchyn
 
             if (model != null)
             {
-                  routes.BusRoutes = routes.SearchRoutesByModel(model);
+                routes.BusRoutes = routes.SearchRoutesByModel(model);
             }
 
             if (hasAirConditioner != null)
@@ -120,7 +121,7 @@ namespace Kursova_Hushchyn
             {
                 routes.BusRoutes = routes.SearchRoutesByPrice(priceLow, priceHigh);
             }
-           
+
             if (departureDate != null)
             {
                 routes.BusRoutes = routes.SearchRoutesByDepartureDate((DateTime)departureDate);
@@ -149,12 +150,13 @@ namespace Kursova_Hushchyn
             {
                 routes.BusRoutes = routes.SearchRoutesByArrival(arrival);
             }
-            /*results.SearchRoutes(
-                    model,hasAirConditioner,hasToilet,hasPowerOutlets,hasInternet,routeNumber,carrierCompany,priceLow,priceHigh,departureDate,arrivalDate,departureTime,arrivalTime,departure,arrival,intermediate
-                );*/
-
-            // Display the routes (implement logic to show the routes in a grid or list)
+            
             dgvRoutes.DataSource = routes.BusRoutes;
+        }
+        private void btnSearch_Click(object sender, EventArgs e)
+        {
+
+            Search();
         }
 
 
@@ -169,7 +171,7 @@ namespace Kursova_Hushchyn
 
         private void btnExit_Click(object sender, EventArgs e)
         {
-            //routeList.SaveRoutesToFile("routes.txt");
+           
             this.Close();
         }
 
@@ -178,10 +180,10 @@ namespace Kursova_Hushchyn
             dgvSchedule.Rows.Clear();
             int rowIndex = this.dgvSchedule.Rows.Add();
 
-            //Obtain a reference to the newly created DataGridViewRow 
+          
             var row = this.dgvSchedule.Rows[rowIndex];
             
-            //Now this won't fail since the row and columns exist 
+           
            
             if (e.RowIndex >= 0 && e.RowIndex < dgvRoutes.Rows.Count)
             {
@@ -191,31 +193,11 @@ namespace Kursova_Hushchyn
                 if (selectedRoute != null)
                 {
                     SelectedRoute = selectedRoute.RouteNumber;
-                    //string routeNumber = selectedRoute.RouteNumber;
-                    //row.Cells["Stop"].Value = selectedRoute.Stops;
+                 
                    
                     foreach (TimeSpan arrival in selectedRoute.Arrivals)
                     {
-                        /*if (count%2==0)
-                        {
-                            row.Cells["Stop"].Value = selectedRoute.Stops[i];
-                            i++;
-                            row.Cells["Arrival"].Value = stop;
-                        }
-                        else
-                        {
-                            row.Cells["Departure"].Value = selectedRoute.Departures[i];
-                            if (count < selectedRoute.Arrivals.Count-1)
-                            {
-                                rowIndex = this.dgvSchedule.Rows.Add();
-                                row = this.dgvSchedule.Rows[rowIndex];
-                            }
-                           
-                        }
-
-                       
                         
-                        count++;*/
                         row.Cells["Arrival"].Value = arrival;
                         row.Cells["Departure"].Value = selectedRoute.Departures[countDep];
                         row.Cells["Stop"].Value = selectedRoute.Stops[countDep];
@@ -261,6 +243,137 @@ namespace Kursova_Hushchyn
                 dgvRoutes.DataSource = routeList.BusRoutes;
                 dgvRoutes.Refresh();
             }
+        }
+
+        private void UserMainForm_KeyDown(object sender, KeyEventArgs e)
+        {
+            switch (e.KeyCode)
+            {
+                case Keys.Enter:
+                   Search();
+                    e.Handled = true;
+                    break;
+                case Keys.F1:
+                    ShowHelp();
+                    e.Handled = true;
+                    break;
+                case Keys.Escape:
+                    this.Close();
+                    e.Handled = true;
+                    break;
+                case Keys.Up:
+                    MoveFocusUp();
+                    e.Handled = true;
+                    break;
+                case Keys.Down:
+                    MoveFocusDown();
+                    e.Handled = true;
+                    break;
+                case Keys.Left:
+                    MoveFocusLeft();
+                    e.Handled = true;
+                    break;
+                case Keys.Right:
+                    MoveFocusRight();
+                    e.Handled = true;
+                    break;
+            }
+        }
+
+        private void MoveFocusUp()
+        {
+            if (ActiveControl == txtIntermediate)
+                txtArrival.Focus();
+            else if (ActiveControl == txtArrival)
+                txtDeparture.Focus();
+            else if (ActiveControl == txtDeparture)
+                txtArrivalDate.Focus();
+            else if (ActiveControl == txtArrivalDate)
+                txtDepartureDate.Focus();
+            else if (ActiveControl == txtDepartureDate)
+                txtCapacity.Focus();
+            else if (ActiveControl == txtCapacity)
+                txtCarrierCompany.Focus();
+
+            if (ActiveControl == txtArrivalTime)
+                txtDepartureTime.Focus();
+            else if (ActiveControl == txtDepartureTime)
+                txtPriceHigh.Focus();
+            else if (ActiveControl == txtPriceHigh)
+                txtPriceLow.Focus();
+            else if (ActiveControl == txtPriceLow)
+                txtModel.Focus();
+            else if (ActiveControl == txtModel)
+                txtRouteNumber.Focus();
+           
+        }
+
+        private void MoveFocusDown()
+        {
+            if (ActiveControl == txtCarrierCompany)
+                txtCapacity.Focus();
+            else if (ActiveControl == txtCapacity)
+                txtDepartureDate.Focus();
+            else if (ActiveControl == txtDepartureDate)
+                txtArrivalDate.Focus();
+            else if (ActiveControl == txtArrivalDate)
+                txtDeparture.Focus();
+            else if (ActiveControl == txtDeparture)
+                txtArrival.Focus();
+            else if (ActiveControl == txtArrival)
+                txtIntermediate.Focus();
+
+            if (ActiveControl == txtRouteNumber)
+                txtModel.Focus();
+            else if (ActiveControl == txtModel)
+                txtPriceLow.Focus();
+            else if (ActiveControl == txtPriceLow)
+                txtPriceHigh.Focus();
+            else if (ActiveControl == txtPriceHigh)
+                txtDepartureTime.Focus();
+            else if (ActiveControl == txtDepartureTime)
+                txtArrivalTime.Focus();
+        }
+
+        private void MoveFocusLeft()
+        {
+            if (ActiveControl == txtRouteNumber)
+                txtCarrierCompany.Focus();
+            else if (ActiveControl == txtModel)
+                txtCapacity.Focus();
+            else if (ActiveControl == txtPriceLow)
+                txtDepartureDate.Focus();
+            else if (ActiveControl == txtPriceHigh)
+                txtArrivalDate.Focus();
+            else if (ActiveControl == txtDepartureTime)
+                txtDeparture.Focus();
+            else if (ActiveControl == txtArrivalTime)
+                txtArrival.Focus();
+           
+        }
+
+        private void MoveFocusRight()
+        {
+            if (ActiveControl == txtCarrierCompany)
+                txtRouteNumber.Focus();
+            else if (ActiveControl == txtCapacity)
+                txtModel.Focus();
+            else if (ActiveControl == txtDepartureDate)
+                txtPriceLow.Focus();
+            else if (ActiveControl == txtArrivalDate)
+                txtPriceHigh.Focus();
+            else if (ActiveControl == txtDeparture)
+                txtDepartureTime.Focus();
+            else if (ActiveControl == txtArrival)
+                txtArrivalTime.Focus();
+            else if (ActiveControl == txtIntermediate)
+                txtArrivalTime.Focus();
+        }
+
+        private void ShowHelp()
+        {
+
+            MessageBox.Show("Menu for searching all availible roads", "Help", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
     }
 }

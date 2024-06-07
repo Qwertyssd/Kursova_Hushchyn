@@ -30,9 +30,7 @@
         {
             this.btnAddTicket = new System.Windows.Forms.Button();
             this.dgvShowDepartures = new System.Windows.Forms.DataGridView();
-            this.Departures = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dgvShowArrivals = new System.Windows.Forms.DataGridView();
-            this.Arrivals = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.txtDeparture = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
@@ -40,6 +38,8 @@
             this.txtDateOfTrip = new System.Windows.Forms.MaskedTextBox();
             this.label8 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
+            this.Departures = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Arrivals = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvShowDepartures)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvShowArrivals)).BeginInit();
             this.SuspendLayout();
@@ -71,13 +71,6 @@
             this.dgvShowDepartures.TabIndex = 8;
             this.dgvShowDepartures.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvShowDepartures_CellClick);
             // 
-            // Departures
-            // 
-            this.Departures.HeaderText = "Departures";
-            this.Departures.MinimumWidth = 6;
-            this.Departures.Name = "Departures";
-            this.Departures.Width = 125;
-            // 
             // dgvShowArrivals
             // 
             this.dgvShowArrivals.BackgroundColor = System.Drawing.SystemColors.Control;
@@ -91,13 +84,6 @@
             this.dgvShowArrivals.Size = new System.Drawing.Size(264, 266);
             this.dgvShowArrivals.TabIndex = 9;
             this.dgvShowArrivals.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvShowArrivals_CellClick);
-            // 
-            // Arrivals
-            // 
-            this.Arrivals.HeaderText = "Arrivals";
-            this.Arrivals.MinimumWidth = 6;
-            this.Arrivals.Name = "Arrivals";
-            this.Arrivals.Width = 125;
             // 
             // txtDeparture
             // 
@@ -174,6 +160,22 @@
             this.label1.TabIndex = 16;
             this.label1.Text = "                             FIND TICKETS                          ";
             // 
+            // Departures
+            // 
+            this.Departures.HeaderText = "Departures";
+            this.Departures.MinimumWidth = 6;
+            this.Departures.Name = "Departures";
+            this.Departures.ReadOnly = true;
+            this.Departures.Width = 125;
+            // 
+            // Arrivals
+            // 
+            this.Arrivals.HeaderText = "Arrivals";
+            this.Arrivals.MinimumWidth = 6;
+            this.Arrivals.Name = "Arrivals";
+            this.Arrivals.ReadOnly = true;
+            this.Arrivals.Width = 125;
+            // 
             // ticketsForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 16F);
@@ -194,6 +196,7 @@
             this.Margin = new System.Windows.Forms.Padding(6);
             this.Name = "ticketsForm";
             this.Text = "Find Bus";
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.ticketsForm_KeyDown);
             ((System.ComponentModel.ISupportInitialize)(this.dgvShowDepartures)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvShowArrivals)).EndInit();
             this.ResumeLayout(false);
@@ -211,9 +214,9 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.TextBox txtArrival;
         private System.Windows.Forms.DataGridViewTextBoxColumn Departures;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Arrivals;
         private System.Windows.Forms.MaskedTextBox txtDateOfTrip;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Arrivals;
     }
 }

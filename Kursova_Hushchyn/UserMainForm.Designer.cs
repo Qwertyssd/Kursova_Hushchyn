@@ -142,6 +142,7 @@
             this.ShowIcon = false;
             this.Text = "Main Menu";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.UserMainForm_FormClosing);
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.UserMainForm_KeyDown);
             this.ResumeLayout(false);
             this.PerformLayout();
 

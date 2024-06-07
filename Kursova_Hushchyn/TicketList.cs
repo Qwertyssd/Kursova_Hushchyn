@@ -69,6 +69,20 @@ namespace Kursova_Hushchyn
             return list.Tickets;
 
         }
+        public List<Ticket> DeleteTicketByTicketID(string id)
+        {
+            List<Ticket> list = new List<Ticket>();
+
+            foreach (Ticket ticket in Tickets)
+            {
+                if (id != ticket.TicketID)
+                {
+                    list.Add(ticket);
+                }
+            }
+            return list;
+
+        }
         public List<Ticket> GetTicketsByID(string ticketID)
         {
            

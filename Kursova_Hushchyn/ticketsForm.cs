@@ -25,6 +25,8 @@ namespace Kursova_Hushchyn
             this.routeList = routeList;
             this.ticketList = ticketList;
             this.user = user;
+            this.KeyPreview = true;
+            txtDateOfTrip.Focus();
         }
 
 
@@ -151,16 +153,98 @@ namespace Kursova_Hushchyn
 
         private void btnAddTicket_Click(object sender, EventArgs e)
         {
-            if (DeparturePoint != null &&ArrivalPoint!=null)
+
+            AddTicket();
+        }
+       
+        private void AddTicket()
+        {
+            if (DeparturePoint != null && ArrivalPoint != null)
             {
                 this.Hide();
-                createTicketForm createTicketForm = new createTicketForm(routeList, ticketList, DateOfTrip, DeparturePoint, ArrivalPoint,user);
+                createTicketForm createTicketForm = new createTicketForm(routeList, ticketList, DateOfTrip, DeparturePoint, ArrivalPoint, user);
                 createTicketForm.ShowDialog();
                 this.Close();
             }
             else
             {
                 MessageBox.Show("Choose departure and arrival points");
+            }
+        }
+        private void MoveFocusUp()
+        {
+            if (ActiveControl == txtDateOfTrip)
+                txtArrival.Focus();
+            else if (ActiveControl == txtArrival)
+                txtDeparture.Focus();
+        }
+
+        private void MoveFocusDown()
+        {
+            if (ActiveControl == txtDeparture)
+                txtDateOfTrip.Focus();
+            else if (ActiveControl == txtArrival)
+                txtDateOfTrip.Focus();
+           
+            
+        }
+
+        private void MoveFocusLeft()
+        {
+            if (ActiveControl == txtArrival)
+                txtDeparture.Focus();
+            if (ActiveControl == dgvShowArrivals)
+                dgvShowDepartures.Focus();
+
+        }
+
+        private void MoveFocusRight()
+        {
+            if (ActiveControl == txtDeparture)
+                txtArrival.Focus();
+
+            if (ActiveControl == dgvShowDepartures)
+                dgvShowArrivals.Focus();
+
+        }
+        private void ShowHelp()
+        {
+
+            MessageBox.Show("Menu for finding a route by city and date", "Help", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        }
+
+        private void ticketsForm_KeyDown(object sender, KeyEventArgs e)
+        {
+            switch (e.KeyCode)
+            {
+                case Keys.Enter:
+                    AddTicket();
+                    e.Handled = true;
+                    break;
+                case Keys.F1:
+                    ShowHelp();
+                    e.Handled = true;
+                    break;
+                case Keys.Escape:
+                    this.Close();
+                    e.Handled = true;
+                    break;
+                case Keys.Up:
+                    MoveFocusUp();
+                    e.Handled = true;
+                    break;
+                case Keys.Down:
+                    MoveFocusDown();
+                    e.Handled = true;
+                    break;
+                case Keys.Left:
+                    MoveFocusLeft();
+                    e.Handled = true;
+                    break;
+                case Keys.Right:
+                    MoveFocusRight();
+                    e.Handled = true;
+                    break;
             }
 
         }

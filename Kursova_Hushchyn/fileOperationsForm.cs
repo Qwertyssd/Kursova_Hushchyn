@@ -22,6 +22,7 @@ namespace Kursova_Hushchyn
             InitializeComponent();
             this.routeList = routeList;
             this.ticketList = ticketList;
+            this.KeyPreview = true;
         }
 
         private void btnSave_Click(object sender, EventArgs e)
@@ -100,6 +101,25 @@ namespace Kursova_Hushchyn
             }
         }
 
+        private void fileOperationsForm_KeyDown(object sender, KeyEventArgs e)
+        {
+            switch (e.KeyCode)
+            {
 
+                case Keys.F1:
+                    ShowHelp();
+                    e.Handled = true;
+                    break;
+                case Keys.Escape:
+                    this.Close();
+                    e.Handled = true;
+                    break;
+            }
+        }
+        private void ShowHelp()
+        {
+
+            MessageBox.Show("Menu for saving and uploading Routes and Tickets", "Help", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        }
     }
 }

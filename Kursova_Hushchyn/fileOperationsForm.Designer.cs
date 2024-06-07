@@ -93,39 +93,39 @@
             // 
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(54)))), ((int)(((byte)(133)))));
-            this.label1.Font = new System.Drawing.Font("Noto Sans Armenian", 20F, System.Drawing.FontStyle.Bold);
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Bold);
             this.label1.ForeColor = System.Drawing.SystemColors.ControlLight;
             this.label1.Location = new System.Drawing.Point(-2, 44);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(882, 46);
+            this.label1.Size = new System.Drawing.Size(688, 31);
             this.label1.TabIndex = 4;
             this.label1.Text = "              OPERATIONS WITH TICKETS                    ";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Noto Sans Armenian", 10F, System.Drawing.FontStyle.Bold);
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold);
             this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(54)))), ((int)(((byte)(133)))));
             this.label2.Location = new System.Drawing.Point(112, 160);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(57, 23);
+            this.label2.Size = new System.Drawing.Size(49, 17);
             this.label2.TabIndex = 5;
             this.label2.Text = "Save:";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Noto Sans Armenian", 10F, System.Drawing.FontStyle.Bold);
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold);
             this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(54)))), ((int)(((byte)(133)))));
             this.label3.Location = new System.Drawing.Point(487, 160);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(74, 23);
+            this.label3.Size = new System.Drawing.Size(64, 17);
             this.label3.TabIndex = 6;
             this.label3.Text = "Upload:";
             // 
             // fileOperationsForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlLight;
             this.ClientSize = new System.Drawing.Size(873, 488);
@@ -136,13 +136,14 @@
             this.Controls.Add(this.btnSaveTickets);
             this.Controls.Add(this.btnUpload);
             this.Controls.Add(this.btnSave);
-            this.Font = new System.Drawing.Font("Noto Sans Armenian", 9F);
+            this.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F);
             this.ForeColor = System.Drawing.Color.Navy;
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "fileOperationsForm";
             this.ShowIcon = false;
             this.Text = "File operations  ";
             this.Load += new System.EventHandler(this.fileOperationsForm_Load);
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.fileOperationsForm_KeyDown);
             this.ResumeLayout(false);
             this.PerformLayout();
 

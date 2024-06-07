@@ -25,9 +25,10 @@ namespace Kursova_Hushchyn
             this.ticketList = ticketList;
             this.user = user;
             this.list = list;
-            
-
            
+            this.KeyPreview = true;
+
+
         }
 
         private void btnAddRoute_Click(object sender, EventArgs e)
@@ -84,10 +85,32 @@ namespace Kursova_Hushchyn
         {
             this.Close();
         }
-
+         
+         
         private void MainForm_FormClosing(object sender, FormClosingEventArgs e)
         {
             this.list.SaveToFile("users.txt");
+        }
+
+        private void MainForm_KeyDown(object sender, KeyEventArgs e)
+        {
+            switch (e.KeyCode)
+            {
+               
+                  
+                case Keys.F1:
+                    ShowHelp();
+                    e.Handled = true; break;
+                case Keys.Escape:
+                    this.Close();
+                    e.Handled = true; break;
+
+            }
+        }
+        private void ShowHelp()
+        {
+
+            MessageBox.Show("Menu for navigating for admin", "Help", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
     }
 }
