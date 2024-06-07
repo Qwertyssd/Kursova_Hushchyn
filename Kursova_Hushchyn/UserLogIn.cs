@@ -115,7 +115,6 @@ namespace Kursova_Hushchyn
             {
                 MessageBox.Show("Incorrect Password or Email");
             }
-
         }
 
         private void btnRegister_Click(object sender, EventArgs e)
