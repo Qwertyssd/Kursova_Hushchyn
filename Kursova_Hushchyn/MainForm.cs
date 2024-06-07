@@ -23,7 +23,6 @@ namespace Kursova_Hushchyn
             this.ticketList = ticketList;
 
             
-
             /*var route1 = new BusRoute(
              "Mercedes-Benz Sprinter", 20, true, false, true, true, "A101",
                 "Speedy Travels",
