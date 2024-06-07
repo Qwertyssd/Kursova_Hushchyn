@@ -41,9 +41,9 @@
             // btnAddRoute
             // 
             this.btnAddRoute.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(54)))), ((int)(((byte)(133)))));
-            this.btnAddRoute.Font = new System.Drawing.Font("Noto Sans Armenian", 7.8F, System.Drawing.FontStyle.Bold);
+            this.btnAddRoute.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold);
             this.btnAddRoute.ForeColor = System.Drawing.Color.White;
-            this.btnAddRoute.Location = new System.Drawing.Point(594, 147);
+            this.btnAddRoute.Location = new System.Drawing.Point(397, 147);
             this.btnAddRoute.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnAddRoute.Name = "btnAddRoute";
             this.btnAddRoute.Size = new System.Drawing.Size(190, 37);
@@ -55,7 +55,7 @@
             // btnSearchRoutes
             // 
             this.btnSearchRoutes.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(54)))), ((int)(((byte)(133)))));
-            this.btnSearchRoutes.Font = new System.Drawing.Font("Noto Sans Armenian", 7.8F, System.Drawing.FontStyle.Bold);
+            this.btnSearchRoutes.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold);
             this.btnSearchRoutes.ForeColor = System.Drawing.Color.White;
             this.btnSearchRoutes.Location = new System.Drawing.Point(155, 205);
             this.btnSearchRoutes.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -70,7 +70,7 @@
             // 
             this.btnTicketOperations.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(54)))), ((int)(((byte)(133)))));
             this.btnTicketOperations.ForeColor = System.Drawing.SystemColors.Control;
-            this.btnTicketOperations.Location = new System.Drawing.Point(594, 205);
+            this.btnTicketOperations.Location = new System.Drawing.Point(397, 205);
             this.btnTicketOperations.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnTicketOperations.Name = "btnTicketOperations";
             this.btnTicketOperations.Size = new System.Drawing.Size(190, 36);
@@ -83,7 +83,7 @@
             // 
             this.btnDeleteRoute.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(54)))), ((int)(((byte)(133)))));
             this.btnDeleteRoute.ForeColor = System.Drawing.Color.White;
-            this.btnDeleteRoute.Location = new System.Drawing.Point(40, 425);
+            this.btnDeleteRoute.Location = new System.Drawing.Point(276, 284);
             this.btnDeleteRoute.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnDeleteRoute.Name = "btnDeleteRoute";
             this.btnDeleteRoute.Size = new System.Drawing.Size(190, 40);
@@ -96,10 +96,10 @@
             // 
             this.btnFileOperations.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(54)))), ((int)(((byte)(133)))));
             this.btnFileOperations.ForeColor = System.Drawing.SystemColors.Control;
-            this.btnFileOperations.Location = new System.Drawing.Point(594, 262);
+            this.btnFileOperations.Location = new System.Drawing.Point(28, 430);
             this.btnFileOperations.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnFileOperations.Name = "btnFileOperations";
-            this.btnFileOperations.Size = new System.Drawing.Size(190, 36);
+            this.btnFileOperations.Size = new System.Drawing.Size(209, 46);
             this.btnFileOperations.TabIndex = 4;
             this.btnFileOperations.Text = "File Management";
             this.btnFileOperations.UseVisualStyleBackColor = false;
@@ -121,9 +121,9 @@
             // btnExit
             // 
             this.btnExit.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(54)))), ((int)(((byte)(133)))));
-            this.btnExit.Font = new System.Drawing.Font("Noto Sans Armenian", 13F, System.Drawing.FontStyle.Bold);
+            this.btnExit.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Bold);
             this.btnExit.ForeColor = System.Drawing.Color.White;
-            this.btnExit.Location = new System.Drawing.Point(713, 418);
+            this.btnExit.Location = new System.Drawing.Point(582, 430);
             this.btnExit.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnExit.Name = "btnExit";
             this.btnExit.Size = new System.Drawing.Size(134, 48);
@@ -136,21 +136,21 @@
             // 
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(54)))), ((int)(((byte)(133)))));
-            this.label1.Font = new System.Drawing.Font("Noto Sans Armenian", 20F, System.Drawing.FontStyle.Bold);
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Bold);
             this.label1.ForeColor = System.Drawing.SystemColors.ControlLight;
-            this.label1.Location = new System.Drawing.Point(2, 22);
+            this.label1.Location = new System.Drawing.Point(0, 25);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(895, 46);
+            this.label1.Size = new System.Drawing.Size(754, 31);
             this.label1.TabIndex = 7;
             this.label1.Text = "                                    MAIN MENU                                    " +
     "";
             // 
             // MainForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.ClientSize = new System.Drawing.Size(900, 506);
+            this.ClientSize = new System.Drawing.Size(754, 506);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.btnExit);
             this.Controls.Add(this.btnSearchTickets);
@@ -159,11 +159,12 @@
             this.Controls.Add(this.btnTicketOperations);
             this.Controls.Add(this.btnSearchRoutes);
             this.Controls.Add(this.btnAddRoute);
-            this.Font = new System.Drawing.Font("Noto Sans Armenian", 7.8F, System.Drawing.FontStyle.Bold);
+            this.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold);
             this.ForeColor = System.Drawing.Color.Navy;
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "MainForm";
             this.Text = "UKR BUS";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.MainForm_FormClosing);
             this.ResumeLayout(false);
             this.PerformLayout();
 

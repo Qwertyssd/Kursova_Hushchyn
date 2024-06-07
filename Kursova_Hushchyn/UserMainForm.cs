@@ -15,13 +15,16 @@ namespace Kursova_Hushchyn
         private RouteList routeList;
         private TicketList ticketList;
         private TicketList userTicketList;
-
-        public UserMainForm(RouteList routeList, TicketList ticketList, TicketList userTicketList)
+        private UserList userList;
+        private User user;
+        public UserMainForm(RouteList routeList, TicketList ticketList, TicketList userTicketList, UserList userList, User user)
         {
             InitializeComponent();
             this.routeList = routeList;
             this.ticketList = ticketList;
             this.userTicketList = userTicketList;
+            this.userList = userList;
+            this.user = user;
         }
 
         private void btnSearchRoutes_Click(object sender, EventArgs e)
@@ -35,6 +38,7 @@ namespace Kursova_Hushchyn
         private void btnSearchTickets_Click(object sender, EventArgs e)
         {
             this.Hide();
+            userTicketList.Tickets = ticketList.GetTicketsByPassenger(user.FirstName, user.LastName);
             SearchTickets searchTickets = new SearchTickets(routeList, userTicketList);
             searchTickets.ShowDialog();
             this.Show();
@@ -43,7 +47,7 @@ namespace Kursova_Hushchyn
         private void btnTicketOperations_Click(object sender, EventArgs e)
         {
             this.Hide();
-            var ticketsForm = new ticketsForm(routeList, ticketList);
+            var ticketsForm = new ticketsForm(routeList, ticketList,user);
             ticketsForm.ShowDialog();
             this.Show();
         }
@@ -54,8 +58,14 @@ namespace Kursova_Hushchyn
 
         private void UserMainForm_FormClosing(object sender, FormClosingEventArgs e)
         {
+            userList.SaveToFile("users.txt");
             routeList.SaveRoutesToFile("routes.txt");
             ticketList.SaveTicketsToFile("tickets.txt");
+        }
+
+        private void btnAddMoney_Click(object sender, EventArgs e)
+        {
+            user.Money = double.Parse(txtMoney.Text);
         }
     }
 }

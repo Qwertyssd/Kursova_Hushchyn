@@ -27,36 +27,43 @@ namespace Kursova_Hushchyn
                 TimeSpan time = TimeSpan.Parse(txtStopsDuration.Text);
                 List<TimeSpan> Arrivals = new List<TimeSpan>();
                 List<TimeSpan> Departures = new List<TimeSpan>();
-                
+                List<int> DateAdd = new List<int>();
                 foreach (DataGridViewRow row in dgvTravelDurations.Rows)
                 {
                     if (row.Cells["StopsTime"].Value != null)
                     {
-                        TimeSpan duration = new TimeSpan();
-                        if (TimeSpan.TryParse(row.Cells["StopsTime"].Value.ToString(), out duration ))
+                        if (row.Cells["Date"].Value != null)
                         {
-                            Arrivals.Add(duration);
-                            TimeSpan timePotentially = time;
-                            timePotentially.Add(Arrivals.Last());
-                           
-                            if (duration.CompareTo(timePotentially)>=0&&timePotentially!=null)
+                            int date;
+                            TimeSpan duration = new TimeSpan();
+                            if (TimeSpan.TryParse(row.Cells["StopsTime"].Value.ToString(), out duration))
                             {
-                                TimeSpan t = new TimeSpan();
-                                t=time.Add(duration);
+                                if (int.TryParse(row.Cells["Date"].Value.ToString(), out date))
+                                {
+                                    Arrivals.Add(duration);
+                                    TimeSpan timePotentially = time;
+                                    timePotentially.Add(Arrivals.Last());
 
-                                Departures.Add(t);
+                                    if (duration.CompareTo(timePotentially) >= 0 && timePotentially != null)
+                                    {
+                                        TimeSpan t = new TimeSpan();
+                                        t = time.Add(duration);
+                                        DateAdd.Add(date);
+                                        Departures.Add(t);
+                                    }
+                                    else
+                                    {
+                                        MessageBox.Show("Invalid duration format. Time management");
+                                        return;
+                                    }
+                                }
+
                             }
                             else
                             {
-                                MessageBox.Show("Invalid duration format. Time management");
+                                MessageBox.Show("Invalid duration format. Please use the format HH:mm:ss.");
                                 return;
                             }
-                            
-                        }
-                        else
-                        {
-                            MessageBox.Show("Invalid duration format. Please use the format HH:mm:ss.");
-                            return;
                         }
                     }
                 }
@@ -71,8 +78,10 @@ namespace Kursova_Hushchyn
                     txtCarrierCompany.Text,
                     double.Parse(txtPrice.Text),
                     DateTime.Parse(txtDepartureDate.Text),
-                    DateTime.Parse(txtArrivalDate.Text),
-                    Arrivals,Departures,
+                    DateTime.Parse(txtDepartureDate.Text).AddDays(DateAdd[DateAdd.Count-1]),
+
+                    
+                    Arrivals,Departures, DateAdd,
                     new List<string>(txtStops.Text.Split(',')),
                     int.Parse(txtCapacity.Text)
                 );
@@ -106,7 +115,7 @@ namespace Kursova_Hushchyn
             txtCarrierCompany.Clear();
             txtPrice.Clear();
             txtDepartureDate.Clear();
-            txtArrivalDate.Clear();
+           
             txtStops.Clear();
             txtCapacity.Clear();
             txtStopsDuration.Clear();

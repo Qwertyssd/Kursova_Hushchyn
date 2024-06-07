@@ -49,7 +49,7 @@
             this.btnAddTicket.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(54)))), ((int)(((byte)(133)))));
             this.btnAddTicket.ForeColor = System.Drawing.Color.White;
             this.btnAddTicket.Location = new System.Drawing.Point(557, 531);
-            this.btnAddTicket.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.btnAddTicket.Margin = new System.Windows.Forms.Padding(6);
             this.btnAddTicket.Name = "btnAddTicket";
             this.btnAddTicket.Size = new System.Drawing.Size(198, 55);
             this.btnAddTicket.TabIndex = 0;
@@ -64,7 +64,7 @@
             this.dgvShowDepartures.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Departures});
             this.dgvShowDepartures.Location = new System.Drawing.Point(32, 231);
-            this.dgvShowDepartures.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.dgvShowDepartures.Margin = new System.Windows.Forms.Padding(6);
             this.dgvShowDepartures.Name = "dgvShowDepartures";
             this.dgvShowDepartures.RowHeadersWidth = 51;
             this.dgvShowDepartures.Size = new System.Drawing.Size(264, 266);
@@ -85,7 +85,7 @@
             this.dgvShowArrivals.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Arrivals});
             this.dgvShowArrivals.Location = new System.Drawing.Point(402, 231);
-            this.dgvShowArrivals.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.dgvShowArrivals.Margin = new System.Windows.Forms.Padding(6);
             this.dgvShowArrivals.Name = "dgvShowArrivals";
             this.dgvShowArrivals.RowHeadersWidth = 51;
             this.dgvShowArrivals.Size = new System.Drawing.Size(264, 266);
@@ -102,9 +102,9 @@
             // txtDeparture
             // 
             this.txtDeparture.Location = new System.Drawing.Point(32, 172);
-            this.txtDeparture.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.txtDeparture.Margin = new System.Windows.Forms.Padding(6);
             this.txtDeparture.Name = "txtDeparture";
-            this.txtDeparture.Size = new System.Drawing.Size(264, 30);
+            this.txtDeparture.Size = new System.Drawing.Size(264, 23);
             this.txtDeparture.TabIndex = 10;
             this.txtDeparture.TextChanged += new System.EventHandler(this.txtDeparture_TextChanged);
             // 
@@ -116,7 +116,7 @@
             this.label4.Location = new System.Drawing.Point(28, 127);
             this.label4.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(135, 23);
+            this.label4.Size = new System.Drawing.Size(118, 17);
             this.label4.TabIndex = 11;
             this.label4.Text = "Deparure Point";
             // 
@@ -127,26 +127,26 @@
             this.label5.Location = new System.Drawing.Point(398, 127);
             this.label5.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(112, 23);
+            this.label5.Size = new System.Drawing.Size(97, 17);
             this.label5.TabIndex = 12;
             this.label5.Text = "Arrival Point";
             // 
             // txtArrival
             // 
             this.txtArrival.Location = new System.Drawing.Point(402, 172);
-            this.txtArrival.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.txtArrival.Margin = new System.Windows.Forms.Padding(6);
             this.txtArrival.Name = "txtArrival";
-            this.txtArrival.Size = new System.Drawing.Size(264, 30);
+            this.txtArrival.Size = new System.Drawing.Size(264, 23);
             this.txtArrival.TabIndex = 13;
             this.txtArrival.TextChanged += new System.EventHandler(this.txtArrival_TextChanged);
             // 
             // txtDateOfTrip
             // 
             this.txtDateOfTrip.Location = new System.Drawing.Point(147, 509);
-            this.txtDateOfTrip.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.txtDateOfTrip.Margin = new System.Windows.Forms.Padding(6);
             this.txtDateOfTrip.Mask = "00/00/0000";
             this.txtDateOfTrip.Name = "txtDateOfTrip";
-            this.txtDateOfTrip.Size = new System.Drawing.Size(149, 30);
+            this.txtDateOfTrip.Size = new System.Drawing.Size(149, 23);
             this.txtDateOfTrip.TabIndex = 15;
             this.txtDateOfTrip.ValidatingType = typeof(System.DateTime);
             this.txtDateOfTrip.TextChanged += new System.EventHandler(this.txtDateOfTrip_TextChanged);
@@ -158,7 +158,7 @@
             this.label8.Location = new System.Drawing.Point(28, 516);
             this.label8.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(107, 23);
+            this.label8.Size = new System.Drawing.Size(95, 17);
             this.label8.TabIndex = 14;
             this.label8.Text = "Date of Trip";
             // 
@@ -166,17 +166,17 @@
             // 
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(54)))), ((int)(((byte)(133)))));
-            this.label1.Font = new System.Drawing.Font("Noto Sans Armenian", 20F, System.Drawing.FontStyle.Bold);
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Bold);
             this.label1.ForeColor = System.Drawing.SystemColors.ControlLight;
             this.label1.Location = new System.Drawing.Point(0, 30);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(789, 46);
+            this.label1.Size = new System.Drawing.Size(654, 31);
             this.label1.TabIndex = 16;
             this.label1.Text = "                             FIND TICKETS                          ";
             // 
             // ticketsForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 23F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlLight;
             this.ClientSize = new System.Drawing.Size(788, 606);
@@ -190,8 +190,8 @@
             this.Controls.Add(this.dgvShowArrivals);
             this.Controls.Add(this.dgvShowDepartures);
             this.Controls.Add(this.btnAddTicket);
-            this.Font = new System.Drawing.Font("Noto Sans Armenian", 10F, System.Drawing.FontStyle.Bold);
-            this.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold);
+            this.Margin = new System.Windows.Forms.Padding(6);
             this.Name = "ticketsForm";
             this.Text = "Find Bus";
             ((System.ComponentModel.ISupportInitialize)(this.dgvShowDepartures)).EndInit();

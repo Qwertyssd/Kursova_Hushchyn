@@ -13,12 +13,13 @@ namespace Kursova_Hushchyn
 {
     public partial class UserLogIn : Form
     {
-        List<User> users = new List<User>();
-        User admin = new User("admin", "admin",DateTime.Parse("07/12/2005 00:00:00"),"admin@gmail.com","admin",true);
-        User justUser = new User("Mykhailo", "Hushchyn", DateTime.Parse("07/12/2005 00:00:00"), "user@gmail.com", "user", false);
+        
+        
         private RouteList routeList;
         private TicketList ticketList;
         private TicketList userTickets;
+        private User finalUser;
+        public UserList userList;
         public UserLogIn()
         {
 
@@ -26,8 +27,8 @@ namespace Kursova_Hushchyn
             this.routeList = new RouteList();
             this.ticketList = new TicketList();
             this.userTickets = new TicketList();
-            users.Add(justUser);
-            users.Add(admin);
+            this.userList = new UserList();
+           
             if (File.Exists("routes.txt"))
             {
                 FileInfo fileInfo = new FileInfo("routes.txt");
@@ -40,9 +41,21 @@ namespace Kursova_Hushchyn
                     MessageBox.Show("Routes file is empty");
                 }
             }
+            if (File.Exists("users.txt"))
+            {
+                FileInfo fileInfo = new FileInfo("users.txt");
+                if (fileInfo.Length > 0)
+                {
+                    userList.LoadFromFile("users.txt");
+                }
+                else
+                {
+                    MessageBox.Show("Users file is empty");
+                }
+            }
             else
             {
-                MessageBox.Show("Routes file doesn`t exist");
+                MessageBox.Show("Users file doesn`t exist");
             }
             if (File.Exists("tickets.txt"))
             {
@@ -65,15 +78,15 @@ namespace Kursova_Hushchyn
 
         private void btnLogIn_Click(object sender, EventArgs e)
         {
-            bool gotThrough = false;
-            foreach (User user in users)
+            bool gotThrough = false;        
+            foreach (User user in userList.Users)
             {
                 if (user.Email==txtEmail.Text&&user.Password == txtPassword.Text)
                 {
                     if (user.IsAdmin==true)
                     {
                         gotThrough = true;
-                        MainForm mainForm = new MainForm(this.routeList,this.ticketList);
+                        MainForm mainForm = new MainForm(this.routeList,this.ticketList,this.userList,user);
                         this.Hide();
                         mainForm.ShowDialog();
                         this.Close();
@@ -91,7 +104,7 @@ namespace Kursova_Hushchyn
                         }
                        
                         gotThrough = true;
-                        UserMainForm userMain = new UserMainForm(this.routeList, this.ticketList,this.userTickets);
+                        UserMainForm userMain = new UserMainForm(this.routeList, this.ticketList,this.userTickets,this.userList, user);
                         this.Hide();
                         userMain.ShowDialog();
                         this.Close();
@@ -103,6 +116,14 @@ namespace Kursova_Hushchyn
                 MessageBox.Show("Incorrect Password or Email");
             }
 
+        }
+
+        private void btnRegister_Click(object sender, EventArgs e)
+        {
+            RegisterUser register = new RegisterUser(userList);
+            this.Hide();
+            register.ShowDialog();
+            this.Show();
         }
     }
 }

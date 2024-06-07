@@ -14,16 +14,18 @@ namespace Kursova_Hushchyn
 
         public string Email { get; set; }
         public string Password { get; set; }
+        public double Money { get; set; }
         
         public bool IsAdmin { get; set; }
 
-        public User(string firstName, string lastName,DateTime dateOfBirth,string email,string password,bool isAdmin) 
+        public User(string firstName, string lastName,DateTime dateOfBirth,string email,string password,double money,bool isAdmin) 
         { 
             FirstName = firstName;
             LastName = lastName;
             DateOfBirth = dateOfBirth;
             Email = email;
             Password = password;
+            Money = money;
             IsAdmin = isAdmin;
         }
     }

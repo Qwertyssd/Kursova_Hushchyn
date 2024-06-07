@@ -14,16 +14,17 @@ namespace Kursova_Hushchyn
     {
         public RouteList routeList;
         public TicketList ticketList;
+        public User user;
         
         private DateTime DateOfTrip;
         private string DepartuePoint;
         private string ArrivalPoint;
         RouteList Sortedroutes = new RouteList();
-        public createTicketForm(RouteList routeList, TicketList ticketList, DateTime dateOfTrip, string departuePoint, string arrivalPoint)
+        public createTicketForm(RouteList routeList, TicketList ticketList, DateTime dateOfTrip, string departuePoint, string arrivalPoint, User user)
         {
             InitializeComponent();
            
-            
+            this.user = user;
             this.routeList = routeList;
             this.ticketList = ticketList; 
             DateOfTrip = dateOfTrip;
@@ -33,7 +34,9 @@ namespace Kursova_Hushchyn
 
         private void createTicketForm_Load(object sender, EventArgs e)
         {
-           
+            txtDOB.Text = user.DateOfBirth.ToString();
+            txtName.Text=user.FirstName.ToString();
+            txtSurname.Text=user.LastName.ToString();
             Sortedroutes.BusRoutes = routeList.BusRoutes;
 
             Sortedroutes.BusRoutes = Sortedroutes.SearchRoutesByDepartureDate(DateOfTrip);
@@ -130,10 +133,10 @@ namespace Kursova_Hushchyn
             dgvSchedule.Rows.Clear();
             int rowIndex = this.dgvSchedule.Rows.Add();
 
-            //Obtain a reference to the newly created DataGridViewRow 
+          
             var row = this.dgvSchedule.Rows[rowIndex];
 
-            //Now this won't fail since the row and columns exist 
+          
             
             if (e.RowIndex >= 0 && e.RowIndex < dgvRoutes.Rows.Count)
             {
@@ -166,20 +169,43 @@ namespace Kursova_Hushchyn
 
         private void btnSubmit_Click(object sender, EventArgs e)
         {
-            string tID = (txtName.Text).Substring(0, 2) + "_" + (txtSurname.Text).Substring(0, 2)
-               + "_" + (txtRouteNumber).Text +"_"+ ((DateTime.Now).Day).ToString()
-               + "_" + ((DateTime.Now).Month).ToString() + "_" + ((DateTime.Now).Year).ToString();
-            string name = txtName.Text;
-            string surname = txtSurname.Text;
-            DateTime dateTime = DateTime.Parse(txtDOB.Text);
-            string routeNumber = txtRouteNumber.Text;
-            string departure = txtDeparturePoint.Text;
-            string arrival = txtArrivalPoint.Text;
-            Ticket ticket = new Ticket(tID,name,surname,dateTime,routeNumber,departure,arrival);
-            ticketList.AddTicket(ticket);
-            routeList.BusRoutes = routeList.DecreaseSeat(routeNumber);
-            MessageBox.Show("Ticket created sucessfully");
-            this.Close();
+            if (!string.IsNullOrWhiteSpace(txtName.Text)&& !string.IsNullOrWhiteSpace(txtSurname.Text) && !string.IsNullOrWhiteSpace(txtDOB.Text))
+            {
+                RouteList list = new RouteList();
+                list.BusRoutes = routeList.BusRoutes;
+                list.BusRoutes = list.SearchRoutesByRouteNumber(txtRouteNumber.Text);
+                if (user.Money >= list.BusRoutes[0].Price||user.IsAdmin==true)
+                {
+                    if(user.IsAdmin==false)
+                    {
+                        user.Money -= list.BusRoutes[0].Price;
+                    }
+                 
+                    string tID = (txtName.Text).Substring(0, 2) + "_" + (txtSurname.Text).Substring(0, 2)
+                   + "_" + (txtRouteNumber).Text + "_" + ((DateTime.Now).Day).ToString()
+                   + "_" + ((DateTime.Now).Month).ToString() + "_" + ((DateTime.Now).Year).ToString();
+                    string name = txtName.Text;
+                    string surname = txtSurname.Text;
+                    DateTime dateTime = DateTime.Parse(txtDOB.Text);
+                    string routeNumber = txtRouteNumber.Text;
+                    string departure = txtDeparturePoint.Text;
+                    string arrival = txtArrivalPoint.Text;
+                    Ticket ticket = new Ticket(tID, name, surname, dateTime, routeNumber, departure, arrival);
+                    ticketList.AddTicket(ticket);
+
+                    routeList.BusRoutes = routeList.DecreaseSeat(routeNumber);
+                    MessageBox.Show("Ticket created sucessfully");
+                    this.Close();
+                }
+                else
+                {
+                    MessageBox.Show("Not enough money");
+                }
+            }
+            else
+            {
+                MessageBox.Show("Input your personal data");
+            }
         }
 
        

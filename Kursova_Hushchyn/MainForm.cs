@@ -15,26 +15,19 @@ namespace Kursova_Hushchyn
     {
         private RouteList routeList;
         private TicketList ticketList;
+        private UserList  list;
+        private User user;
 
-        public MainForm(RouteList routeList, TicketList ticketList)
+        public MainForm(RouteList routeList, TicketList ticketList,UserList list,User user)
         {
             InitializeComponent();
             this.routeList = routeList;
             this.ticketList = ticketList;
-
+            this.user = user;
+            this.list = list;
             
-            /*var route1 = new BusRoute(
-             "Mercedes-Benz Sprinter", 20, true, false, true, true, "A101",
-                "Speedy Travels",
-                15.50,
-                DateTime.Parse("2023-06-01 08:00"),
-                DateTime.Parse("2023-06-01 12:00"),
-                new List<TimeSpan> { TimeSpan.Parse("02:00:00"), TimeSpan.Parse("03:00:00"), TimeSpan.Parse("04:00:00") },
-                new List<TimeSpan> { TimeSpan.Parse("02:20:00"), TimeSpan.Parse("03:20:00"), TimeSpan.Parse("04:20:00") },
-                new List<string> { "City A", "City B", "City C", "City D" },
-                10
-            );
-            routeList.AddRoute(route1);*/
+
+           
         }
 
         private void btnAddRoute_Click(object sender, EventArgs e)
@@ -57,7 +50,7 @@ namespace Kursova_Hushchyn
         private void btnTicketOperations_Click(object sender, EventArgs e)
         {
             this.Hide();
-            var ticketsForm = new ticketsForm(routeList, ticketList);
+            var ticketsForm = new ticketsForm(routeList, ticketList,user);
             ticketsForm.ShowDialog();
             this.Show();
         }
@@ -86,9 +79,15 @@ namespace Kursova_Hushchyn
             this.Show();
         }
 
+
         private void btnExit_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void MainForm_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            this.list.SaveToFile("users.txt");
         }
     }
 }

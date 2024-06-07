@@ -219,6 +219,7 @@ namespace Kursova_Hushchyn
                         row.Cells["Arrival"].Value = arrival;
                         row.Cells["Departure"].Value = selectedRoute.Departures[countDep];
                         row.Cells["Stop"].Value = selectedRoute.Stops[countDep];
+                        row.Cells["Date"].Value = (selectedRoute.DepartureDate.AddDays(selectedRoute.TimeAdd[countDep]));
                         countDep++;
                         if (countDep< selectedRoute.Arrivals.Count)
                         {

@@ -352,6 +352,7 @@ namespace Kursova_Hushchyn
                     writer.WriteLine(route.ArrivalDate);
                     writer.WriteLine(string.Join(",", route.Arrivals));
                     writer.WriteLine(string.Join(",", route.Departures));
+                    writer.WriteLine(string.Join(",", route.TimeAdd));
                     writer.WriteLine(string.Join(",", route.Stops));
                     writer.WriteLine(route.AvailableSeats);
                 }
@@ -377,11 +378,12 @@ namespace Kursova_Hushchyn
                     DateTime arrivalDate = DateTime.Parse(reader.ReadLine());
                     List<TimeSpan> arrivals = reader.ReadLine().Split(',').Select(TimeSpan.Parse).ToList();
                     List<TimeSpan> departures = reader.ReadLine().Split(',').Select(TimeSpan.Parse).ToList();
+                    List<int> dateAdd = reader.ReadLine().Split(',').Select(int.Parse).ToList();
                     List<string> stops = reader.ReadLine().Split(',').ToList();
                     int availableSeats = int.Parse(reader.ReadLine());
 
                     BusRoute route = new BusRoute(model, passengerCapacity, hasAirConditioner, hasToilet, hasPowerOutlets, hasInternet,
-                                                  routeNumber, carrierCompany, price, departureDate, arrivalDate, arrivals,departures, stops, availableSeats);
+                                                  routeNumber, carrierCompany, price, departureDate, arrivalDate, arrivals,departures,dateAdd, stops, availableSeats);
                     AddRoute(route);
                 }
             }

@@ -33,6 +33,8 @@
             this.btnTicketOperations = new System.Windows.Forms.Button();
             this.btnExit = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
+            this.btnAddMoney = new System.Windows.Forms.Button();
+            this.txtMoney = new System.Windows.Forms.MaskedTextBox();
             this.SuspendLayout();
             // 
             // btnSearchTickets
@@ -91,28 +93,51 @@
             // 
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(54)))), ((int)(((byte)(133)))));
-            this.label1.Font = new System.Drawing.Font("Noto Sans Armenian", 20F, System.Drawing.FontStyle.Bold);
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Bold);
             this.label1.ForeColor = System.Drawing.SystemColors.ControlLight;
             this.label1.Location = new System.Drawing.Point(1, 31);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(922, 46);
+            this.label1.Size = new System.Drawing.Size(778, 31);
             this.label1.TabIndex = 10;
             this.label1.Text = "                                      MAIN MENU                                  " +
     "   ";
             // 
+            // btnAddMoney
+            // 
+            this.btnAddMoney.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(54)))), ((int)(((byte)(133)))));
+            this.btnAddMoney.ForeColor = System.Drawing.Color.White;
+            this.btnAddMoney.Location = new System.Drawing.Point(553, 146);
+            this.btnAddMoney.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.btnAddMoney.Name = "btnAddMoney";
+            this.btnAddMoney.Size = new System.Drawing.Size(162, 52);
+            this.btnAddMoney.TabIndex = 11;
+            this.btnAddMoney.Text = "Add Money";
+            this.btnAddMoney.UseVisualStyleBackColor = false;
+            this.btnAddMoney.Click += new System.EventHandler(this.btnAddMoney_Click);
+            // 
+            // txtMoney
+            // 
+            this.txtMoney.Location = new System.Drawing.Point(735, 158);
+            this.txtMoney.Mask = "000000.00";
+            this.txtMoney.Name = "txtMoney";
+            this.txtMoney.Size = new System.Drawing.Size(100, 23);
+            this.txtMoney.TabIndex = 12;
+            // 
             // UserMainForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 23F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlLight;
             this.ClientSize = new System.Drawing.Size(917, 542);
+            this.Controls.Add(this.txtMoney);
+            this.Controls.Add(this.btnAddMoney);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.btnExit);
             this.Controls.Add(this.btnTicketOperations);
             this.Controls.Add(this.btnSearchTickets);
             this.Controls.Add(this.btnSearchRoutes);
-            this.Font = new System.Drawing.Font("Noto Sans Armenian", 10F, System.Drawing.FontStyle.Bold);
-            this.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold);
+            this.Margin = new System.Windows.Forms.Padding(6);
             this.Name = "UserMainForm";
             this.ShowIcon = false;
             this.Text = "Main Menu";
@@ -129,5 +154,7 @@
         private System.Windows.Forms.Button btnTicketOperations;
         private System.Windows.Forms.Button btnExit;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button btnAddMoney;
+        private System.Windows.Forms.MaskedTextBox txtMoney;
     }
 }

@@ -15,14 +15,16 @@ namespace Kursova_Hushchyn
     {
         private RouteList routeList;
         private TicketList ticketList;
+        private User user;
         private string DeparturePoint { get; set; }
         private string ArrivalPoint { get; set; }
         private DateTime DateOfTrip { get; set; }
-        public ticketsForm(RouteList routeList, TicketList ticketList)
+        public ticketsForm(RouteList routeList, TicketList ticketList, User user)
         {
             InitializeComponent();
             this.routeList = routeList;
             this.ticketList = ticketList;
+            this.user = user;
         }
 
 
@@ -152,7 +154,7 @@ namespace Kursova_Hushchyn
             if (DeparturePoint != null &&ArrivalPoint!=null)
             {
                 this.Hide();
-                createTicketForm createTicketForm = new createTicketForm(routeList, ticketList, DateOfTrip, DeparturePoint, ArrivalPoint);
+                createTicketForm createTicketForm = new createTicketForm(routeList, ticketList, DateOfTrip, DeparturePoint, ArrivalPoint,user);
                 createTicketForm.ShowDialog();
                 this.Close();
             }
