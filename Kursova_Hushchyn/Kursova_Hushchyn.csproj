@@ -92,7 +92,6 @@
       <DependentUpon>RegisterUser.cs</DependentUpon>
     </Compile>
     <Compile Include="RouteList.cs" />
-    <Compile Include="Schedule.cs" />
     <Compile Include="SearchRoutesForm.cs">
       <SubType>Form</SubType>
     </Compile>
