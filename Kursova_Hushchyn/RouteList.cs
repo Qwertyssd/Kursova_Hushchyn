@@ -87,6 +87,21 @@ namespace Kursova_Hushchyn
             }
             return list;
         }
+        public List<BusRoute> SearchRoutesByCapacity(int capacity)
+        {
+            List<BusRoute> list = new List<BusRoute>();
+
+
+
+            foreach (BusRoute bus in BusRoutes)
+            {
+                if (bus.PassengerCapacity == capacity)
+                {
+                    list.Add(bus);
+                }
+            }
+            return list;
+        }
 
         public List<BusRoute> SearchRoutesByArrival(string arrivalPoint)
         {
@@ -110,13 +125,7 @@ namespace Kursova_Hushchyn
         {
             List<BusRoute> list = new List<BusRoute>();
 
-            /*foreach (BusRoute bus in BusRoutes)
-            {
-                if (bus.Stops.Last() == arrivalPoint)
-                {
-                    list.Add(bus);
-                }
-            }*/
+            
             bool cathced = false;
             foreach (BusRoute route in BusRoutes)
             {
@@ -266,21 +275,34 @@ namespace Kursova_Hushchyn
         {
             return BusRoutes.Where(r => r.HasPowerOutlets == true).ToList();
         }
-        public List<BusRoute> SearchRoutesByPrice(double? priceLow, double? priceHigh)
+        public List<BusRoute> SearchRoutesByPriceLow(double? priceLow)
         {
             List<BusRoute> list = new List<BusRoute>();
 
 
             foreach (BusRoute bus in BusRoutes)
             {
-                if (bus.Price<priceHigh&& bus.Price > priceLow)
+                if ( bus.Price > priceLow)
                 {
                     list.Add(bus);
                 }
             }
             return list;
         }
+        public List<BusRoute> SearchRoutesByPriceHigh(double? priceHigh)
+        {
+            List<BusRoute> list = new List<BusRoute>();
 
+
+            foreach (BusRoute bus in BusRoutes)
+            {
+                if (bus.Price < priceHigh)
+                {
+                    list.Add(bus);
+                }
+            }
+            return list;
+        }
         public List<BusRoute> DecreaseSeat(string routeNumber)
         {
             List<BusRoute> list = new List<BusRoute>();

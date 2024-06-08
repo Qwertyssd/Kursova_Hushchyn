@@ -122,6 +122,7 @@ namespace Kursova_Hushchyn
             this.dgvRoutes.Location = new System.Drawing.Point(18, 30);
             this.dgvRoutes.Margin = new System.Windows.Forms.Padding(4);
             this.dgvRoutes.Name = "dgvRoutes";
+            this.dgvRoutes.ReadOnly = true;
             this.dgvRoutes.RowHeadersWidth = 51;
             this.dgvRoutes.Size = new System.Drawing.Size(1732, 426);
             this.dgvRoutes.TabIndex = 0;
@@ -133,6 +134,7 @@ namespace Kursova_Hushchyn
             this.routeNumberDataGridViewTextBoxColumn.HeaderText = "RouteNumber";
             this.routeNumberDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.routeNumberDataGridViewTextBoxColumn.Name = "routeNumberDataGridViewTextBoxColumn";
+            this.routeNumberDataGridViewTextBoxColumn.ReadOnly = true;
             this.routeNumberDataGridViewTextBoxColumn.Width = 125;
             // 
             // carrierCompanyDataGridViewTextBoxColumn
@@ -141,6 +143,7 @@ namespace Kursova_Hushchyn
             this.carrierCompanyDataGridViewTextBoxColumn.HeaderText = "CarrierCompany";
             this.carrierCompanyDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.carrierCompanyDataGridViewTextBoxColumn.Name = "carrierCompanyDataGridViewTextBoxColumn";
+            this.carrierCompanyDataGridViewTextBoxColumn.ReadOnly = true;
             this.carrierCompanyDataGridViewTextBoxColumn.Width = 125;
             // 
             // priceDataGridViewTextBoxColumn
@@ -149,6 +152,7 @@ namespace Kursova_Hushchyn
             this.priceDataGridViewTextBoxColumn.HeaderText = "Price";
             this.priceDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.priceDataGridViewTextBoxColumn.Name = "priceDataGridViewTextBoxColumn";
+            this.priceDataGridViewTextBoxColumn.ReadOnly = true;
             this.priceDataGridViewTextBoxColumn.Width = 125;
             // 
             // departureDateDataGridViewTextBoxColumn
@@ -157,6 +161,7 @@ namespace Kursova_Hushchyn
             this.departureDateDataGridViewTextBoxColumn.HeaderText = "DepartureDate";
             this.departureDateDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.departureDateDataGridViewTextBoxColumn.Name = "departureDateDataGridViewTextBoxColumn";
+            this.departureDateDataGridViewTextBoxColumn.ReadOnly = true;
             this.departureDateDataGridViewTextBoxColumn.Width = 125;
             // 
             // arrivalDateDataGridViewTextBoxColumn
@@ -165,6 +170,7 @@ namespace Kursova_Hushchyn
             this.arrivalDateDataGridViewTextBoxColumn.HeaderText = "ArrivalDate";
             this.arrivalDateDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.arrivalDateDataGridViewTextBoxColumn.Name = "arrivalDateDataGridViewTextBoxColumn";
+            this.arrivalDateDataGridViewTextBoxColumn.ReadOnly = true;
             this.arrivalDateDataGridViewTextBoxColumn.Width = 125;
             // 
             // availableSeatsDataGridViewTextBoxColumn
@@ -173,6 +179,7 @@ namespace Kursova_Hushchyn
             this.availableSeatsDataGridViewTextBoxColumn.HeaderText = "AvailableSeats";
             this.availableSeatsDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.availableSeatsDataGridViewTextBoxColumn.Name = "availableSeatsDataGridViewTextBoxColumn";
+            this.availableSeatsDataGridViewTextBoxColumn.ReadOnly = true;
             this.availableSeatsDataGridViewTextBoxColumn.Width = 125;
             // 
             // modelDataGridViewTextBoxColumn
@@ -181,6 +188,7 @@ namespace Kursova_Hushchyn
             this.modelDataGridViewTextBoxColumn.HeaderText = "Model";
             this.modelDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.modelDataGridViewTextBoxColumn.Name = "modelDataGridViewTextBoxColumn";
+            this.modelDataGridViewTextBoxColumn.ReadOnly = true;
             this.modelDataGridViewTextBoxColumn.Width = 125;
             // 
             // passengerCapacityDataGridViewTextBoxColumn
@@ -189,6 +197,7 @@ namespace Kursova_Hushchyn
             this.passengerCapacityDataGridViewTextBoxColumn.HeaderText = "PassengerCapacity";
             this.passengerCapacityDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.passengerCapacityDataGridViewTextBoxColumn.Name = "passengerCapacityDataGridViewTextBoxColumn";
+            this.passengerCapacityDataGridViewTextBoxColumn.ReadOnly = true;
             this.passengerCapacityDataGridViewTextBoxColumn.Width = 125;
             // 
             // hasAirConditionerDataGridViewCheckBoxColumn
@@ -197,6 +206,7 @@ namespace Kursova_Hushchyn
             this.hasAirConditionerDataGridViewCheckBoxColumn.HeaderText = "HasAirConditioner";
             this.hasAirConditionerDataGridViewCheckBoxColumn.MinimumWidth = 6;
             this.hasAirConditionerDataGridViewCheckBoxColumn.Name = "hasAirConditionerDataGridViewCheckBoxColumn";
+            this.hasAirConditionerDataGridViewCheckBoxColumn.ReadOnly = true;
             this.hasAirConditionerDataGridViewCheckBoxColumn.Width = 125;
             // 
             // hasToiletDataGridViewCheckBoxColumn
@@ -205,6 +215,7 @@ namespace Kursova_Hushchyn
             this.hasToiletDataGridViewCheckBoxColumn.HeaderText = "HasToilet";
             this.hasToiletDataGridViewCheckBoxColumn.MinimumWidth = 6;
             this.hasToiletDataGridViewCheckBoxColumn.Name = "hasToiletDataGridViewCheckBoxColumn";
+            this.hasToiletDataGridViewCheckBoxColumn.ReadOnly = true;
             this.hasToiletDataGridViewCheckBoxColumn.Width = 125;
             // 
             // hasPowerOutletsDataGridViewCheckBoxColumn
@@ -213,6 +224,7 @@ namespace Kursova_Hushchyn
             this.hasPowerOutletsDataGridViewCheckBoxColumn.HeaderText = "HasPowerOutlets";
             this.hasPowerOutletsDataGridViewCheckBoxColumn.MinimumWidth = 6;
             this.hasPowerOutletsDataGridViewCheckBoxColumn.Name = "hasPowerOutletsDataGridViewCheckBoxColumn";
+            this.hasPowerOutletsDataGridViewCheckBoxColumn.ReadOnly = true;
             this.hasPowerOutletsDataGridViewCheckBoxColumn.Width = 125;
             // 
             // hasInternetDataGridViewCheckBoxColumn
@@ -221,6 +233,7 @@ namespace Kursova_Hushchyn
             this.hasInternetDataGridViewCheckBoxColumn.HeaderText = "HasInternet";
             this.hasInternetDataGridViewCheckBoxColumn.MinimumWidth = 6;
             this.hasInternetDataGridViewCheckBoxColumn.Name = "hasInternetDataGridViewCheckBoxColumn";
+            this.hasInternetDataGridViewCheckBoxColumn.ReadOnly = true;
             this.hasInternetDataGridViewCheckBoxColumn.Width = 125;
             // 
             // busRoutesBindingSource

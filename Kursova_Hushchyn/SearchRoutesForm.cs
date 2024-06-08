@@ -73,14 +73,18 @@ namespace Kursova_Hushchyn
             bool? hasToilet = chbToilet.Checked ? (bool?)chbToilet.Checked : null;
             bool? hasPowerOutlets = chbPowerOutlets.Checked ? (bool?)chbPowerOutlets.Checked : null;
             bool? hasInternet = chbInternet.Checked ? (bool?)chbInternet.Checked : null;
-            double? priceLow = string.IsNullOrWhiteSpace(txtPriceLow.Text) ? -1 : (double?)double.Parse(txtPriceLow.Text);
-            double? priceHigh = string.IsNullOrWhiteSpace(txtPriceHigh.Text) ? -1 : (double?)double.Parse(txtPriceHigh.Text);
+            double? priceLow = string.IsNullOrWhiteSpace(txtPriceLow.Text) ? null : (double?)double.Parse(txtPriceLow.Text);
+            double? priceHigh = string.IsNullOrWhiteSpace(txtPriceHigh.Text) ? null : (double?)double.Parse(txtPriceHigh.Text);
             int? capacity = null;
             if (!string.IsNullOrWhiteSpace(txtCapacity.Text))
             {
                 if (int.TryParse(txtCapacity.Text, out int parsedCapacity))
                 {
                     capacity = parsedCapacity;
+                }
+                else
+                {
+                    capacity = null; 
                 }
 
             }
@@ -105,6 +109,14 @@ namespace Kursova_Hushchyn
             {
                 routes.BusRoutes = routes.SearchRoutesByPowerOutlets();
             }
+            if (capacity!=null)
+            {
+                routes.BusRoutes = routes.SearchRoutesByCapacity((int)capacity);
+            }
+            if (intermediate!=null)
+            {
+                routes.BusRoutes = routes.SearchRoutesByIntermediate(intermediate);
+            }
             if (hasInternet != null)
             {
                 routes.BusRoutes = routes.SearchRoutesByInternet();
@@ -117,10 +129,7 @@ namespace Kursova_Hushchyn
             {
                 routes.BusRoutes = routes.SearchRoutesByCarrierCompany(carrierCompany);
             }
-            if ((priceLow != null && priceHigh != null) && priceHigh > priceLow)
-            {
-                routes.BusRoutes = routes.SearchRoutesByPrice(priceLow, priceHigh);
-            }
+            
 
             if (departureDate != null)
             {
@@ -151,6 +160,19 @@ namespace Kursova_Hushchyn
                 routes.BusRoutes = routes.SearchRoutesByArrival(arrival);
             }
             
+            if ((priceLow != null && priceHigh == null) )
+            {
+                routes.BusRoutes = routes.SearchRoutesByPriceLow(priceLow);
+            }
+            else if ((priceLow == null && priceHigh != null))
+            {
+                routes.BusRoutes = routes.SearchRoutesByPriceHigh(priceHigh);
+            }
+            else if((priceHigh!=null&&priceHigh!=null)&&priceLow<priceHigh)
+            {
+                routes.BusRoutes = routes.SearchRoutesByPriceHigh(priceHigh);
+                routes.BusRoutes = routes.SearchRoutesByPriceLow(priceLow);
+            }
             dgvRoutes.DataSource = routes.BusRoutes;
         }
         private void btnSearch_Click(object sender, EventArgs e)
