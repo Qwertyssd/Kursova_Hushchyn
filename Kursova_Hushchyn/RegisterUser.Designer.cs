@@ -40,8 +40,8 @@
             this.txtMoney = new System.Windows.Forms.MaskedTextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.btnSubmit = new System.Windows.Forms.Button();
-            this.txtPassword = new System.Windows.Forms.Label();
-            this.maskedTextBox1 = new System.Windows.Forms.MaskedTextBox();
+            this.lblPass = new System.Windows.Forms.Label();
+            this.txtPassword = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // label1
@@ -125,7 +125,6 @@
             // txtMoney
             // 
             this.txtMoney.Location = new System.Drawing.Point(371, 155);
-            this.txtMoney.Mask = "________.__";
             this.txtMoney.Name = "txtMoney";
             this.txtMoney.Size = new System.Drawing.Size(100, 20);
             this.txtMoney.TabIndex = 6;
@@ -149,31 +148,29 @@
             this.btnSubmit.UseVisualStyleBackColor = true;
             this.btnSubmit.Click += new System.EventHandler(this.btnSubmit_Click);
             // 
+            // lblPass
+            // 
+            this.lblPass.AutoSize = true;
+            this.lblPass.Location = new System.Drawing.Point(23, 176);
+            this.lblPass.Name = "lblPass";
+            this.lblPass.Size = new System.Drawing.Size(53, 13);
+            this.lblPass.TabIndex = 29;
+            this.lblPass.Text = "Password";
+            // 
             // txtPassword
             // 
-            this.txtPassword.AutoSize = true;
-            this.txtPassword.Location = new System.Drawing.Point(23, 176);
+            this.txtPassword.Location = new System.Drawing.Point(97, 169);
             this.txtPassword.Name = "txtPassword";
-            this.txtPassword.Size = new System.Drawing.Size(53, 13);
-            this.txtPassword.TabIndex = 29;
-            this.txtPassword.Text = "Password";
-            // 
-            // maskedTextBox1
-            // 
-            this.maskedTextBox1.Location = new System.Drawing.Point(97, 169);
-            this.maskedTextBox1.Mask = "00/00/0000";
-            this.maskedTextBox1.Name = "maskedTextBox1";
-            this.maskedTextBox1.Size = new System.Drawing.Size(100, 20);
-            this.maskedTextBox1.TabIndex = 3;
-            this.maskedTextBox1.ValidatingType = typeof(System.DateTime);
+            this.txtPassword.Size = new System.Drawing.Size(100, 20);
+            this.txtPassword.TabIndex = 30;
             // 
             // RegisterUser
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(518, 261);
-            this.Controls.Add(this.maskedTextBox1);
             this.Controls.Add(this.txtPassword);
+            this.Controls.Add(this.lblPass);
             this.Controls.Add(this.btnSubmit);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.txtMoney);
@@ -208,7 +205,7 @@
         private System.Windows.Forms.MaskedTextBox txtMoney;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Button btnSubmit;
-        private System.Windows.Forms.Label txtPassword;
-        private System.Windows.Forms.MaskedTextBox maskedTextBox1;
+        private System.Windows.Forms.Label lblPass;
+        private System.Windows.Forms.TextBox txtPassword;
     }
 }

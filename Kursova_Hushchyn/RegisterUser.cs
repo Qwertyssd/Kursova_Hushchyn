@@ -22,7 +22,7 @@ namespace Kursova_Hushchyn
 
         private void Submit()
         {
-            if (double.TryParse(txtMoney.Text, out double money) == true && !string.IsNullOrWhiteSpace(txtEmail.Text) && !string.IsNullOrWhiteSpace(txtPassword.Text) && txtPassword.Text.Length > 4)
+            if (double.TryParse(txtMoney.Text, out double money) == true && !string.IsNullOrWhiteSpace(txtEmail.Text) && !string.IsNullOrWhiteSpace(lblPass.Text) && lblPass.Text.Length > 4)
             {
                 if (money > 0)
                 {
@@ -34,7 +34,7 @@ namespace Kursova_Hushchyn
                         {
                             for (int j = i + 1; j < mail.Length; j++)
                             {
-                                if (j < mail.Length && mail[j] == '.')
+                                if (j < mail.Length && mail[j] == '.' && j>i+1)
                                 {
                                     isValid = true;
                                 }
@@ -52,12 +52,12 @@ namespace Kursova_Hushchyn
                                 {
                                     DateTime tmp = date;
                                     tmp = tmp.AddYears(14);
-                                    if (tmp.Date > DateTime.UtcNow)
+                                    if (tmp.Date < DateTime.UtcNow)
                                     {
                                         User user = new User(txtName.Text, txtSurname.Text, date, txtEmail.Text, txtPassword.Text, money, false);
                                         foreach (User u in userList.Users)
                                         {
-                                            if (u == user)
+                                            if (u.Email == user.Email)
                                             {
                                                 MessageBox.Show("This user is already registered");
                                                 return;
@@ -65,7 +65,14 @@ namespace Kursova_Hushchyn
                                         }
 
                                         userList.Users.Add(user);
+                                        userList.SaveToFile("users.txt");
                                         MessageBox.Show("You have successfully registered!");
+                                        return;
+                                    }
+                                    else
+                                    {
+                                        MessageBox.Show("You`re too young");
+
                                     }
                                 }
                             }
@@ -162,7 +169,7 @@ namespace Kursova_Hushchyn
         }
         private void MoveFocusUp()
         {
-            if (ActiveControl == txtPassword)
+            if (ActiveControl == lblPass)
                 txtDate.Focus();
             else if (ActiveControl == txtDate)
                 txtName.Focus();
@@ -179,7 +186,7 @@ namespace Kursova_Hushchyn
             if (ActiveControl == txtName)
                 txtDate.Focus();
             else if (ActiveControl == txtDate)
-                txtPassword.Focus();
+                lblPass.Focus();
 
             if (ActiveControl == txtSurname)
                 txtEmail.Focus();
@@ -190,8 +197,8 @@ namespace Kursova_Hushchyn
         private void MoveFocusLeft()
         {
             if (ActiveControl == txtMoney)
-                txtPassword.Focus();
-            else if (ActiveControl == txtPassword)
+                lblPass.Focus();
+            else if (ActiveControl == lblPass)
                 txtMoney.Focus(); 
 
             if (ActiveControl == txtEmail)
@@ -201,10 +208,10 @@ namespace Kursova_Hushchyn
         }
         private void MoveFocusRight()
         {
-            if (ActiveControl == txtPassword)
+            if (ActiveControl == lblPass)
                 txtMoney.Focus();
             else if (ActiveControl == txtMoney)
-                txtPassword.Focus(); 
+                lblPass.Focus(); 
 
             if (ActiveControl == txtDate)
                 txtEmail.Focus();

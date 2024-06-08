@@ -59,7 +59,7 @@ namespace Kursova_Hushchyn
         private void btnDeleteRoute_Click(object sender, EventArgs e)
         {
             this.Hide();
-            var deleteRouteForm = new deleteRouteForm(routeList,ticketList);
+            var deleteRouteForm = new deleteRouteForm(routeList,ticketList,user);
             deleteRouteForm.ShowDialog();
             this.Show();
         }

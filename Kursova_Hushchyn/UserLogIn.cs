@@ -98,6 +98,7 @@ namespace Kursova_Hushchyn
                         MainForm mainForm = new MainForm(this.routeList, this.ticketList, this.userList, user);
                         this.Hide();
                         mainForm.ShowDialog();
+                        this.userList.SaveToFile("users.txt");
                         this.Close();
 
                     }
@@ -116,6 +117,9 @@ namespace Kursova_Hushchyn
                         UserMainForm userMain = new UserMainForm(this.routeList, this.ticketList, this.userTickets, this.userList, user);
                         this.Hide();
                         userMain.ShowDialog();
+                        this.routeList.SaveRoutesToFile("routes.txt");
+                        this.ticketList.SaveTicketsToFile("tickets.txt");
+                        this.userList.SaveToFile("users.txt");
                         this.Close();
                     }
                 }

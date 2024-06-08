@@ -76,11 +76,10 @@ namespace Kursova_Hushchyn
         }
         private void AddMoney()
         {
-            if (string.IsNullOrWhiteSpace(txtMoney.Text))
+            if (double.TryParse(txtMoney.Text,out double money)==true)
             {
-                user.Money = double.Parse(txtMoney.Text);
+                user.Money+=money;
             }
-
             else 
             {
                 MessageBox.Show("Input amount of money");
@@ -129,7 +128,12 @@ namespace Kursova_Hushchyn
             MessageBox.Show("Menu for navigating", "Help", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
-        
-           
+        private void btnReturn_Click(object sender, EventArgs e)
+        {
+            deleteRouteForm deleteRoute = new deleteRouteForm(routeList,ticketList,user);
+            this.Hide();
+            deleteRoute.ShowDialog();
+            this.Show();
+        }
     }
 }

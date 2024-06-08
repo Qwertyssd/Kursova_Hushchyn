@@ -35,6 +35,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.btnAddMoney = new System.Windows.Forms.Button();
             this.txtMoney = new System.Windows.Forms.MaskedTextBox();
+            this.btnReturn = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // btnSearchTickets
@@ -84,7 +85,7 @@
             this.btnExit.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.btnExit.Name = "btnExit";
             this.btnExit.Size = new System.Drawing.Size(260, 59);
-            this.btnExit.TabIndex = 6;
+            this.btnExit.TabIndex = 7;
             this.btnExit.Text = "Exit";
             this.btnExit.UseVisualStyleBackColor = false;
             this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
@@ -118,10 +119,22 @@
             // txtMoney
             // 
             this.txtMoney.Location = new System.Drawing.Point(735, 158);
-            this.txtMoney.Mask = "000000.00";
             this.txtMoney.Name = "txtMoney";
             this.txtMoney.Size = new System.Drawing.Size(100, 23);
-            this.txtMoney.TabIndex = 5;
+            this.txtMoney.TabIndex = 6;
+            // 
+            // btnReturn
+            // 
+            this.btnReturn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(54)))), ((int)(((byte)(133)))));
+            this.btnReturn.ForeColor = System.Drawing.Color.White;
+            this.btnReturn.Location = new System.Drawing.Point(553, 246);
+            this.btnReturn.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.btnReturn.Name = "btnReturn";
+            this.btnReturn.Size = new System.Drawing.Size(271, 52);
+            this.btnReturn.TabIndex = 5;
+            this.btnReturn.Text = "Return Ticket";
+            this.btnReturn.UseVisualStyleBackColor = false;
+            this.btnReturn.Click += new System.EventHandler(this.btnReturn_Click);
             // 
             // UserMainForm
             // 
@@ -129,6 +142,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlLight;
             this.ClientSize = new System.Drawing.Size(917, 542);
+            this.Controls.Add(this.btnReturn);
             this.Controls.Add(this.txtMoney);
             this.Controls.Add(this.btnAddMoney);
             this.Controls.Add(this.label1);
@@ -157,5 +171,6 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button btnAddMoney;
         private System.Windows.Forms.MaskedTextBox txtMoney;
+        private System.Windows.Forms.Button btnReturn;
     }
 }

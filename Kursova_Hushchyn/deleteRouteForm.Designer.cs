@@ -30,10 +30,10 @@
         {
             this.btnDelete = new System.Windows.Forms.Button();
             this.txtRouteNumber = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
+            this.lblRouteNumber = new System.Windows.Forms.Label();
+            this.lblModel = new System.Windows.Forms.Label();
             this.txtModel = new System.Windows.Forms.TextBox();
-            this.label3 = new System.Windows.Forms.Label();
+            this.lblCarrier = new System.Windows.Forms.Label();
             this.txtCarrier = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.txtTicketNumber = new System.Windows.Forms.TextBox();
@@ -62,27 +62,27 @@
             this.txtRouteNumber.Size = new System.Drawing.Size(250, 19);
             this.txtRouteNumber.TabIndex = 2;
             // 
-            // label1
+            // lblRouteNumber
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold);
-            this.label1.Location = new System.Drawing.Point(18, 69);
-            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(100, 15);
-            this.label1.TabIndex = 2;
-            this.label1.Text = "Route Number";
+            this.lblRouteNumber.AutoSize = true;
+            this.lblRouteNumber.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold);
+            this.lblRouteNumber.Location = new System.Drawing.Point(18, 69);
+            this.lblRouteNumber.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblRouteNumber.Name = "lblRouteNumber";
+            this.lblRouteNumber.Size = new System.Drawing.Size(100, 15);
+            this.lblRouteNumber.TabIndex = 2;
+            this.lblRouteNumber.Text = "Route Number";
             // 
-            // label2
+            // lblModel
             // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold);
-            this.label2.Location = new System.Drawing.Point(18, 116);
-            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(90, 15);
-            this.label2.TabIndex = 4;
-            this.label2.Text = "Model of bus";
+            this.lblModel.AutoSize = true;
+            this.lblModel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold);
+            this.lblModel.Location = new System.Drawing.Point(18, 116);
+            this.lblModel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblModel.Name = "lblModel";
+            this.lblModel.Size = new System.Drawing.Size(90, 15);
+            this.lblModel.TabIndex = 4;
+            this.lblModel.Text = "Model of bus";
             // 
             // txtModel
             // 
@@ -92,16 +92,16 @@
             this.txtModel.Size = new System.Drawing.Size(250, 19);
             this.txtModel.TabIndex = 3;
             // 
-            // label3
+            // lblCarrier
             // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold);
-            this.label3.Location = new System.Drawing.Point(18, 163);
-            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(51, 15);
-            this.label3.TabIndex = 6;
-            this.label3.Text = "Carrier";
+            this.lblCarrier.AutoSize = true;
+            this.lblCarrier.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold);
+            this.lblCarrier.Location = new System.Drawing.Point(18, 163);
+            this.lblCarrier.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblCarrier.Name = "lblCarrier";
+            this.lblCarrier.Size = new System.Drawing.Size(51, 15);
+            this.lblCarrier.TabIndex = 6;
+            this.lblCarrier.Text = "Carrier";
             // 
             // txtCarrier
             // 
@@ -142,6 +142,7 @@
             this.btnClose.TabIndex = 7;
             this.btnClose.Text = "Close";
             this.btnClose.UseVisualStyleBackColor = false;
+            this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
             // 
             // deleteRouteForm
             // 
@@ -152,11 +153,11 @@
             this.Controls.Add(this.btnClose);
             this.Controls.Add(this.txtTicketNumber);
             this.Controls.Add(this.label4);
-            this.Controls.Add(this.label3);
+            this.Controls.Add(this.lblCarrier);
             this.Controls.Add(this.txtCarrier);
-            this.Controls.Add(this.label2);
+            this.Controls.Add(this.lblModel);
             this.Controls.Add(this.txtModel);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.lblRouteNumber);
             this.Controls.Add(this.txtRouteNumber);
             this.Controls.Add(this.btnDelete);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold);
@@ -164,6 +165,7 @@
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "deleteRouteForm";
             this.Text = "deleteRouteForm";
+            this.Load += new System.EventHandler(this.deleteRouteForm_Load);
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.deleteRouteForm_KeyDown);
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -174,10 +176,10 @@
 
         private System.Windows.Forms.Button btnDelete;
         private System.Windows.Forms.TextBox txtRouteNumber;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label lblRouteNumber;
+        private System.Windows.Forms.Label lblModel;
         private System.Windows.Forms.TextBox txtModel;
-        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label lblCarrier;
         private System.Windows.Forms.TextBox txtCarrier;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TextBox txtTicketNumber;
