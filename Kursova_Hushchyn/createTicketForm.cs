@@ -203,10 +203,32 @@ namespace Kursova_Hushchyn
                     string routeNumber = txtRouteNumber.Text;
                     string departure = txtDeparturePoint.Text;
                     string arrival = txtArrivalPoint.Text;
+                    int i = 0;
+                    bool isDep = false;
+                    foreach (var item in list.BusRoutes[0].Stops)
+                    {
+                        if (item == departure)
+                        {
+                            isDep = true;
+                        }
+                        if (isDep==true)
+                        {
+                            if (list.BusRoutes[0].AvailableSeats[i]<=0)
+                            {
+                                MessageBox.Show("Not enough seats");
+                                return;
+                            }
+                        }
+                        if (item == arrival)
+                        {
+                            isDep = false;
+                        }
+                        i++;
+                    }
                     Ticket ticket = new Ticket(tID, name, surname, dateTime, routeNumber, departure, arrival);
                     ticketList.AddTicket(ticket);
 
-                    routeList.BusRoutes = routeList.DecreaseSeat(routeNumber);
+                    routeList.BusRoutes = routeList.DecreaseSeat(routeNumber,departure,arrival);
                     MessageBox.Show("Ticket created sucessfully");
                     this.Close();
                 }

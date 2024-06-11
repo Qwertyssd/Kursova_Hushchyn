@@ -18,11 +18,11 @@ namespace Kursova_Hushchyn
         
         public List<int> TimeAdd { get; set; }
         public List<string> Stops { get; set; }
-        public int AvailableSeats { get; set; }
+        public List<int> AvailableSeats { get; set; }
 
         public BusRoute(string model, int passengerCapacity, bool hasAirConditioner, bool hasToilet, bool hasPowerOutlets, bool hasInternet,
                         string routeNumber, string carrierCompany, double price, DateTime departureDate, DateTime arrivalDate,
-                        List<TimeSpan> arrivals, List <TimeSpan> departures,List<int> timeAdd, List<string> stops, int availableSeats)
+                        List<TimeSpan> arrivals, List <TimeSpan> departures,List<int> timeAdd, List<string> stops, List<int> availableSeats)
             : base(model, passengerCapacity, hasAirConditioner, hasToilet, hasPowerOutlets, hasInternet)
         {
             RouteNumber = routeNumber;

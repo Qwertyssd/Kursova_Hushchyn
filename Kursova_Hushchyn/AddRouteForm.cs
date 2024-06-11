@@ -40,6 +40,7 @@ namespace Kursova_Hushchyn
             List<TimeSpan> Arrivals = new List<TimeSpan>();
             List<TimeSpan> Departures = new List<TimeSpan>();
             List<int> DateAdd = new List<int>();
+            List<int> Capacity = new List<int>();
             foreach (DataGridViewRow row in dgvTravelDurations.Rows)
             {
                 if (row.Cells["StopsTime"].Value != null)
@@ -53,6 +54,7 @@ namespace Kursova_Hushchyn
                             if (int.TryParse(row.Cells["Date"].Value.ToString(), out date))
                             {
                                 Arrivals.Add(duration);
+                                Capacity.Add(int.Parse(txtCapacity.Text));
                                 TimeSpan timePotentially = time;
                                 timePotentially.Add(Arrivals.Last());
 
@@ -141,7 +143,7 @@ namespace Kursova_Hushchyn
 
                     Arrivals, Departures, DateAdd,
                     new List<string>(txtStops.Text.Split(',')),
-                    int.Parse(txtCapacity.Text)
+                    Capacity
                 );
 
             routeList.AddRoute(route);

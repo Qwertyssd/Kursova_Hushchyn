@@ -252,11 +252,11 @@ namespace Kursova_Hushchyn
         {
             return BusRoutes.Where(r => r.Arrivals.Last() == time).ToList();
         }
-
+/*
         public List<BusRoute> SearchRoutesByTicketAvailability()
         {
             return BusRoutes.Where(r => r.AvailableSeats > 0).ToList();
-        }
+        }*/
 
         public List<BusRoute> SearchRoutesByToilet()
         {
@@ -303,7 +303,7 @@ namespace Kursova_Hushchyn
             }
             return list;
         }
-        public List<BusRoute> DecreaseSeat(string routeNumber)
+        /*public List<BusRoute> DecreaseSeat(string routeNumber)
         {
             List<BusRoute> list = new List<BusRoute>();
 
@@ -319,7 +319,43 @@ namespace Kursova_Hushchyn
             return list;
 
 
+        }*/
+        public List<BusRoute> DecreaseSeat(string routeNumber, string a, string b)
+        {
+
+            List<BusRoute> list = new List<BusRoute>();
+            foreach (BusRoute bus in BusRoutes)
+            {
+                int i = 0;
+                if (bus.RouteNumber == routeNumber)
+                {
+                    bool isStart = false;
+                    foreach (var stop in bus.Stops)
+                    {
+                        if (stop == a)
+                        {
+                            isStart = true;
+                            
+                        }
+                        if (isStart != false)
+                        {
+                            bus.AvailableSeats[i]--;
+                        }
+                        if (stop == b)
+                        {
+                            isStart = false;
+                        }
+                        
+                        i++;
+                    }
+
+                }
+                list.Add(bus);
+
+            }
+            return list;
         }
+
         public List<BusRoute> SortByPriceHighToLow()
         {
             List<BusRoute> list = BusRoutes;
@@ -376,7 +412,8 @@ namespace Kursova_Hushchyn
                     writer.WriteLine(string.Join(",", route.Departures));
                     writer.WriteLine(string.Join(",", route.TimeAdd));
                     writer.WriteLine(string.Join(",", route.Stops));
-                    writer.WriteLine(route.AvailableSeats);
+                    writer.WriteLine(string.Join(",", route.AvailableSeats));
+                    
                 }
             }
         }
@@ -402,7 +439,8 @@ namespace Kursova_Hushchyn
                     List<TimeSpan> departures = reader.ReadLine().Split(',').Select(TimeSpan.Parse).ToList();
                     List<int> dateAdd = reader.ReadLine().Split(',').Select(int.Parse).ToList();
                     List<string> stops = reader.ReadLine().Split(',').ToList();
-                    int availableSeats = int.Parse(reader.ReadLine());
+                    List<int> availableSeats = reader.ReadLine().Split(',').Select(int.Parse).ToList();
+                   
 
                     BusRoute route = new BusRoute(model, passengerCapacity, hasAirConditioner, hasToilet, hasPowerOutlets, hasInternet,
                                                   routeNumber, carrierCompany, price, departureDate, arrivalDate, arrivals,departures,dateAdd, stops, availableSeats);

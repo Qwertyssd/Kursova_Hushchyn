@@ -63,7 +63,7 @@ namespace Kursova_Hushchyn
                 return;
             }
 
-            ticketList.Tickets = ticketList.DeleteTicketByTicketID(ticketNumber);
+            ticketList.Tickets = ticketList.DeleteTicketByTicketID(ticketNumber,routeList);
             MessageBox.Show("Ticket successfully deleted.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
@@ -105,7 +105,8 @@ namespace Kursova_Hushchyn
 
             if (!string.IsNullOrWhiteSpace(ticketNumber))
             {
-                ticketList.Tickets = ticketList.DeleteTicketByTicketID(ticketNumber);
+                ticketList.Tickets = ticketList.DeleteTicketByTicketID(ticketNumber,routeList);
+                
                 isDeleted = true;
             }
 

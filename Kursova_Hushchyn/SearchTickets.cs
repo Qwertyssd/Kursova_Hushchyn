@@ -2,7 +2,9 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Diagnostics;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -14,6 +16,7 @@ namespace Kursova_Hushchyn
     {
         private RouteList routes = new RouteList();
         private TicketList tickets = new TicketList();
+        private Ticket ticket;
         public SearchTickets(RouteList routeList, TicketList ticketList)
         {
             InitializeComponent();
@@ -179,6 +182,99 @@ namespace Kursova_Hushchyn
         private void btnClose_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void btnPrint_Click(object sender, EventArgs e)
+        {
+            PrintTicket();
+
+        }
+       
+            private void PrintTicket()
+        {     
+            var results = (List<Ticket>)dgvTickets.DataSource;
+
+            if (results == null || !results.Any())
+            {
+                MessageBox.Show("No search results to print.");
+                return;
+            }
+            string filePath = "";
+            
+
+            if (ticket!=null)
+            {
+                 filePath = $"{ticket.TicketID}.txt";
+                            
+            }
+
+            if (File.Exists(filePath)==false&& ticket != null)
+            {
+                using (StreamWriter writer = new StreamWriter(filePath))
+                {
+
+                    writer.WriteLine(new string('-', 50));
+                    writer.WriteLine($"Ticket ID: {ticket.TicketID}");
+                    writer.WriteLine($"First Name: {ticket.FirstName}");
+                    writer.WriteLine($"Last Name: {ticket.LastName}");
+                    writer.WriteLine($"Route Number: {ticket.RouteNumber}");
+                    foreach (BusRoute item in routes.BusRoutes)
+                    {
+                        if (ticket.RouteNumber == item.RouteNumber)
+                        {
+                            writer.WriteLine($"Bus Model: {item.Model}");
+
+                            writer.WriteLine($"Carrier Company: {item.CarrierCompany}");
+                            writer.WriteLine($"Price: {item.Price}");
+                            foreach (var item1 in item.Stops)
+                            {
+                                if (ticket.DeparturePoint == item1)
+                                {
+                                   int i = item.Stops.IndexOf(item1);
+                                    
+                                    writer.WriteLine($"Departure Time: {item.Arrivals[i]}");
+                                    writer.WriteLine($"Arrival Time: {item.Arrivals[i+1]}");
+                                    string dep = item.DepartureDate.Date.ToShortDateString();
+                                    string arr = item.DepartureDate.AddDays(item.TimeAdd[i]).Date.ToShortDateString();
+                                    writer.WriteLine($"Departure Date: {dep}");
+                                    writer.WriteLine($"Arrival Date: {arr}");
+                                }
+                               
+                               
+                            }
+                            
+                            writer.WriteLine($"Departure Point: {ticket.DeparturePoint}");
+                            writer.WriteLine($"Arrival Point: {ticket.ArrivalPoint}");
+                           
+                            
+                            writer.WriteLine(new string('-', 50));
+                        }
+                    }
+
+
+                }
+
+             
+
+            }
+            if (ticket!=null)
+            {
+                MessageBox.Show("Ticket search results printed successfully.");
+                Process.Start("notepad.exe", filePath);
+            }
+            else
+            {
+                MessageBox.Show("Choose ticket to print");
+            }
+
+        }
+
+        private void dgvTickets_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+          
+
+             ticket = dgvTickets.Rows[e.RowIndex].DataBoundItem as Ticket;
+           
         }
     }
 }

@@ -224,19 +224,19 @@ namespace Kursova_Hushchyn
                         row.Cells["Departure"].Value = selectedRoute.Departures[countDep];
                         row.Cells["Stop"].Value = selectedRoute.Stops[countDep];
                         row.Cells["Date"].Value = (selectedRoute.DepartureDate.AddDays(selectedRoute.TimeAdd[countDep]));
+                        row.Cells["AvailibleSeats"].Value = selectedRoute.AvailableSeats[countDep];
                         countDep++;
                         if (countDep< selectedRoute.Arrivals.Count)
                         {
                             rowIndex = this.dgvSchedule.Rows.Add();
                             row = this.dgvSchedule.Rows[rowIndex];
                         }
-                        
-
 
 
                     }
-                    
-                    
+                   
+
+
 
                 }
             }
@@ -417,6 +417,21 @@ namespace Kursova_Hushchyn
         {
 
             MessageBox.Show("Menu for searching all availible roads", "Help", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        }
+
+        private void SearchRoutesForm_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnChange_Click(object sender, EventArgs e)
+        {
+            List<BusRoute> bus = routeList.SearchRoutesByRouteNumber(SelectedRoute);
+            ChangeRoute changeRoute = new ChangeRoute( bus[bus.Count - 1], routeList);
+            this.Hide();
+            changeRoute.ShowDialog();
+            dgvRoutes.DataSource = routeList;
+            this.Show();
         }
     }
 }

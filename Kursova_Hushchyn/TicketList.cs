@@ -69,7 +69,7 @@ namespace Kursova_Hushchyn
             return list.Tickets;
 
         }
-        public List<Ticket> DeleteTicketByTicketID(string id)
+        public List<Ticket> DeleteTicketByTicketID(string id , RouteList route)
         {
             List<Ticket> list = new List<Ticket>();
 
@@ -78,6 +78,28 @@ namespace Kursova_Hushchyn
                 if (id != ticket.TicketID)
                 {
                     list.Add(ticket);
+                }
+                else
+                {
+                    string l = ticket.RouteNumber;
+                    
+                    foreach (BusRoute bus in route.BusRoutes)
+                    {
+                        int i = 0;
+                        if (bus.RouteNumber==l)
+                        {
+                            foreach (var stop in bus.Stops)
+                            {
+                                if (stop==ticket.DeparturePoint||stop==ticket.ArrivalPoint)
+                                {
+                                    bus.AvailableSeats[i]++;
+                                }
+                                i++;
+                            }
+                            
+                        }
+                        
+                    }
                 }
             }
             return list;
