@@ -13,13 +13,13 @@ namespace Kursova_Hushchyn
     public partial class SearchRoutesForm : Form
     {
         public RouteList routeList;
-
+        public TicketList ticketList;
         public string SelectedRoute {  get; set; }
-        public SearchRoutesForm(RouteList routeList)
+        public SearchRoutesForm(RouteList routeList, TicketList ticketList)
         {
             InitializeComponent();
             this.routeList = routeList;
-          
+            this.ticketList = ticketList;
             this.KeyPreview = true;
         }
 
@@ -427,7 +427,7 @@ namespace Kursova_Hushchyn
         private void btnChange_Click(object sender, EventArgs e)
         {
             List<BusRoute> bus = routeList.SearchRoutesByRouteNumber(SelectedRoute);
-            ChangeRoute changeRoute = new ChangeRoute( bus[bus.Count - 1], routeList);
+            ChangeRoute changeRoute = new ChangeRoute( bus[bus.Count - 1], routeList,ticketList);
             this.Hide();
             changeRoute.ShowDialog();
             dgvRoutes.DataSource = routeList;

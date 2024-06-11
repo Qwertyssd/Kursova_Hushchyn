@@ -14,12 +14,14 @@ namespace Kursova_Hushchyn
     {
         private BusRoute routeChange;
         private RouteList routeList;
+        public TicketList ticketList;
         
-        public ChangeRoute(BusRoute route, RouteList routeList)
+        public ChangeRoute(BusRoute route, RouteList routeList,TicketList ticketList)
         {
             InitializeComponent();
             this.routeChange = route;
             this.routeList = routeList;
+            this.ticketList = ticketList;
             LoadRouteDetails();
         }
        
@@ -118,7 +120,10 @@ namespace Kursova_Hushchyn
             List<TimeSpan> Arrivals = new List<TimeSpan>();
             List<TimeSpan> Departures = new List<TimeSpan>();
             List<int> DateAdd = new List<int>();
+            List<int> AvailableSeats = new List<int>();
             List<string> Stops = new List<string>();
+            int i = 0;
+            
             foreach (DataGridViewRow row in dgvSchedule.Rows)
             {
                 if (row.Cells["Arrival"].Value != null)
@@ -139,10 +144,15 @@ namespace Kursova_Hushchyn
                                     {
                                         if (int.TryParse(row.Cells["Date"].Value.ToString(), out date))
                                         {
+                                            if (int.TryParse(txtCapacity.Text, out int Capacity))
+                                            {
                                                 Arrivals.Add(arrival);
                                                 Departures.Add(departure);
                                                 Stops.Add((row.Cells["Stop"].Value.ToString()));
-                                               DateAdd.Add(date);
+                                                DateAdd.Add(date);
+                                                AvailableSeats.Add(Capacity);
+                                                i++;
+                                            }
                                         }
                                     }
                                 }
@@ -213,7 +223,63 @@ namespace Kursova_Hushchyn
                 );
 
             routeList.AddRoute(route);
-            MessageBox.Show("Route added successfully!");
+            bool isChanged = false;
+
+           
+            if (route.Stops.Count != routeChange.Stops.Count)
+            {
+                isChanged = true;
+            }
+            else
+            {
+               
+                if (route.Arrivals.Count != route.Stops.Count ||
+                    route.Departures.Count != route.Stops.Count ||
+                    routeChange.Arrivals.Count != route.Stops.Count ||
+                    routeChange.Departures.Count != route.Stops.Count ||
+                    route.TimeAdd.Count != route.Stops.Count ||
+                    routeChange.TimeAdd.Count != route.Stops.Count)
+                {
+                    isChanged = true;
+                }
+
+                for (int j = 0; j < route.Stops.Count; j++)
+                {
+                    if (route.Stops[j] != routeChange.Stops[j] ||
+                        route.Arrivals[j] != routeChange.Arrivals[j] ||
+                        route.Departures[j] != routeChange.Departures[j] ||
+                        route.DepartureDate != routeChange.DepartureDate ||
+                        route.TimeAdd[j] != routeChange.TimeAdd[j])
+                    {
+                        isChanged = true;
+                        break;
+                    }
+                }
+            }
+
+            if (isChanged)
+            {
+                ticketList.Tickets = ticketList.DeleteTicketByRouteNumber(route.RouteNumber);
+            }
+            foreach (BusRoute bus in routeList.BusRoutes)
+            {
+                int k = 0;
+                if (bus.RouteNumber == route.RouteNumber)
+                {
+                    foreach (var stop in bus.Stops)
+                    {
+                       
+                            bus.AvailableSeats[k]=int.Parse(txtCapacity.Text);
+                       
+                        k++;
+                    }
+
+                }
+
+            }
+
+
+
 
             this.Close();
         }

@@ -43,7 +43,7 @@ namespace Kursova_Hushchyn
         private void btnSearchRoutes_Click(object sender, EventArgs e)
         {
             this.Hide();
-            var searchRoutesForm = new SearchRoutesForm(routeList);
+            var searchRoutesForm = new SearchRoutesForm(routeList,ticketList);
             searchRoutesForm.ShowDialog();
             this.Show();
         }
