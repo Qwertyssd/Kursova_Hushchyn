@@ -225,7 +225,7 @@
             // 
             // dgvSchedule
             // 
-            this.dgvSchedule.AllowUserToAddRows = false;
+            this.dgvSchedule.AllowUserToAddRows = true;
             this.dgvSchedule.BackgroundColor = System.Drawing.SystemColors.Control;
             this.dgvSchedule.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvSchedule.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
