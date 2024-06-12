@@ -1,0 +1,2 @@
+Mykhailo|Hushchyn|2005-12-07|user@gmail.com|user|9970|False
+admin|admin|2005-12-07|admin@gmail.com|admin|99999999|True
