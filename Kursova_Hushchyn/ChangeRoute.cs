@@ -228,7 +228,28 @@ namespace Kursova_Hushchyn
            
             if (route.Stops.Count != routeChange.Stops.Count)
             {
-                isChanged = true;
+                    isChanged = true;
+                     if (isChanged)
+                     {
+                         ticketList.Tickets = ticketList.DeleteTicketByRouteNumber(route.RouteNumber);
+                     }
+                         foreach (BusRoute bus in routeList.BusRoutes)
+                     {
+                     int k = 0;
+                     if (bus.RouteNumber == route.RouteNumber)
+                     {
+                         foreach (var stop in bus.Stops)
+                         {
+
+                             bus.AvailableSeats[k] = int.Parse(txtCapacity.Text);
+
+                             k++;
+                         }
+
+                     }
+
+                 }
+                 this.Close();
             }
             else
             {
@@ -241,6 +262,27 @@ namespace Kursova_Hushchyn
                     routeChange.TimeAdd.Count != route.Stops.Count)
                 {
                     isChanged = true;
+                     if (isChanged)
+                     {
+                         ticketList.Tickets = ticketList.DeleteTicketByRouteNumber(route.RouteNumber);
+                    }
+                     foreach (BusRoute bus in routeList.BusRoutes)
+                     {
+                         int k = 0;
+                         if (bus.RouteNumber == route.RouteNumber)
+                         {
+                             foreach (var stop in bus.Stops)
+                             {
+
+                                 bus.AvailableSeats[k] = int.Parse(txtCapacity.Text);
+
+                                     k++;
+                             }
+
+                            }
+
+                    }
+                         this.Close();
                 }
 
                 for (int j = 0; j < route.Stops.Count; j++)
